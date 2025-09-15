@@ -1,4 +1,5 @@
 import { toast } from "@/hooks/use-toast";
+import { convertImageToHTML as convertImageToHTMLAPI } from "@/lib/api";
 
 export interface TemplateField {
   key: string;
@@ -75,7 +76,7 @@ export const processImageToHTML = async (imageFile: File): Promise<ParsedTemplat
     const ocrText = await extractTextFromImage(imageFile);
     
     // Then convert to HTML using OpenAI
-    const htmlResult = await convertImageToHTML(imageFile, ocrText);
+    const htmlResult = await convertImageToHTMLAPI(imageFile);
     
     // Parse the generated HTML
     return parseHTMLTemplate(htmlResult.html);
@@ -91,22 +92,9 @@ const extractTextFromImage = async (imageFile: File): Promise<string> => {
   return "Sample OCR text extracted from image";
 };
 
-const convertImageToHTML = async (imageFile: File, ocrText: string): Promise<{ html: string }> => {
+const convertImageToHTML = async (imageFile: File): Promise<{ html: string }> => {
   try {
-    const formData = new FormData();
-    formData.append('image', imageFile);
-    formData.append('ocrText', ocrText);
-
-    const response = await fetch('/.netlify/functions/convert-image-to-html', {
-      method: 'POST',
-      body: formData
-    });
-
-    if (!response.ok) {
-      throw new Error('Failed to convert image to HTML');
-    }
-
-    return await response.json();
+    return await convertImageToHTMLAPI(imageFile);
   } catch (error) {
     console.error('Error converting image to HTML:', error);
     throw error;
@@ -264,7 +252,7 @@ export const getTemplateHTML = (templateId: string): string => {
       <div class="header-center"></div>
       <div class="header-right"></div>
       <div class="stan-logo-holder">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/STAN_store_logo.png" alt="Stan Logo">
+        <img src="https://cdn.stan.store/assets/stan-logo-white.png" alt="Stan Logo">
       </div>
     </div>
     <div class="stan-header-spacer"></div>

@@ -1,3 +1,5 @@
+import { supabase } from "@/integrations/supabase/client";
+
 export interface EmailRequest {
   to: string;
   subject: string;
@@ -8,24 +10,45 @@ export interface EmailRequest {
 
 export const sendEmail = async (emailData: EmailRequest): Promise<void> => {
   try {
-    const response = await fetch('/api/send-email', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(emailData)
+    const { data, error } = await supabase.functions.invoke('send-email', {
+      body: emailData
     });
 
-    if (!response.ok) {
-      const error = await response.text();
-      throw new Error(error || 'Failed to send email');
+    if (error) {
+      console.error('Supabase function error:', error);
+      throw new Error(error.message || 'Failed to send email');
     }
 
-    return await response.json();
+    return data;
   } catch (error) {
     console.error('Email send error:', error);
     throw error;
   }
+};
+
+export const convertImageToHTML = async (imageFile: File) => {
+  // Convert file to base64
+  const reader = new FileReader();
+  const imageBase64 = await new Promise<string>((resolve, reject) => {
+    reader.onloadend = () => {
+      const result = reader.result as string;
+      // Remove data URL prefix to get just the base64 string
+      const base64 = result.split(',')[1];
+      resolve(base64);
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(imageFile);
+  });
+
+  const { data, error } = await supabase.functions.invoke('convert-image-to-html', {
+    body: { imageBase64 }
+  });
+
+  if (error) {
+    throw new Error(error.message || 'Failed to process image');
+  }
+
+  return data;
 };
 
 export const uploadFile = async (file: File): Promise<string> => {

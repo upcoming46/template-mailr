@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { ArrowLeft, Mail, Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
+import { sendEmail } from "@/lib/api";
 
 const SendReceipt = () => {
   const [emailData, setEmailData] = useState({
@@ -46,23 +47,13 @@ const SendReceipt = () => {
 
     setLoading(true);
     try {
-    const response = await fetch('/.netlify/functions/send-email', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        to: emailData.recipientEmail,
-        subject: emailData.subject,
-        fromName: emailData.fromName,
-        fromEmail: emailData.fromEmail,
-        html: emailData.html
-      })
+    const response = await sendEmail({
+      to: emailData.recipientEmail,
+      subject: emailData.subject,
+      fromName: emailData.fromName,
+      fromEmail: emailData.fromEmail,
+      html: emailData.html
     });
-
-      if (!response.ok) {
-        throw new Error('Failed to send email');
-      }
 
       toast({
         title: "Success!",
