@@ -3,22 +3,22 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { ArrowLeft, Mail, Loader2 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { sendEmail } from "@/lib/api";
 
 const SendReceipt = () => {
   const [emailData, setEmailData] = useState({
-    recipientEmail: "",
-    subject: "",
+    to: "",
+    subject: "Payment Confirmation - Your Order Receipt",
     fromName: "",
     fromEmail: "",
-    html: ""
   });
-  const [loading, setLoading] = useState(false);
+  const [htmlContent, setHtmlContent] = useState("");
+  const [isSending, setIsSending] = useState(false);
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Load receipt data from localStorage
@@ -27,50 +27,46 @@ const SendReceipt = () => {
       const receiptData = JSON.parse(storedData);
       setEmailData(prev => ({
         ...prev,
-        subject: receiptData.subject || "Your Receipt",
-        fromName: receiptData.fromName || "Receipt Generator",
-        fromEmail: receiptData.fromEmail || "no-reply@example.com",
-        html: receiptData.html || ""
+        subject: receiptData.subject || "Payment Confirmation - Your Order Receipt",
+        fromName: receiptData.fromName || "",
+        fromEmail: receiptData.fromEmail || "",
       }));
+      setHtmlContent(receiptData.html || "");
     }
   }, []);
 
   const handleSendEmail = async () => {
-    if (!emailData.recipientEmail || !emailData.subject || !emailData.html) {
+    if (!emailData.to || !emailData.subject || !htmlContent) {
       toast({
         title: "Error",
         description: "Please fill in all required fields",
-        variant: "destructive"
+        variant: "destructive",
       });
       return;
     }
 
-    setLoading(true);
+    setIsSending(true);
     try {
-    const response = await sendEmail({
-      to: emailData.recipientEmail,
-      subject: emailData.subject,
-      fromName: emailData.fromName,
-      fromEmail: emailData.fromEmail,
-      html: emailData.html
-    });
-
-      toast({
-        title: "Success!",
-        description: "Receipt sent successfully to " + emailData.recipientEmail,
+      await sendEmail({
+        to: emailData.to,
+        subject: emailData.subject,
+        fromName: emailData.fromName,
+        fromEmail: emailData.fromEmail,
+        html: htmlContent,
       });
 
-      // Clear the stored receipt data
-      localStorage.removeItem('receiptData');
+      // Redirect to success page
+      navigate("/email-success");
     } catch (error) {
       console.error('Email send error:', error);
       toast({
-        title: "Error",
+        title: "Error", 
         description: "Failed to send email. Please try again.",
-        variant: "destructive"
+        variant: "destructive",
       });
+    } finally {
+      setIsSending(false);
     }
-    setLoading(false);
   };
 
   return (
@@ -103,8 +99,8 @@ const SendReceipt = () => {
                 <Input
                   id="recipient-email"
                   type="email"
-                  value={emailData.recipientEmail}
-                  onChange={(e) => setEmailData(prev => ({ ...prev, recipientEmail: e.target.value }))}
+                  value={emailData.to}
+                  onChange={(e) => setEmailData(prev => ({ ...prev, to: e.target.value }))}
                   placeholder="customer@example.com"
                   required
                 />
@@ -144,10 +140,10 @@ const SendReceipt = () => {
 
               <Button 
                 onClick={handleSendEmail}
-                disabled={loading || !emailData.html}
+                disabled={isSending || !htmlContent}
                 className="w-full"
               >
-                {loading ? (
+                {isSending ? (
                   <>
                     <Loader2 className="w-4 h-4 mr-2 animate-spin" />
                     Sending...
@@ -160,7 +156,7 @@ const SendReceipt = () => {
                 )}
               </Button>
 
-              {!emailData.html && (
+              {!htmlContent && (
                 <p className="text-sm text-muted-foreground">
                   No receipt found. Please generate a receipt first from the templates page.
                 </p>
@@ -173,16 +169,16 @@ const SendReceipt = () => {
               <CardTitle>Email Preview</CardTitle>
             </CardHeader>
             <CardContent>
-              {emailData.html ? (
+              {htmlContent ? (
                 <div className="space-y-4">
                   <div className="p-3 bg-muted rounded">
-                    <p className="text-sm"><strong>To:</strong> {emailData.recipientEmail || "customer@example.com"}</p>
-                    <p className="text-sm"><strong>From:</strong> {emailData.fromName || "Your Business"} &lt;{emailData.fromEmail || "no-reply@example.com"}&gt;</p>
+                    <p className="text-sm"><strong>To:</strong> {emailData.to || "customer@example.com"}</p>
+                    <p className="text-sm"><strong>From:</strong> {emailData.fromName || "Your Business"} &lt;{emailData.fromEmail || "onboarding@resend.dev"}&gt;</p>
                     <p className="text-sm"><strong>Subject:</strong> {emailData.subject || "Your Receipt"}</p>
                   </div>
                   <div className="border rounded-lg p-4 max-h-96 overflow-auto">
                     <iframe
-                      srcDoc={emailData.html}
+                      srcDoc={htmlContent}
                       className="w-full h-96 border-0"
                       title="Email Preview"
                     />

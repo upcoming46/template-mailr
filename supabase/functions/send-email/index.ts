@@ -62,10 +62,11 @@ const handler = async (req: Request): Promise<Response> => {
     const resend = new Resend(resendApiKey);
 
     const emailData = {
-      from: fromName && fromEmail ? `${fromName} <${fromEmail}>` : "Receipt Generator <noreply@receipts.com>",
+      from: fromName && fromEmail ? `${fromName} <onboarding@resend.dev>` : "Receipt Generator <onboarding@resend.dev>",
       to: [to],
       subject: subject,
       html: html,
+      reply_to: fromEmail || undefined,
     };
 
     console.log("Sending email with Resend API...");

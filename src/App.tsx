@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Templates from "./pages/Templates";
 import CustomTemplates from "./pages/CustomTemplates";
 import SendReceipt from "./pages/SendReceipt";
+import EmailSuccess from "./pages/EmailSuccess";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/templates" element={<Templates />} />
           <Route path="/custom" element={<CustomTemplates />} />
           <Route path="/send" element={<SendReceipt />} />
+          <Route path="/email-success" element={<EmailSuccess />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
