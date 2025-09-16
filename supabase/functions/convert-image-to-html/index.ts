@@ -1,9 +1,14 @@
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import "https://deno.land/x/xhr@0.1.0/mod.ts";
+import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
+
+interface ImageToHTMLRequest {
+  imageBase64: string;
+}
 
 const handler = async (req: Request): Promise<Response> => {
   // Handle CORS preflight requests
@@ -22,9 +27,12 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { imageBase64 } = await req.json();
+    const { imageBase64 }: ImageToHTMLRequest = await req.json();
+
+    console.log("Processing image to HTML conversion...");
 
     if (!imageBase64) {
+      console.error("No image data provided");
       return new Response(
         JSON.stringify({ error: "Missing image data" }),
         { 
@@ -34,13 +42,20 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    console.log("Processing image to HTML conversion...");
-
     const openAIApiKey = Deno.env.get("OPENAI_API_KEY");
     
     if (!openAIApiKey) {
-      throw new Error("OpenAI API key not configured");
+      console.error("OpenAI API key not found in environment variables");
+      return new Response(
+        JSON.stringify({ error: "AI service not configured" }),
+        { 
+          status: 500,
+          headers: { ...corsHeaders, "Content-Type": "application/json" }
+        }
+      );
     }
+
+    console.log("Calling OpenAI Vision API...");
 
     // Call OpenAI Vision API to analyze the receipt image
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
@@ -88,14 +103,30 @@ Return only the HTML code without any markdown formatting or explanations.`
     if (!response.ok) {
       const errorData = await response.json();
       console.error("OpenAI API error:", errorData);
-      throw new Error(`OpenAI API error: ${errorData.error?.message || "Unknown error"}`);
+      return new Response(
+        JSON.stringify({ 
+          error: "AI processing failed",
+          details: errorData.error?.message || "Unknown OpenAI error"
+        }),
+        { 
+          status: 500,
+          headers: { ...corsHeaders, "Content-Type": "application/json" }
+        }
+      );
     }
 
     const data = await response.json();
     const generatedHTML = data.choices[0]?.message?.content;
 
     if (!generatedHTML) {
-      throw new Error("No HTML generated from OpenAI");
+      console.error("No HTML generated from OpenAI response");
+      return new Response(
+        JSON.stringify({ error: "Failed to generate HTML from image" }),
+        { 
+          status: 500,
+          headers: { ...corsHeaders, "Content-Type": "application/json" }
+        }
+      );
     }
 
     console.log("Successfully generated HTML from image");

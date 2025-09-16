@@ -1,10 +1,18 @@
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import { Resend } from "npm:resend@3.0.0";
+import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+import { Resend } from "npm:resend@2.0.0";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
+
+interface EmailRequest {
+  to: string;
+  subject: string;
+  fromName?: string;
+  fromEmail?: string;
+  html: string;
+}
 
 const handler = async (req: Request): Promise<Response> => {
   // Handle CORS preflight requests
@@ -23,9 +31,13 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { to, subject, fromName, fromEmail, html } = await req.json();
+    const body: EmailRequest = await req.json();
+    const { to, subject, fromName, fromEmail, html } = body;
+
+    console.log("Received email request:", { to, subject, fromName, fromEmail, htmlLength: html?.length });
 
     if (!to || !subject || !html) {
+      console.error("Missing required fields:", { to: !!to, subject: !!subject, html: !!html });
       return new Response(
         JSON.stringify({ error: "Missing required fields: to, subject, html" }),
         { 
@@ -35,25 +47,37 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
+    const resendApiKey = Deno.env.get("RESEND_API_KEY");
+    if (!resendApiKey) {
+      console.error("RESEND_API_KEY not found in environment variables");
+      return new Response(
+        JSON.stringify({ error: "Email service not configured" }),
+        { 
+          status: 500,
+          headers: { ...corsHeaders, "Content-Type": "application/json" }
+        }
+      );
+    }
+
+    const resend = new Resend(resendApiKey);
 
     const emailData = {
-      from: fromName && fromEmail ? `${fromName} <${fromEmail}>` : "Receipt Generator <no-reply@receipts.com>",
+      from: fromName && fromEmail ? `${fromName} <${fromEmail}>` : "Receipt Generator <noreply@receipts.com>",
       to: [to],
       subject: subject,
       html: html,
     };
 
-    console.log("Sending email with data:", { to, subject, fromName, fromEmail });
+    console.log("Sending email with Resend API...");
 
-    const data = await resend.emails.send(emailData);
+    const result = await resend.emails.send(emailData);
 
-    console.log("Email sent successfully:", data);
+    console.log("Email sent successfully:", result);
 
     return new Response(
       JSON.stringify({ 
         success: true, 
-        messageId: data.id,
+        messageId: result.data?.id || result.id,
         message: "Email sent successfully" 
       }),
       { 
