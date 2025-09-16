@@ -176,10 +176,10 @@ const SendReceipt = () => {
                     <p className="text-sm"><strong>From:</strong> {emailData.fromName || "Your Business"} &lt;{emailData.fromEmail || "onboarding@resend.dev"}&gt;</p>
                     <p className="text-sm"><strong>Subject:</strong> {emailData.subject || "Your Receipt"}</p>
                   </div>
-                  <div className="border rounded-lg p-4 max-h-96 overflow-auto">
+                  <div className="border rounded-lg p-4 overflow-auto">
                     <iframe
                       srcDoc={htmlContent}
-                      className="w-full h-96 border-0"
+                      className="w-full h-[500px] border-0"
                       title="Email Preview"
                     />
                   </div>

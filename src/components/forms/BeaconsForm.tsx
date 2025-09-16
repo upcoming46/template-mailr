@@ -187,10 +187,10 @@ const BeaconsForm = () => {
         </CardHeader>
         <CardContent>
           {generatedHTML ? (
-            <div className="border rounded-lg p-4 max-h-96 overflow-auto">
+            <div className="border rounded-lg p-4 overflow-auto">
               <iframe
                 srcDoc={generatedHTML}
-                className="w-full h-96 border-0"
+                className="w-full h-[600px] border-0"
                 title="Receipt Preview"
               />
             </div>
