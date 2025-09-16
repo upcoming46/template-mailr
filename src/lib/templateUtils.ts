@@ -252,7 +252,7 @@ export const getTemplateHTML = (templateId: string): string => {
       <div class="header-center"></div>
       <div class="header-right"></div>
       <div class="stan-logo-holder">
-        <img src="https://cdn.stan.store/assets/stan-logo-white.png" alt="Stan Logo">
+        <img src="https://ci3.googleusercontent.com/meips/ADKq_NaxItFi-yF2RxRNI9BO8yERSyFYHxb4gaTRO-6U7baJmmh7ApaYhf0IDm_3n56SH2iKpf38KSw6XPJYZh3i8Y07HCM_l0x9IKDaozD9XQFEgXL3izhR3AB-I4sH-Njkoxx8Vy4pitYDiJ8NEV4Fl-5CIwp9oQ=s0-d-e1-ft#https://stripe-images.s3.amazonaws.com/emails/acct_1FYbdJIYtv5oAFkS/2/twelve_degree_icon@2x.png" alt="Stan Logo">
       </div>
     </div>
     <div class="stan-header-spacer"></div>
