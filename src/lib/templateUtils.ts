@@ -133,524 +133,134 @@ export const generateReceiptHTML = (template: string, formData: Record<string, a
 
 export const getTemplateHTML = (templateId: string): string => {
   const templates: Record<string, string> = {
-  beacons: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html data-editor-version="2" class="sg-campaigns" xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-      <!--[if !mso]><!-->
-      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-      <!--<![endif]-->
-      <!--[if (gte mso 9)|(IE)]>
-      <xml>
-        <o:OfficeDocumentSettings>
-          <o:AllowPNG/>
-          <o:PixelsPerInch>96</o:PixelsPerInch>
-        </o:OfficeDocumentSettings>
-      </xml>
-      <![endif]-->
-      <!--[if (gte mso 9)|(IE)]>
-  <style type="text/css">
-    body {width: 100%; margin: 0 auto; padding: 0;}
-    table {border-collapse: collapse;}
-    table, td {mso-table-lspace: 0pt; mso-table-rspace: 0pt;}
-    img {-ms-interpolation-mode: bicubic;}
-  </style>
-<![endif]-->
-      <style type="text/css">
-    body, p, div {
-      font-family: arial,helvetica,sans-serif;
-      font-size: 14px;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      color: #000000;
-      background-color: #EAEAEA;
-      overflow-x: hidden;
-    }
-    body a {
-      color: #2848F0;
-      text-decoration: none;
-    }
-    table.wrapper {
-      width: 100% !important;
-      table-layout: fixed;
-      -webkit-font-smoothing: antialiased;
-      -webkit-text-size-adjust: 100%;
-      -moz-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-    }
-    img.max-width {
-      max-width: 100% !important;
-      height: auto !important;
-      display: block;
-    }
-    .column.of-2 {
-      width: 50%;
-    }
-    .column.of-3 {
-      width: 33.333%;
-    }
-    .column.of-4 {
-      width: 25%;
-    }
-    ul ul ul ul  {
-      list-style-type: disc !important;
-    }
-    ol ol {
-      list-style-type: lower-roman !important;
-    }
-    ol ol ol {
-      list-style-type: lower-latin !important;
-    }
-    ol ol ol ol {
-      list-style-type: decimal !important;
-    }
-    @media screen and (max-width: 480px) {
-      .preheader .rightColumnContent,
-      .footer .rightColumnContent {
-        text-align: left !important;
-      }
-      .preheader .rightColumnContent div,
-      .preheader .rightColumnContent span,
-      .footer .rightColumnContent div,
-      .footer .rightColumnContent span {
-        text-align: left !important;
-      }
-      .preheader .rightColumnContent,
-      .preheader .leftColumnContent {
-        font-size: 80% !important;
-        padding: 5px 0;
-      }
-      table.wrapper-mobile {
-        width: 100% !important;
-        table-layout: fixed;
-      }
-      img.max-width {
-        max-width: 100% !important;
-        height: auto !important;
-      }
-      a.bulletproof-button {
-        display: block !important;
-        width: auto !important;
-        font-size: 80%;
-        padding: 10px !important;
-      }
-      .columns {
-        width: 100% !important;
-      }
-      .column {
-        display: block !important;
-        width: 100% !important;
-        padding: 0 !important;
-        margin: 0 !important;
-      }
-      .social-icon-column {
-        display: inline-block !important;
-      }
-      .review-cta {
-        padding-left: 16px !important;
-        padding-right: 16px !important;
-      }
-      .review-wrapper {
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-      }
-    }
-    @media screen and (min-width: 500px) {
-      .review-cta {
-        padding-left: 130px;
-        padding-right: 130px;
-      }
-      .review-wrapper {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-    }
-    .review-wrapper {
-      margin-top: 0;
-      margin-left: -10px;
-      margin-right: -10px;
-    }
-    .review-cta {
-      padding-top: 32px;
-      padding-bottom: 32px;
-      padding-left: 16px;
-      padding-right: 16px;
-      text-align: center;
-      color: #1c1c1c;
-    }
-    .review-cta p {
-      margin-top: 10px;
-    }
-    .review-button {
-      background-color: #1c1c1c;
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 16px 40px;
-      border-radius: 8px;
-      display: inline-block;
-    }
-  </style>
-    </head>
-    <body>
-      <center class="wrapper" data-link-color="#2848F0" data-body-style="font-size:14px; font-family:arial,helvetica,sans-serif; color:#000000; background-color:#EAEAEA;">
-        <div class="webkit">
-          <table cellpadding="0" cellspacing="0" border="0" width="100%" class="wrapper" bgcolor="#EAEAEA">
-            <tr>
-              <td valign="top" bgcolor="#EAEAEA" width="100%">
-                <table width="100%" role="content-container" class="outer" align="center" cellpadding="0" cellspacing="0" border="0">
-                  <tr>
-                    <td width="100%">
-                      <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                        <tr>
-                          <td>
-                            <!--[if mso]>
-    <center>
-    <table><tr><td width="600">
-  <![endif]-->
-                                    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%; max-width:600px;" align="center">
-                                      <tr>
-                                        <td role="modules-container" style="padding:16px; color:#000000; text-align:left;" bgcolor="#EAEAEA" width="100%" align="left"><table class="module preheader preheader-hide" role="module" data-type="preheader" border="0" cellpadding="0" cellspacing="0" width="100%" style="display: none !important; mso-hide: all; visibility: hidden; opacity: 0; color: transparent; height: 0; width: 0;">
-    <tr>
-      <td role="module-content">
-        <p>Your purchase from {{SELLER_NAME}}!</p>
-      </td>
-    </tr>
-  </table><table class="wrapper" role="module" data-type="image" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
-    <tbody>
-      <tr>
-        <td style="font-size:6px; line-height:10px; padding:0;" valign="top" align="center"><a href="{{UNTITLED_URL}}">
-<img class="max-width" border="0" style="display:block; color:#000000; text-decoration:none; font-family:Helvetica, arial, sans-serif; font-size:16px; max-width:25% !important; width:25%; height:auto !important; border-radius:10000px;" width="142" alt="{{SELLER_NAME}}'s profile picture" data-proportionally-constrained="true" data-responsive="true" src="{{SELLER_LOGO_URL}}">
-</a></td>
-      </tr>
-    </tbody>
-  </table><table class="module" role="module" data-type="spacer" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
-    <tbody>
-      <tr>
-        <td style="padding:0 0 16px 0;" role="module-content" bgcolor="">
-        </td>
-      </tr>
-    </tbody>
-  </table><table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:16px;" bgcolor="#ffffff" data-distribution="1">
-    <tbody>
-      <tr role="module-content">
-        <td height="100%" valign="top"><table width="536" style="width:536px; border-spacing:0; border-collapse:collapse; margin:0;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-0">
-      <tbody>
-        <tr>
-          <td style="padding:0;margin:0;border-spacing:0;"><table class="module" role="module" data-type="code" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
-    <tbody>
-      <tr>
-        <td height="100%" valign="top" role="module-content">
-<h1 style="text-align: center">Thanks for your order, {{BUYER_NAME}}! 🙏</h1>
-</td>
-      </tr>
-    </tbody>
-  </table></td>
-        </tr>
-      </tbody>
-    </table></td>
-      </tr>
-    </tbody>
-  </table><table class="module" role="module" data-type="spacer" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
-    <tbody>
-      <tr>
-        <td style="padding:0 0 16px 0;" role="module-content" bgcolor="">
-        </td>
-      </tr>
-    </tbody>
-  </table><table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:0 16px;" bgcolor="#FFFFFF" data-distribution="1">
-    <tbody>
-      <tr role="module-content">
-        <td height="100%" valign="top"><table width="536" style="width:536px; border-spacing:0; border-collapse:collapse; margin:0;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-0">
-      <tbody>
-        <tr>
-          <td style="padding:0;margin:0;border-spacing:0;"><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
-    <tbody>
-      <tr>
-        <td style="padding:0; line-height:18px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><h2 style="text-align: inherit"><span style="font-size: 18px"><strong>{{PRODUCT_NAME}}</strong></span></h2><div></div></div></td>
-      </tr>
-    </tbody>
-  </table></td>
-        </tr>
-      </tbody>
-    </table></td>
-      </tr>
-    </tbody>
-  </table><table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:8px 16px;" bgcolor="#FFFFFF" data-distribution="2,1">
-    <tbody>
-      <tr role="module-content">
-        <td height="100%" valign="top"><table width="341" style="width:341px; border-spacing:0; border-collapse:collapse; margin:0 12px 0 0;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-0">
-      <tbody>
-        <tr>
-          <td style="padding:0;margin:0;border-spacing:0;"><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
-    <tbody>
-      <tr>
-        <td style="padding:0; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit"><span style="color: #000000; font-family: helvetica, sans-serif; font-size: 14px;">{{UNTITLED_URL}}</span></div><div></div></div></td>
-      </tr>
-    </tbody>
-  </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
-    <tbody>
-      <tr>
-        <td style="padding:0; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit"><span style="color: #757575; font-family: helvetica, sans-serif; font-size: 14px;">url</span></div><div></div></div></td>
-      </tr>
-    </tbody>
-  </table></td>
-        </tr>
-      </tbody>
-    </table><table width="170" style="width:170px; border-spacing:0; border-collapse:collapse; margin:0 0 0 12px;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-1">
-      <tbody>
-        <tr>
-          <td style="padding:0;margin:0;border-spacing:0;"><table border="0" cellpadding="0" cellspacing="0" class="module" data-role="module-button" data-type="button" role="module" style="table-layout:fixed;" width="100%">
-      <tbody>
-        <tr>
-          <td align="right" bgcolor="" class="outer-td" style="padding:0;">
-            <table border="0" cellpadding="0" cellspacing="0" class="wrapper-mobile" style="text-align:center;">
-              <tbody>
-                <tr>
-                <td align="center" bgcolor="#2848F0" class="inner-td" style="border-radius:6px; font-size:16px; text-align:right; background-color:inherit;">
-                  <a href="{{ACCESS_LINK}}" style="background-color:#2848F0; border:0px solid #ffffff; border-color:#ffffff; border-radius:8px; border-width:0px; color:#ffffff; font-size:14px; font-weight:normal; letter-spacing:0px; line-height:normal; padding:12px 18px; text-align:center; text-decoration:none; border-style:solid; font-family:helvetica,sans-serif;" target="_blank">Access link</a>
-                </td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-      </tbody>
-    </table></td>
-        </tr>
-      </tbody>
-    </table></td>
-      </tr>
-    </tbody>
-  </table><table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:0 16px 8px;" bgcolor="#FFFFFF" data-distribution="1">
-    <tbody>
-      <tr role="module-content">
-        <td height="100%" valign="top"><table width="536" style="width:536px; border-spacing:0; border-collapse:collapse; margin:0;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-0">
-      <tbody>
-        <tr>
-          <td style="padding:0;margin:0;border-spacing:0;"></td>
-        </tr>
-      </tbody>
-    </table></td>
-      </tr>
-    </tbody>
-  </table><table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:0 16px;" bgcolor="#FFFFFF" data-distribution="1">
-    <tbody>
-      <tr role="module-content">
-        <td height="100%" valign="top"><table width="536" style="width:536px; border-spacing:0; border-collapse:collapse; margin:0;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-0">
-      <tbody>
-        <tr>
-          <td style="padding:0;margin:0;border-spacing:0;"><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
-    <tbody>
-      <tr>
-        <td style="padding:0; line-height:18px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit"><span style="font-size: 18px"><strong>Order Summary</strong></span></div><div></div></div></td>
-      </tr>
-    </tbody>
-  </table><table class="module" role="module" data-type="code" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
-    <tbody>
-      <tr>
-        <td height="100%" valign="top" role="module-content"><div style="font-family: inherit; text-align: inherit"><strong>Date: </strong>{{DATE}}</div>
-<div style="font-family: inherit; text-align: inherit"><strong>Order #: </strong>{{ORDER_ID}}</div>
-</td>
-      </tr>
-    </tbody>
-  </table></td>
-        </tr>
-      </tbody>
-    </table></td>
-      </tr>
-    </tbody>
-  </table><table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:8px 16px 16px;" bgcolor="#FFFFFF" data-distribution="1,3">
-    <tbody>
-      <tr role="module-content">
-        <td height="100%" valign="top"><table width="128" style="width:128px; border-spacing:0; border-collapse:collapse; margin:0 12px 0 0;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-0">
-      <tbody>
-        <tr>
-          <td style="padding:0;margin:0;border-spacing:0;"><table class="wrapper" role="module" data-type="image" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
-    <tbody>
-      <tr>
-        <td style="font-size:6px; line-height:10px; padding:0;" valign="top" align="left"><a href=""><img class="max-width" border="0" style="display:block; color:#000000; text-decoration:none; font-family:Helvetica, arial, sans-serif; font-size:16px; max-width:100% !important; width:100%; height:auto !important;" width="128" alt="product image" data-proportionally-constrained="true" data-responsive="true" src="{{PRODUCT_IMAGE_URL}}"></a></td>
-      </tr>
-    </tbody>
-  </table></td>
-        </tr>
-      </tbody>
-    </table><table width="384" style="width:384px; border-spacing:0; border-collapse:collapse; margin:0 0 0 12px;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-1">
-      <tbody>
-        <tr>
-          <td style="padding:0;margin:0;border-spacing:0;"><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
-    <tbody>
-      <tr>
-        <td style="padding:0; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit">{{PRODUCT_NAME}}</div><div></div></div></td>
-      </tr>
-    </tbody>
-  </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
-    <tbody>
-      <tr>
-        <td style="padding:0; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit"><span style="color: #757575; font-family: helvetica, sans-serif; font-size: 14px;">{{PRICE}}</span></div><div></div></div></td>
-      </tr>
-    </tbody>
-  </table></td>
-        </tr>
-      </tbody>
-    </table></td>
-      </tr>
-    </tbody>
-  </table><table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:8px 16px 16px;" bgcolor="#FFFFFF" data-distribution="1">
-    <tbody>
-      <tr role="module-content">
-        <td height="100%" valign="top"><table width="536" style="width:536px; border-spacing:0; border-collapse:collapse; margin:0;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-0">
-      <tbody>
-        <tr>
-          <td style="padding:0;margin:0;border-spacing:0;"><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
-    <tbody>
-      <tr>
-        <td style="padding:0; line-height:20px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit">Visit the <a href="{{CUSTOMER_PORTAL_URL}}">customer portal</a> to manage your order and access your content any time.</div><div></div></div></td>
-      </tr>
-    </tbody>
-  </table></td>
-        </tr>
-      </tbody>
-    </table></td>
-      </tr>
-    </tbody>
-  </table><table class="module" role="module" data-type="spacer" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
-    <tbody>
-      <tr>
-        <td style="padding:0 0 16px 0;" role="module-content" bgcolor="">
-        </td>
-      </tr>
-    </tbody>
-  </table><table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:0 16px 16px;" bgcolor="#FFFFFF" data-distribution="1">
-    <tbody>
-      <tr role="module-content">
-        <td height="100%" valign="top"><table width="536" style="width:536px; border-spacing:0; border-collapse:collapse; margin:0;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-0">
-      <tbody>
-        <tr>
-          <td style="padding:0;margin:0;border-spacing:0;"><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
-    <tbody>
-      <tr>
-        <td style="padding:0; line-height:18px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><h2 style="text-align: inherit">Your feedback matters!</h2><div></div></div></td>
-      </tr>
-    </tbody>
-  </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
-    <tbody>
-      <tr>
-        <td style="padding:0; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit">Share your experience and help others with your product review!</div><div></div></div></td>
-      </tr>
-    </tbody>
-  </table><table class="module" role="module" data-type="code" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
-    <tbody>
-      <tr>
-        <td height="100%" valign="top" role="module-content"><div class="review-wrapper">
-        <div class="review-cta" style="background-color: #ffffff;">
-            <center>
-              <div style="width:100%; text-align:center; max-width: 500px; margin-top:10px; background-color: #ffffff;">
-                <span style="width: calc(100% / 8); display: inline-block; vertical-align: top; text-align:center; margin:2%; font-size: 20px;"><a href="{{ACCESS_LINK}}"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" style="height:32px;width:32px"> </a></span>
-                <span style="width: calc(100% / 8); display: inline-block; vertical-align: top; text-align:center; margin:2%; font-size: 20px;"><a href="{{ACCESS_LINK}}"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" style="height:32px;width:32px"></a></span>
-                <span style="width: calc(100% / 8); display: inline-block; vertical-align: top; text-align:center; margin:2%; font-size: 20px;"><a href="{{ACCESS_LINK}}"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" style="height:32px;width:32px"></a></span>
-                <span style="width: calc(100% / 8); display: inline-block; vertical-align: top; text-align:center; margin:2%; font-size: 20px;"><a href="{{ACCESS_LINK}}"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" style="height:32px;width:32px"></a></span>
-                <span style="width: calc(100% / 8); display: inline-block; vertical-align: top; text-align:center; margin:2%; font-size: 20px;"><a href="{{ACCESS_LINK}}"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" style="height:32px;width:32px"></a></span>
-              </div>
-            </center>
-        </div>
-      </div></td>
-      </tr>
-    </tbody>
-  </table><table border="0" cellpadding="0" cellspacing="0" class="module" data-role="module-button" data-type="button" role="module" style="table-layout:fixed;" width="100%">
-      <tbody>
-        <tr>
-          <td align="center" bgcolor="" class="outer-td" style="padding:8px 16px;">
-            <table border="0" cellpadding="0" cellspacing="0" class="wrapper-mobile" style="text-align:center;">
-              <tbody>
-                <tr>
-                <td align="center" bgcolor="#2848F0" class="inner-td" style="border-radius:6px; font-size:16px; text-align:center; background-color:inherit;"><a href="{{ACCESS_LINK}}" style="background-color:#2848F0; border:0px solid #333333; border-color:#333333; border-radius:8px; border-width:0px; color:#ffffff; font-size:14px; font-weight:normal; letter-spacing:0px; line-height:normal; padding:12px 18px; text-align:center; text-decoration:none; border-style:solid; font-family:helvetica,sans-serif;" target="_blank">Leave a review</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-      </tbody>
-    </table></td>
-        </tr>
-      </tbody>
-    </table></td>
-      </tr>
-    </tbody>
-  </table><table class="module" role="module" data-type="spacer" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
-    <tbody>
-      <tr>
-        <td style="padding:0 0 32px 0;" role="module-content" bgcolor="">
-        </td>
-      </tr>
-    </tbody>
-  </table><table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:0 16px 16px;" bgcolor="#FFFFFF" data-distribution="1">
-    <tbody>
-      <tr role="module-content">
-        <td height="100%" valign="top"><table width="536" style="width:536px; border-spacing:0; border-collapse:collapse; margin:0;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-0">
-      <tbody>
-        <tr>
-          <td style="padding:0;margin:0;border-spacing:0;"><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
-    <tbody>
-      <tr>
-        <td style="padding:0; line-height:18px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><h2 style="text-align: inherit">Need help?</h2><div></div></div></td>
-      </tr>
-    </tbody>
-  </table><table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
-    <tbody>
-      <tr>
-        <td style="padding:0; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content"><div><div style="font-family: inherit; text-align: inherit">If you have any questions or need assistance with your order, feel free to contact {{SELLER_NAME}} directly.</div><div></div></div></td>
-      </tr>
-    </tbody>
-  </table></td>
-        </tr>
-      </tbody>
-    </table></td>
-      </tr>
-    </tbody>
-  </table><table class="module" role="module" data-type="spacer" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
-    <tbody>
-      <tr>
-        <td style="padding:0 0 32px 0;" role="module-content" bgcolor="">
-        </td>
-      </tr>
-    </tbody>
-  </table><table class="module" role="module" data-type="code" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
-    <tbody>
-      <tr>
-        <td height="100%" valign="top" role="module-content">
-<center>
-  <a href="{{UNTITLED_URL}}">
-    <img src="https://ci3.googleusercontent.com/meips/ADKq_Nbg7QfX8yy6oOfceUY8CBPhKncZBgC-ToVIS-lVhQ9fqQjwn4qX-6nBhsao7oKS-V0HfM0oJFJ1A3L20XEH8BAOwU_3nxcrInjrwd-IyEmFb2tYVg12iY4=s0-d-e1-ft#https://cdn.beacons.ai/images/beacons_assets/made-with-beacons.png" alt="made with beacons" style="height:40px">
-  </a>
-</center>
+  beacons: `<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<center style="color:#757575;font-size:12px;padding:24px 16px 0;">
-You are getting this receipt email because you bought a product from <a style="text-decoration:none;color:#757575;font-weight:bold;" href="{{UNTITLED_URL}}" target="_blank">{{SELLER_NAME}}</a>.
-If you'd like to stop receiving future marketing messages, please <a style="text-decoration:underline;color:#757575;" href="{{CUSTOMER_PORTAL_URL}}" target="_blank">unsubscribe</a> from the list.
-</center>
-</td>
-      </tr>
-    </tbody>
-  </table><table class="module" role="module" data-type="spacer" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;">
-    <tbody>
+  <title>Receipt</title>
+
+  <!--[if mso]>
+  <style type="text/css">
+    body, table, td {font-family: Arial, Helvetica, sans-serif !important;}
+    img { -ms-interpolation-mode:bicubic; }
+    table { border-collapse: collapse !important; }
+  </style>
+  <![endif]-->
+
+  <style>
+    /* Base reset for email */
+    body { margin:0; padding:0; background:#EAEAEA; color:#000000; }
+    img { border:0; outline:none; text-decoration:none; display:block; }
+    a { color:#2848F0; text-decoration:none; }
+    table { border-spacing:0; border-collapse:collapse; }
+
+    /* Container */
+    .wrapper { width:100%; background:#EAEAEA; }
+    .container { width:100%; max-width:600px; margin:0 auto; }
+    .card { background:#FFFFFF; }
+
+    /* Spacing helpers */
+    .px-16 { padding-left:16px; padding-right:16px; }
+    .py-16 { padding-top:16px; padding-bottom:16px; }
+    .pt-16 { padding-top:16px; }
+    .pb-16 { padding-bottom:16px; }
+    .pb-24 { padding-bottom:24px; }
+    .pb-32 { padding-bottom:32px; }
+
+    /* Headings and text */
+    h1, h2 { margin:0; font-family: Arial, Helvetica, sans-serif; }
+    h1 { font-size:24px; line-height:30px; text-align:center; }
+    h2 { font-size:18px; line-height:24px; }
+    .text { font-family: Arial, Helvetica, sans-serif; font-size:14px; line-height:20px; }
+    .muted { color:#757575; }
+
+    /* Columns that stack on mobile */
+    .row { width:100%; }
+    .col { vertical-align:top; }
+    .col-66 { width:66.66%; }
+    .col-34 { width:33.33%; }
+    .col-75 { width:75%; }
+    .col-25 { width:25%; }
+
+    /* Buttons */
+    .btn { background:#2848F0; color:#FFFFFF !important; font-family: Arial, Helvetica, sans-serif; font-size:14px; line-height:18px; font-weight:bold; border-radius:8px; padding:12px 18px; display:inline-block; }
+
+    @media screen and (max-width: 500px) {
+      .container { width:100% !important; }
+      .stack, .stack td, .stack table { display:block !important; width:100% !important; }
+      .btn { display:block !important; width:100% !important; text-align:center !important; }
+      .px-16 { padding-left:16px !important; padding-right:16px !important; }
+    }
+
+    /* Prevent iOS blue link styling */
+    a[x-apple-data-detectors] { color:inherit !important; text-decoration:none !important; }
+  </style>
+</head>
+
+<body>
+  <center class="wrapper">
+    <table role="presentation" width="100%">
       <tr>
-        <td style="padding:0 0 32px 0;" role="module-content" bgcolor="">
-        </td>
-      </tr>
-    </tbody>
-  </table></td>
-                                      </tr>
-                                    </table>
-                                    <!--[if mso]>
-                                  </td>
-                                </tr>
-                              </table>
-                            </center>
-                            <![endif]-->
+        <td align="center">
+
+          <!-- Outer container -->
+          <table role="presentation" class="container" width="100%">
+
+            <!-- Avatar -->
+            <tr>
+              <td align="center" class="pt-16">
+                <a href="{{UNTITLED_URL}}">
+                  <img src="{{SELLER_LOGO_URL}}" width="120" alt="{{SELLER_NAME}}'s profile picture" style="width:120px; height:auto; border-radius:1000px;">
+                </a>
+              </td>
+            </tr>
+
+            <!-- Thank you card -->
+            <tr>
+              <td class="px-16 pb-16">
+                <table role="presentation" width="100%" class="card">
+                  <tr>
+                    <td class="px-16 py-16">
+                      <h1>Thanks for your order, {{BUYER_NAME}}! 🙏</h1>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Product title -->
+            <tr>
+              <td class="px-16">
+                <table role="presentation" width="100%" class="card">
+                  <tr>
+                    <td class="px-16 py-16">
+                      <h2 class="text"><strong>{{PRODUCT_NAME}}</strong></h2>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- URL + Button, fluid two columns -->
+            <tr>
+              <td class="px-16 pb-16">
+                <table role="presentation" width="100%" class="card">
+                  <tr>
+                    <td class="px-16 py-16">
+                      <table role="presentation" width="100%" class="row stack">
+                        <tr>
+                          <!-- Left text -->
+                          <td class="col col-66 text" style="padding-right:12px;">
+                            <div>{{UNTITLED_URL}}</div>
+                            <div class="muted">url</div>
+                          </td>
+                          <!-- Right button -->
+                          <td class="col col-34" align="right" style="padding-left:12px;">
+                            <a href="{{ACCESS_LINK}}" class="btn">Access link</a>
                           </td>
                         </tr>
                       </table>
@@ -659,12 +269,144 @@ If you'd like to stop receiving future marketing messages, please <a style="text
                 </table>
               </td>
             </tr>
+
+            <!-- Order Summary -->
+            <tr>
+              <td class="px-16">
+                <table role="presentation" width="100%" class="card">
+                  <tr>
+                    <td class="px-16 pt-16">
+                      <h2 class="text"><strong>Order Summary</strong></h2>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="px-16 pb-16 text">
+                      <div><strong>Date:</strong> {{ORDER_DATE}}</div>
+                      <div><strong>Order #:</strong> {{ORDER_ID}}</div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Line item, fluid two columns -->
+            <tr>
+              <td class="px-16 pb-16">
+                <table role="presentation" width="100%" class="card">
+                  <tr>
+                    <td class="px-16 py-16">
+                      <table role="presentation" width="100%" class="row stack">
+                        <tr>
+                          <!-- Product image -->
+                          <td class="col col-25" style="padding-right:12px;" align="left">
+                            <a href="">
+                              <img src="{{PRODUCT_IMAGE_URL}}" width="128" alt="product image" style="width:128px; max-width:100%; height:auto;">
+                            </a>
+                          </td>
+                          <!-- Name and price -->
+                          <td class="col col-75 text" style="padding-left:12px;">
+                            <div>{{PRODUCT_NAME}}</div>
+                            <div class="muted">{{PRODUCT_PRICE}}</div>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+
+                  <!-- Customer portal note -->
+                  <tr>
+                    <td class="px-16 pb-16 text">
+                      Visit the <a href="{{CUSTOMER_PORTAL_URL}}">customer portal</a> to manage your order and access your content any time.
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Feedback -->
+            <tr>
+              <td class="px-16">
+                <table role="presentation" width="100%" class="card">
+                  <tr>
+                    <td class="px-16 pt-16">
+                      <h2 class="text">Your feedback matters!</h2>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="px-16 text">
+                      Share your experience and help others with your product review!
+                    </td>
+                  </tr>
+
+                  <!-- Star row rebuilt with a small table -->
+                  <tr>
+                    <td class="px-16 pt-16" align="center">
+                      <table role="presentation" align="center" cellpadding="0" cellspacing="8">
+                        <tr>
+                          <td><a href="{{REVIEW_LINK_1}}"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" alt="★"></a></td>
+                          <td><a href="{{REVIEW_LINK_2}}"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" alt="★"></a></td>
+                          <td><a href="{{REVIEW_LINK_3}}"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" alt="★"></a></td>
+                          <td><a href="{{REVIEW_LINK_4}}"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" alt="★"></a></td>
+                          <td><a href="{{REVIEW_LINK_5}}"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" alt="★"></a></td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+
+                  <!-- Review button -->
+                  <tr>
+                    <td class="px-16 pb-24" align="center">
+                      <a href="{{REVIEW_MAIN_LINK}}" class="btn">Leave a review</a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Help -->
+            <tr>
+              <td class="px-16">
+                <table role="presentation" width="100%" class="card">
+                  <tr>
+                    <td class="px-16 pt-16">
+                      <h2 class="text">Need help?</h2>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="px-16 pb-32 text">
+                      If you have any questions or need assistance with your order, feel free to contact {{SELLER_NAME}} directly.
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Beacons badge and footer -->
+            <tr>
+              <td class="px-16 pb-32" align="center">
+                <a href="{{UNTITLED_URL}}">
+                  <img src="https://cdn.beacons.ai/images/beacons_assets/made-with-beacons.png" alt="made with beacons" style="height:40px; width:auto;">
+                </a>
+
+                <div class="text muted" style="padding-top:24px;">
+                  You are getting this receipt email because you bought a product from <a style="font-weight:bold; color:#757575;" href="{{UNTITLED_URL}}" target="_blank">{{SELLER_NAME}}</a>.
+                  If you would like to stop receiving future marketing messages, <a style="text-decoration:underline; color:#757575;" href="{{CUSTOMER_PORTAL_URL}}" target="_blank">unsubscribe</a> from the list.
+                </div>
+              </td>
+            </tr>
+
           </table>
-        </div>
-      </center>
-    <img src="https://c.info.beacons.ai/wf/open?upn=u001.ZVVMriL2rBySvNViTnc2wTuxgIaVR7uJ6K3ATBSPALAzF3aMwMZIiz4k7OmdojJSoVO8PViPjKOqK7fjWb5Pncn56oIolM8OXjE4Vs9lT3Yv8DqVTynmv8LagJgsNfFiY3Eo7o5yKFzCn8w-2BFwPw8blmcBuNJmO9pz-2BflXsAjjDDXDZxmX7vYvDwYTkcAg8h-2BegOXe8XNxrQBnCPBrAMDvcWuFvNVqW1vN-2Bbdv7ErxXUccCrCA4QSrM5S2rpJ2LkDIqHse80mOEI7oaqj7FhJ-2BHTJ0GAXan7H1mVKBrnASkCmzYCXSOAbz8TEbY4pI8UYpBLzHFDDB7ZfHIXQTIjTpYTLfO7bIQDo9wzgOljLE1Q-3D" alt="" width="1" height="1" border="0" style="height:1px !important;width:1px !important;border-width:0 !important;margin:0 !important;padding:0 !important;"/>
-    </body>
-  </html>`,
+          <!-- /container -->
+
+        </td>
+      </tr>
+    </table>
+  </center>
+
+  <!-- Tracking pixel from original (optional) -->
+  <img src="https://c.info.beacons.ai/wf/open?upn=u001.ZVVMriL2rBySvNViTnc2wTuxgIaVR7uJ6K3ATBSPALAzF3aMwMZIiz4k7OmdojJSoVO8PViPjKOqK7fjWb5Pncn56oIolM8OXjE4Vs9lT3Yv8DqVTynmv8LagJgsNfFiY3Eo7o5yKFzCn8w-2BFwPw8blmcBuNJmO9pz-2BflXsAjjDDXDZxmX7vYvDwYTkcAg8h-2BegOXe8XNxrQBnCPBrAMDvcWuFvNVqW1vN-2Bbdv7ErxXUccCrCA4QSrM5S2rpJ2LkDIqHse80mOEI7oaqj7FhJ-2BHTJ0GAXan7H1mVKBrnASkCmzYCXSOAbz8TEbY4pI8UYpBLzHFDDB7ZfHIXQTIjTpYTLfO7bIQDo9wzgOljLE1Q-3D" alt="" width="1" height="1" style="display:block; width:1px; height:1px; border:0;">
+</body>
+</html>`,
 
     stanstore: `<div bgcolor="#f6f9fc" style="border:0;margin:0;padding:0;min-width:100%;width:100%">
         
@@ -833,7 +575,7 @@ If you'd like to stop receiving future marketing messages, please <a style="text
         <tr>
           <td style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#525f7f;font-size:15px;line-height:24px;white-space:nowrap">
            
-          <span>      <img alt="{{PAYMENT_METHOD}}" height="16" src="https://stripe-images.stripecdn.com/emails/receipt_assets/card/{{PAYMENT_METHOD}}-dark@2x.png" style="border:0;margin:0;padding:0;vertical-align:text-bottom" width="75">    </span>    <span>      - {{CARD_LAST4}}</span></td>
+          <span>      <img alt="{{PAYMENT_METHOD}}" height="16" src="https://stripe-images.stripecdn.com/emails/receipt_assets/card/mastercard-dark@2x.png" style="border:0;margin:0;padding:0;vertical-align:text-bottom" width="75">    </span>    <span>      - {{CARD_LAST4}}</span></td>
         </tr>
         </tbody>
       </table>

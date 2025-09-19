@@ -156,6 +156,21 @@ const SendReceipt = () => {
                 )}
               </Button>
 
+              <div className="p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
+                <p className="text-sm text-yellow-800">
+                  <strong>Note:</strong> If emails are not being delivered, you may need to verify your domain at{" "}
+                  <a 
+                    href="https://resend.com/domains" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="underline"
+                  >
+                    resend.com/domains
+                  </a>{" "}
+                  for reliable email delivery.
+                </p>
+              </div>
+
               {!htmlContent && (
                 <p className="text-sm text-muted-foreground">
                   No receipt found. Please generate a receipt first from the templates page.

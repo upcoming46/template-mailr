@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { ArrowLeft, Code, Upload, Loader2 } from "lucide-react";
+import { ArrowLeft, Code, Upload, Loader2, Edit } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { parseHTMLTemplate, processImageToHTML } from "@/lib/templateUtils";
@@ -193,44 +193,54 @@ const CustomTemplates = () => {
         {parsedTemplate && (
           <Card className="shadow-card mt-8">
             <CardHeader>
-              <CardTitle>Template Preview & Form</CardTitle>
+              <CardTitle>Template Preview & Actions</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-6">
                 <div>
-                  <h4 className="font-semibold mb-3">Editable Fields:</h4>
-                  <div className="space-y-4">
+                  <h4 className="font-semibold mb-3">Preview:</h4>
+                  <div className="border rounded-lg overflow-hidden">
+                    <iframe
+                      srcDoc={parsedTemplate.html}
+                      className="w-full h-[400px] border-0"
+                      title="Template Preview"
+                    />
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold mb-3">Detected Fields: {parsedTemplate.fields?.length || 0}</h4>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                     {parsedTemplate.fields?.map((field: any, index: number) => (
-                      <div key={index} className="space-y-2">
-                        <label className="text-sm font-medium">{field.label}</label>
-                        {field.type === "file" ? (
-                          <input
-                            type="file"
-                            accept="image/*"
-                            className="w-full p-2 border rounded"
-                          />
-                        ) : (
-                          <input
-                            type={field.type}
-                            placeholder={field.placeholder}
-                            className="w-full p-2 border rounded"
-                          />
-                        )}
+                      <div key={index} className="bg-muted p-2 rounded text-sm">
+                        {field.label}
                       </div>
                     ))}
                   </div>
                 </div>
-                <div>
-                  <h4 className="font-semibold mb-3">Preview:</h4>
-                  <div 
-                    className="border rounded p-4 max-h-96 overflow-auto"
-                    dangerouslySetInnerHTML={{ __html: parsedTemplate.html }}
-                  />
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <Button 
+                    onClick={() => {
+                      // Store parsed template for editing
+                      localStorage.setItem('editReceiptData', JSON.stringify({
+                        html: parsedTemplate.html,
+                        fields: parsedTemplate.fields
+                      }));
+                      // Navigate to receipt editor
+                      window.location.href = '/receipt-editor';
+                    }}
+                    className="w-full"
+                  >
+                    <Edit className="w-4 h-4 mr-2" />
+                    Edit Receipt
+                  </Button>
+                  
+                  <Button variant="outline" className="w-full">
+                    Save as Template
+                  </Button>
                 </div>
               </div>
-              <Button className="w-full mt-6">
-                Save Custom Template
-              </Button>
             </CardContent>
           </Card>
         )}
