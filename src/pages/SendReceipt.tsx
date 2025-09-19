@@ -45,8 +45,20 @@ const SendReceipt = () => {
       return;
     }
 
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(emailData.to)) {
+      toast({
+        title: "Error",
+        description: "Please enter a valid email address",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSending(true);
     try {
+      console.log('Sending email to:', emailData.to);
       await sendEmail({
         to: emailData.to,
         subject: emailData.subject,
@@ -55,13 +67,29 @@ const SendReceipt = () => {
         html: htmlContent,
       });
 
+      toast({
+        title: "Email sent successfully!",
+        description: `Receipt sent to ${emailData.to}`,
+      });
+
       // Redirect to success page
       navigate("/email-success");
     } catch (error) {
       console.error('Email send error:', error);
+      
+      // Provide more detailed error feedback
+      let errorMessage = "Failed to send email. Please try again.";
+      if (error instanceof Error) {
+        if (error.message.includes('network') || error.message.includes('fetch')) {
+          errorMessage = "Network error. Please check your connection and try again.";
+        } else if (error.message.includes('invalid') || error.message.includes('not found')) {
+          errorMessage = "Invalid email address or email service issue.";
+        }
+      }
+      
       toast({
         title: "Error", 
-        description: "Failed to send email. Please try again.",
+        description: errorMessage,
         variant: "destructive",
       });
     } finally {

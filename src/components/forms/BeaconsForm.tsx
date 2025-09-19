@@ -16,11 +16,12 @@ const BeaconsForm = () => {
     PRODUCT_NAME: "",
     UNTITLED_URL: "",
     ACCESS_LINK: "",
-    DATE: new Date().toLocaleDateString(),
+    DATE: new Date().toISOString().split('T')[0], // YYYY-MM-DD format
     ORDER_ID: "",
     PRODUCT_IMAGE_URL: "",
     PRICE: "",
     CUSTOMER_PORTAL_URL: "",
+    MASTERCARD_LOGO_URL: "",
     SELLER_NAME: ""
   });
   const [generatedHTML, setGeneratedHTML] = useState("");
@@ -32,14 +33,25 @@ const BeaconsForm = () => {
 
   const handleFileUpload = async (field: string, file: File) => {
     try {
-      // Create object URL for preview
-      const objectUrl = URL.createObjectURL(file);
-      handleInputChange(field, objectUrl);
-      
-      toast({
-        title: "File uploaded",
-        description: "Image has been uploaded successfully"
-      });
+      // Convert file to base64 for email compatibility
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const base64String = reader.result as string;
+        handleInputChange(field, base64String);
+        
+        toast({
+          title: "File uploaded",
+          description: "Image has been uploaded successfully"
+        });
+      };
+      reader.onerror = () => {
+        toast({
+          title: "Upload failed",
+          description: "Failed to upload image",
+          variant: "destructive"
+        });
+      };
+      reader.readAsDataURL(file);
     } catch (error) {
       toast({
         title: "Upload failed",
@@ -163,6 +175,36 @@ const BeaconsForm = () => {
               value={formData.SELLER_NAME}
               onChange={(e) => handleInputChange("SELLER_NAME", e.target.value)}
               placeholder="Enter seller name"
+            />
+          </div>
+
+          <div>
+            <Label htmlFor="date">Date</Label>
+            <Input
+              id="date"
+              type="date"
+              value={formData.DATE}
+              onChange={(e) => handleInputChange("DATE", e.target.value)}
+            />
+          </div>
+
+          <div>
+            <Label htmlFor="customer-portal">Customer Portal URL</Label>
+            <Input
+              id="customer-portal"
+              value={formData.CUSTOMER_PORTAL_URL}
+              onChange={(e) => handleInputChange("CUSTOMER_PORTAL_URL", e.target.value)}
+              placeholder="https://..."
+            />
+          </div>
+
+          <div>
+            <Label htmlFor="untitled-url">Untitled URL</Label>
+            <Input
+              id="untitled-url"
+              value={formData.UNTITLED_URL}
+              onChange={(e) => handleInputChange("UNTITLED_URL", e.target.value)}
+              placeholder="Enter URL description"
             />
           </div>
 

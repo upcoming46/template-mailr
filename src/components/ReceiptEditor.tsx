@@ -44,15 +44,34 @@ const ReceiptEditor = ({ originalHTML, onEditComplete }: ReceiptEditorProps) => 
   const extractDataFromHTML = (html: string): Record<string, any> => {
     const data: Record<string, any> = {};
     
-    // Simple extraction - look for common patterns
+    // Enhanced extraction patterns
     const patterns = {
-      BUYER_NAME: /Thanks for your order,?\s*([^!]+?)!/,
-      PRODUCT_NAME: /<(?:strong|b)>\s*([^<]+)\s*<\/(?:strong|b)>/,
-      AMOUNT_PAID: /\$(\d+(?:\.\d{2})?)/,
-      DATE_PAID: /(?:Date paid|Order date):\s*([^<\n]+)/,
-      RECEIPT_ID: /#(\w+\-?\w*)/,
-      SELLER_EMAIL: /mailto:([^"'>]+)/,
+      BUYER_NAME: /Thanks for your order,?\s*([^!]+?)!/i,
+      PRODUCT_NAME: /<(?:strong|b|h[1-6])[^>]*>\s*([^<]+?)\s*<\/(?:strong|b|h[1-6])>/i,
+      PRICE: /\$([0-9]+(?:\.[0-9]{2})?)/,
+      DATE: /(?:Date|Order date):\s*([^<\n]+)/i,
+      ORDER_ID: /(?:Order #|Receipt #|ID):\s*([^<\n\s]+)/i,
+      SELLER_NAME: /from\s+([^<\n.!]+)/i,
+      ACCESS_LINK: /href="([^"]*access[^"]*)/i,
+      CUSTOMER_PORTAL_URL: /href="([^"]*portal[^"]*)/i,
     };
+
+    // Extract images
+    const imgMatches = html.match(/<img[^>]+src="([^"]+)"[^>]*>/gi);
+    if (imgMatches) {
+      imgMatches.forEach((match, index) => {
+        const srcMatch = match.match(/src="([^"]+)"/);
+        if (srcMatch) {
+          const src = srcMatch[1];
+          // Detect image type based on context or alt text
+          if (match.includes('logo') || match.includes('profile') || index === 0) {
+            data.SELLER_LOGO_URL = src;
+          } else if (match.includes('product') || index > 0) {
+            data.PRODUCT_IMAGE_URL = src;
+          }
+        }
+      });
+    }
 
     Object.entries(patterns).forEach(([key, pattern]) => {
       const match = html.match(pattern);
@@ -65,10 +84,23 @@ const ReceiptEditor = ({ originalHTML, onEditComplete }: ReceiptEditorProps) => 
   };
 
   const handleInputChange = (key: string, value: string | File) => {
-    setFormData(prev => ({
-      ...prev,
-      [key]: value
-    }));
+    if (value instanceof File) {
+      // Convert file to base64 for email compatibility
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const base64String = reader.result as string;
+        setFormData(prev => ({
+          ...prev,
+          [key]: base64String
+        }));
+      };
+      reader.readAsDataURL(value);
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        [key]: value
+      }));
+    }
   };
 
   const handleGenerate = async () => {
