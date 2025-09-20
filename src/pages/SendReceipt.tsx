@@ -10,10 +10,10 @@ import { sendEmail } from "@/lib/api";
 
 const SendReceipt = () => {
   const [emailData, setEmailData] = useState({
-    to: "",
-    subject: "Payment Confirmation - Your Order Receipt",
-    fromName: "",
-    fromEmail: "",
+    to: "customer@example.com",
+    subject: "Your Receipt from Beacons.ai", 
+    fromName: "Beacons AI",
+    fromEmail: "no-reply@beacons.ai",
   });
   const [htmlContent, setHtmlContent] = useState("");
   const [isSending, setIsSending] = useState(false);
@@ -25,11 +25,32 @@ const SendReceipt = () => {
     const storedData = localStorage.getItem('receiptData');
     if (storedData) {
       const receiptData = JSON.parse(storedData);
+      // Determine email settings based on template type
+      let defaultSettings = {
+        subject: "Your Receipt from Beacons.ai",
+        fromName: "Beacons AI", 
+        fromEmail: "no-reply@beacons.ai"
+      };
+      
+      if (receiptData.html?.includes('stan.store') || receiptData.html?.includes('Stan Store')) {
+        defaultSettings = {
+          subject: "Receipt from Stan - Your Creator Store",
+          fromName: "Stan Store",
+          fromEmail: "no-reply@stan.store"
+        };
+      } else if (receiptData.html?.includes('fanbasis') || receiptData.html?.includes('Fanbasis')) {
+        defaultSettings = {
+          subject: "Payment Confirmation - Your Order Receipt", 
+          fromName: "Fanbasis",
+          fromEmail: "no-reply@fanbasis.com"
+        };
+      }
+      
       setEmailData(prev => ({
         ...prev,
-        subject: receiptData.subject || "Payment Confirmation - Your Order Receipt",
-        fromName: receiptData.fromName || "",
-        fromEmail: receiptData.fromEmail || "",
+        subject: receiptData.subject || defaultSettings.subject,
+        fromName: receiptData.fromName || defaultSettings.fromName,
+        fromEmail: receiptData.fromEmail || defaultSettings.fromEmail,
       }));
       setHtmlContent(receiptData.html || "");
     }
@@ -214,10 +235,11 @@ const SendReceipt = () => {
             <CardContent>
               {htmlContent ? (
                 <div className="space-y-4">
-                  <div className="p-3 bg-muted rounded">
-                    <p className="text-sm"><strong>To:</strong> {emailData.to || "customer@example.com"}</p>
-                    <p className="text-sm"><strong>From:</strong> {emailData.fromName || "Your Business"} &lt;{emailData.fromEmail || "onboarding@resend.dev"}&gt;</p>
-                    <p className="text-sm"><strong>Subject:</strong> {emailData.subject || "Your Receipt"}</p>
+                  <div className="p-4 bg-muted rounded-lg border">
+                    <h3 className="font-semibold mb-2">Email Preview</h3>
+                    <p className="text-sm"><strong>To:</strong> {emailData.to}</p>
+                    <p className="text-sm"><strong>From:</strong> {emailData.fromName} &lt;{emailData.fromEmail}&gt;</p>
+                    <p className="text-sm"><strong>Subject:</strong> {emailData.subject}</p>
                   </div>
                   <div className="border rounded-lg p-4 overflow-auto">
                     <iframe

@@ -1,21 +1,35 @@
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
-import { ArrowLeft, Code, Upload, Loader2, Edit } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Textarea } from "@/components/ui/textarea";  
+import { ArrowLeft, Code, Upload, Loader2, Edit, Eye } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { parseHTMLTemplate, processImageToHTML } from "@/lib/templateUtils";
 
 const CustomTemplates = () => {
   const [activeTab, setActiveTab] = useState<"html" | "image">("html");
-  const [htmlContent, setHtmlContent] = useState("");
+  const [htmlInput, setHtmlInput] = useState("");
+  const [previewHtml, setPreviewHtml] = useState("");
   const [loading, setLoading] = useState(false);
   const [parsedTemplate, setParsedTemplate] = useState<any>(null);
   const { toast } = useToast();
+  const navigate = useNavigate();
+
+  const handlePreview = () => {
+    if (!htmlInput.trim()) {
+      toast({
+        title: "Error",
+        description: "Please paste HTML content first",
+        variant: "destructive"
+      });
+      return;
+    }
+    setPreviewHtml(htmlInput);
+  };
 
   const handleHTMLSubmit = async () => {
-    if (!htmlContent.trim()) {
+    if (!htmlInput.trim()) {
       toast({
         title: "Error",
         description: "Please paste HTML content first",
@@ -26,7 +40,7 @@ const CustomTemplates = () => {
 
     setLoading(true);
     try {
-      const parsed = parseHTMLTemplate(htmlContent);
+      const parsed = parseHTMLTemplate(htmlInput);
       setParsedTemplate(parsed);
       toast({
         title: "Success",
@@ -135,25 +149,42 @@ const CustomTemplates = () => {
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold">Paste HTML Template</h3>
                 <Textarea
-                  placeholder="Paste your HTML receipt template here..."
-                  value={htmlContent}
-                  onChange={(e) => setHtmlContent(e.target.value)}
-                  className="min-h-[300px] font-mono text-sm"
+                  value={htmlInput}
+                  onChange={(e) => {
+                    setHtmlInput(e.target.value);
+                    // Auto-preview when HTML is pasted
+                    if (e.target.value.trim()) {
+                      setPreviewHtml(e.target.value);
+                    }
+                  }}
+                  placeholder="Paste your receipt HTML here..."
+                  className="min-h-[200px] font-mono text-sm"
                 />
-                <Button 
-                  onClick={handleHTMLSubmit}
-                  disabled={loading}
-                  className="w-full"
-                >
-                  {loading ? (
-                    <>
-                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                      Processing...
-                    </>
-                  ) : (
-                    "Parse HTML Template"
+                <div className="flex gap-2">
+                  <Button 
+                    onClick={handlePreview}
+                    disabled={!htmlInput.trim()}
+                  >
+                    <Eye className="w-4 h-4 mr-2" />
+                    Preview Receipt
+                  </Button>
+                  
+                  {previewHtml && (
+                    <Button 
+                      onClick={() => {
+                        // Store HTML for editing
+                        localStorage.setItem('editReceiptData', JSON.stringify({
+                          html: previewHtml
+                        }));
+                        navigate('/edit-receipt');
+                      }}
+                      variant="outline"
+                    >
+                      <Edit className="w-4 h-4 mr-2" />
+                      Edit Receipt
+                    </Button>
                   )}
-                </Button>
+                </div>
               </div>
             ) : (
               <div className="space-y-4">
@@ -190,54 +221,51 @@ const CustomTemplates = () => {
           </CardContent>
         </Card>
 
-        {parsedTemplate && (
+        {previewHtml && (
           <Card className="shadow-card mt-8">
             <CardHeader>
-              <CardTitle>Template Preview & Actions</CardTitle>
+              <CardTitle>Receipt Preview</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-6">
-                <div>
-                  <h4 className="font-semibold mb-3">Preview:</h4>
-                  <div className="border rounded-lg overflow-hidden">
-                    <iframe
-                      srcDoc={parsedTemplate.html}
-                      className="w-full h-[400px] border-0"
-                      title="Template Preview"
-                    />
-                  </div>
+              <div className="space-y-4">
+                <div className="border rounded-lg overflow-hidden">
+                  <iframe
+                    srcDoc={previewHtml}
+                    className="w-full h-[500px] border-0"
+                    title="Receipt Preview"
+                  />
                 </div>
                 
-                <div>
-                  <h4 className="font-semibold mb-3">Detected Fields: {parsedTemplate.fields?.length || 0}</h4>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-                    {parsedTemplate.fields?.map((field: any, index: number) => (
-                      <div key={index} className="bg-muted p-2 rounded text-sm">
-                        {field.label}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="flex gap-4">
                   <Button 
                     onClick={() => {
-                      // Store parsed template for editing
+                      // Store HTML for editing
                       localStorage.setItem('editReceiptData', JSON.stringify({
-                        html: parsedTemplate.html,
-                        fields: parsedTemplate.fields
+                        html: previewHtml
                       }));
-                      // Navigate to receipt editor
-                      window.location.href = '/receipt-editor';
+                      navigate('/edit-receipt');
                     }}
-                    className="w-full"
+                    className="flex-1"
                   >
                     <Edit className="w-4 h-4 mr-2" />
-                    Edit Receipt
+                    Edit Receipt Details
                   </Button>
                   
-                  <Button variant="outline" className="w-full">
-                    Save as Template
+                  <Button 
+                    variant="outline"
+                    onClick={() => {
+                      // Store receipt for sending
+                      localStorage.setItem('receiptData', JSON.stringify({
+                        html: previewHtml,
+                        subject: "Your Receipt",
+                        fromName: "Store",
+                        fromEmail: "no-reply@store.com"
+                      }));
+                      navigate('/send-receipt');
+                    }}
+                    className="flex-1"
+                  >
+                    Send Receipt via Email
                   </Button>
                 </div>
               </div>
