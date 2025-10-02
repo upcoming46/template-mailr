@@ -213,9 +213,7 @@ export const getTemplateHTML = (templateId: string): string => {
             <!-- Avatar -->
             <tr>
               <td align="center" class="pt-16">
-                <a href="{{SELLER_LINK}}">
-                  <img src="{{SELLER_LOGO_URL}}" width="120" alt="{{SELLER_NAME}}'s profile picture" style="width:120px; height:auto; border-radius:1000px;">
-                </a>
+                <img src="{{SELLER_LOGO_URL}}" width="120" alt="Seller Logo" style="width:120px; height:auto; border-radius:1000px;">
               </td>
             </tr>
 
@@ -255,8 +253,8 @@ export const getTemplateHTML = (templateId: string): string => {
                         <tr>
                           <!-- Left text -->
                           <td class="col col-66 text" style="padding-right:12px;">
-                            <div>{{PRODUCT_NAME}}</div>
-                            <div class="muted">Access Link</div>
+                            <div>{{UNTITLED_URL}}</div>
+                            <div class="muted">url</div>
                           </td>
                           <!-- Right button -->
                           <td class="col col-34" align="right" style="padding-left:12px;">
@@ -299,14 +297,12 @@ export const getTemplateHTML = (templateId: string): string => {
                         <tr>
                           <!-- Product image -->
                           <td class="col col-25" style="padding-right:12px;" align="left">
-                            <a href="">
-                              <img src="{{PRODUCT_IMAGE_URL}}" width="128" alt="product image" style="width:128px; max-width:100%; height:auto;">
-                            </a>
+                            <img src="{{PRODUCT_IMAGE_URL}}" width="128" alt="product image" style="width:128px; max-width:100%; height:auto;">
                           </td>
                           <!-- Name and price -->
                           <td class="col col-75 text" style="padding-left:12px;">
                             <div>{{PRODUCT_NAME}}</div>
-                            <div class="muted">\${{PRICE}}</div>
+                            <div class="muted">{{PRICE}}</div>
                           </td>
                         </tr>
                       </table>
@@ -316,9 +312,7 @@ export const getTemplateHTML = (templateId: string): string => {
                   <!-- Customer portal note -->
                   <tr>
                     <td class="px-16 pb-16 text">
-                      Visit the
-                      <a href="{{CUSTOMER_PORTAL_URL}}">customer portal</a>
-                      to manage your order and access your content any time.
+                      Visit the <a href="{{CUSTOMER_PORTAL_URL}}">customer portal</a> to manage your order and access your content any time.
                     </td>
                   </tr>
                 </table>
@@ -340,16 +334,16 @@ export const getTemplateHTML = (templateId: string): string => {
                     </td>
                   </tr>
 
-                  <!-- Star row rebuilt with a small table -->
+                  <!-- Star row -->
                   <tr>
                     <td class="px-16 pt-16" align="center">
                       <table role="presentation" align="center" cellpadding="0" cellspacing="8">
                         <tr>
-                          <td><a href="{{REVIEW_LINK}}"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" alt="★"></a></td>
-                          <td><a href="{{REVIEW_LINK}}"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" alt="★"></a></td>
-                          <td><a href="{{REVIEW_LINK}}"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" alt="★"></a></td>
-                          <td><a href="{{REVIEW_LINK}}"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" alt="★"></a></td>
-                          <td><a href="{{REVIEW_LINK}}"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" alt="★"></a></td>
+                          <td><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" alt="★"></td>
+                          <td><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" alt="★"></td>
+                          <td><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" alt="★"></td>
+                          <td><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" alt="★"></td>
+                          <td><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" alt="★"></td>
                         </tr>
                       </table>
                     </td>
@@ -358,7 +352,7 @@ export const getTemplateHTML = (templateId: string): string => {
                   <!-- Review button -->
                   <tr>
                     <td class="px-16 pb-24" align="center">
-                      <a href="{{REVIEW_LINK}}" class="btn">Leave a review</a>
+                      <a href="#" class="btn">Leave a review</a>
                     </td>
                   </tr>
                 </table>
@@ -386,15 +380,11 @@ export const getTemplateHTML = (templateId: string): string => {
             <!-- Beacons badge and footer -->
             <tr>
               <td class="px-16 pb-32" align="center">
-                <a href="https://beacons.ai">
-                  <img src="https://cdn.beacons.ai/images/beacons_assets/made-with-beacons.png" alt="made with beacons" style="height:40px; width:auto;">
-                </a>
+                <img src="https://cdn.beacons.ai/images/beacons_assets/made-with-beacons.png" alt="made with beacons" style="height:40px; width:auto;">
 
                 <div class="text muted" style="padding-top:24px;">
-                  You are getting this receipt email because you bought a product from
-                  <a style="font-weight:bold; color:#757575;" href="{{SELLER_LINK}}" target="_blank">{{SELLER_NAME}}</a>.
-                  If you would like to stop receiving future marketing messages,
-                  <a style="text-decoration:underline; color:#757575;" href="#" target="_blank">unsubscribe</a> from the list.
+                  You are getting this receipt email because you bought a product from <a style="font-weight:bold; color:#757575;" href="#">{{SELLER_NAME}}</a>.
+                  If you would like to stop receiving future marketing messages, <a style="text-decoration:underline; color:#757575;" href="#">unsubscribe</a> from the list.
                 </div>
               </td>
             </tr>
