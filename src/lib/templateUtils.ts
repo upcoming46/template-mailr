@@ -136,266 +136,270 @@ export const getTemplateHTML = (templateId: string): string => {
   beacons: `<!doctype html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="utf-8">
-  <meta name="x-apple-disable-message-reformatting">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>Receipt</title>
+    <title>Receipt</title>
 
-  <!--[if mso]>
-  <style type="text/css">
-    body, table, td {font-family: Arial, Helvetica, sans-serif !important;}
-    img { -ms-interpolation-mode:bicubic; }
-    table { border-collapse: collapse !important; }
-  </style>
-  <![endif]-->
+    <style>
+      /* Base reset for email */
+      body { margin:0; padding:0; background:#EAEAEA; color:#000000; }
+      img { border:0; outline:none; text-decoration:none; display:block; }
+      a { color:#2848F0; text-decoration:none; }
+      table { border-spacing:0; border-collapse:collapse; }
 
-  <style>
-    /* Base reset for email */
-    body { margin:0; padding:0; background:#EAEAEA; color:#000000; }
-    img { border:0; outline:none; text-decoration:none; display:block; }
-    a { color:#2848F0; text-decoration:none; }
-    table { border-spacing:0; border-collapse:collapse; }
+      /* Container */
+      .wrapper { width:100%; background:#EAEAEA; }
+      /* IMPORTANT FIX: Force max-width for container on all clients */
+      .container { width:100%; max-width:600px; margin:0 auto; }
+      /* IMPORTANT FIX: Ensure cards always have a white background */
+      .card { background:#FFFFFF; }
 
-    /* Container */
-    .wrapper { width:100%; background:#EAEAEA; }
-    .container { width:100%; max-width:600px; margin:0 auto; }
-    .card { background:#FFFFFF; }
+      /* Spacing helpers */
+      .px-16 { padding-left:16px; padding-right:16px; }
+      .py-16 { padding-top:16px; padding-bottom:16px; }
+      .pt-16 { padding-top:16px; }
+      .pb-16 { padding-bottom:16px; }
+      .pb-24 { padding-bottom:24px; }
+      .pb-32 { padding-bottom:32px; }
 
-    /* Spacing helpers */
-    .px-16 { padding-left:16px; padding-right:16px; }
-    .py-16 { padding-top:16px; padding-bottom:16px; }
-    .pt-16 { padding-top:16px; }
-    .pb-16 { padding-bottom:16px; }
-    .pb-24 { padding-bottom:24px; }
-    .pb-32 { padding-bottom:32px; }
+      /* Headings and text */
+      h1, h2 { margin:0; font-family: Arial, Helvetica, sans-serif; }
+      h1 { font-size:24px; line-height:30px; text-align:center; }
+      h2 { font-size:18px; line-height:24px; }
+      .text { font-family: Arial, Helvetica, sans-serif; font-size:14px; line-height:20px; }
+      .muted { color:#757575; }
 
-    /* Headings and text */
-    h1, h2 { margin:0; font-family: Arial, Helvetica, sans-serif; }
-    h1 { font-size:24px; line-height:30px; text-align:center; }
-    h2 { font-size:18px; line-height:24px; }
-    .text { font-family: Arial, Helvetica, sans-serif; font-size:14px; line-height:20px; }
-    .muted { color:#757575; }
+      /* Columns that stack on mobile */
+      .row { width:100%; }
+      .col { vertical-align:top; }
+      .col-66 { width:66.66%; }
+      .col-34 { width:33.33%; }
+      .col-75 { width:75%; }
+      .col-25 { width:25%; }
 
-    /* Columns that stack on mobile */
-    .row { width:100%; }
-    .col { vertical-align:top; }
-    .col-66 { width:66.66%; }
-    .col-34 { width:33.33%; }
-    .col-75 { width:75%; }
-    .col-25 { width:25%; }
+      /* Buttons */
+      /* Applied inline in the button structure below, but keeping this for reference */
+      .btn { background:#2848F0; color:#FFFFFF !important; font-family: Arial, Helvetica, sans-serif; font-size:14px; line-height:18px; font-weight:bold; border-radius:8px; padding:12px 18px; display:inline-block; }
 
-    /* Buttons */
-    .btn { background:#2848F0; color:#FFFFFF !important; font-family: Arial, Helvetica, sans-serif; font-size:14px; line-height:18px; font-weight:bold; border-radius:8px; padding:12px 18px; display:inline-block; }
+      @media screen and (max-width: 500px) {
+        .container { width:100% !important; }
+        /* IMPORTANT FIX: Added max-width to address container issues */
+        .stack, .stack td, .stack table { display:block !important; width:100% !important; max-width: 100% !important; }
+        .btn { display:block !important; width:100% !important; text-align:center !important; }
+        .px-16 { padding-left:16px !important; padding-right:16px !important; }
+      }
 
-    @media screen and (max-width: 500px) {
-      .container { width:100% !important; }
-      .stack, .stack td, .stack table { display:block !important; width:100% !important; }
-      .btn { display:block !important; width:100% !important; text-align:center !important; }
-      .px-16 { padding-left:16px !important; padding-right:16px !important; }
-    }
+      /* Prevent iOS blue link styling */
+      a[x-apple-data-detectors] { color:inherit !important; text-decoration:none !important; }
 
-    /* Prevent iOS blue link styling */
-    a[x-apple-data-detectors] { color:inherit !important; text-decoration:none !important; }
-  </style>
+      /* Dark Mode Fixes - A common cause of your issue is a dark mode inversion */
+      /* Adding some basic dark mode declarations, though a full fix is more complex */
+      @media (prefers-color-scheme: dark) {
+          .wrapper { background-color: #EAEAEA !important; }
+          .card { background-color: #FFFFFF !important; }
+          .text, h1, h2 { color: #000000 !important; }
+          .muted { color: #757575 !important; }
+      }
+    </style>
 </head>
 
-<body>
-  <center class="wrapper">
-    <table role="presentation" width="100%">
-      <tr>
-        <td align="center">
-
-          <!-- Outer container -->
-          <table role="presentation" class="container" width="100%">
-
-            <!-- Avatar -->
+<body style="margin:0; padding:0; background:#EAEAEA; color:#000000; font-family: Arial, Helvetica, sans-serif;">
+    <center class="wrapper" style="width:100%; background:#EAEAEA;">
+        <table role="presentation" width="100%" style="border-spacing:0; border-collapse:collapse;">
             <tr>
-              <td align="center" class="pt-16">
-                <img src="{{SELLER_LOGO_URL}}" width="120" alt="Seller Logo" style="width:120px; height:auto; border-radius:1000px;">
-              </td>
-            </tr>
+                <td align="center">
 
-            <!-- Thank you card -->
-            <tr>
-              <td class="px-16 pb-16">
-                <table role="presentation" width="100%" class="card">
-                  <tr>
-                    <td class="px-16 py-16">
-                      <h1>Thanks for your order, {{BUYER_NAME}}! 🙏</h1>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
+                    <table role="presentation" class="container" width="100%" style="max-width:600px; margin:0 auto; border-spacing:0; border-collapse:collapse;">
 
-            <!-- Product title -->
-            <tr>
-              <td class="px-16">
-                <table role="presentation" width="100%" class="card">
-                  <tr>
-                    <td class="px-16 py-16">
-                      <h2 class="text"><strong>{{PRODUCT_NAME}}</strong></h2>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-
-            <!-- URL + Button, fluid two columns -->
-            <tr>
-              <td class="px-16 pb-16">
-                <table role="presentation" width="100%" class="card">
-                  <tr>
-                    <td class="px-16 py-16">
-                      <table role="presentation" width="100%" class="row stack">
                         <tr>
-                          <!-- Left text -->
-                          <td class="col col-66 text" style="padding-right:12px;">
-                            <div>{{UNTITLED_URL}}</div>
-                            <div class="muted">url</div>
-                          </td>
-                          <!-- Right button -->
-                          <td class="col col-34" align="right" style="padding-left:12px;">
-                            <a href="{{ACCESS_LINK}}" class="btn">Access link</a>
-                          </td>
+                            <td align="center" class="pt-16" style="padding-top:16px;">
+                                <a href="#">
+                                    <img src="{{SELLER_LOGO}}" width="120" alt="Seller profile picture" style="width:120px; height:auto; border-radius:1000px; display:block; border:0; outline:none; text-decoration:none;">
+                                </a>
+                            </td>
                         </tr>
-                      </table>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
 
-            <!-- Order Summary -->
-            <tr>
-              <td class="px-16">
-                <table role="presentation" width="100%" class="card">
-                  <tr>
-                    <td class="px-16 pt-16">
-                      <h2 class="text"><strong>Order Summary</strong></h2>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="px-16 pb-16 text">
-                      <div><strong>Date:</strong> {{DATE}}</div>
-                      <div><strong>Order #:</strong> {{ORDER_ID}}</div>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-
-            <!-- Line item, fluid two columns -->
-            <tr>
-              <td class="px-16 pb-16">
-                <table role="presentation" width="100%" class="card">
-                  <tr>
-                    <td class="px-16 py-16">
-                      <table role="presentation" width="100%" class="row stack">
                         <tr>
-                          <!-- Product image -->
-                          <td class="col col-25" style="padding-right:12px;" align="left">
-                            <img src="{{PRODUCT_IMAGE_URL}}" width="128" alt="product image" style="width:128px; max-width:100%; height:auto;">
-                          </td>
-                          <!-- Name and price -->
-                          <td class="col col-75 text" style="padding-left:12px;">
-                            <div>{{PRODUCT_NAME}}</div>
-                            <div class="muted">{{PRICE}}</div>
-                          </td>
+                            <td class="px-16 pb-16" style="padding-left:16px; padding-right:16px; padding-bottom:16px;">
+                                <table role="presentation" width="100%" class="card" style="background:#FFFFFF; border-spacing:0; border-collapse:collapse;">
+                                    <tr>
+                                        <td class="px-16 py-16" style="padding:16px;">
+                                            <h1 style="margin:0; font-family: Arial, Helvetica, sans-serif; font-size:24px; line-height:30px; text-align:center; color:#000000;">Thanks for your order, {{BUYER_NAME}}! 🙏</h1>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
-                      </table>
-                    </td>
-                  </tr>
 
-                  <!-- Customer portal note -->
-                  <tr>
-                    <td class="px-16 pb-16 text">
-                      Visit the <a href="{{CUSTOMER_PORTAL_URL}}">customer portal</a> to manage your order and access your content any time.
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-
-            <!-- Feedback -->
-            <tr>
-              <td class="px-16">
-                <table role="presentation" width="100%" class="card">
-                  <tr>
-                    <td class="px-16 pt-16">
-                      <h2 class="text">Your feedback matters!</h2>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="px-16 text">
-                      Share your experience and help others with your product review!
-                    </td>
-                  </tr>
-
-                  <!-- Star row -->
-                  <tr>
-                    <td class="px-16 pt-16" align="center">
-                      <table role="presentation" align="center" cellpadding="0" cellspacing="8">
                         <tr>
-                          <td><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" alt="★"></td>
-                          <td><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" alt="★"></td>
-                          <td><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" alt="★"></td>
-                          <td><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" alt="★"></td>
-                          <td><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" alt="★"></td>
+                            <td class="px-16" style="padding-left:16px; padding-right:16px;">
+                                <table role="presentation" width="100%" class="card" style="background:#FFFFFF; border-spacing:0; border-collapse:collapse;">
+                                    <tr>
+                                        <td class="px-16 py-16" style="padding:16px;">
+                                            <h2 class="text" style="margin:0; font-family: Arial, Helvetica, sans-serif; font-size:18px; line-height:24px; color:#000000;"><strong>{{PRODUCT_NAME}}</strong></h2>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
-                      </table>
-                    </td>
-                  </tr>
 
-                  <!-- Review button -->
-                  <tr>
-                    <td class="px-16 pb-24" align="center">
-                      <a href="#" class="btn">Leave a review</a>
+                        <tr>
+                            <td class="px-16 pb-16" style="padding-left:16px; padding-right:16px; padding-bottom:16px;">
+                                <table role="presentation" width="100%" class="card" style="background:#FFFFFF; border-spacing:0; border-collapse:collapse;">
+                                    <tr>
+                                        <td class="px-16 py-16" style="padding:16px;">
+                                            <table role="presentation" width="100%" class="row stack" style="border-spacing:0; border-collapse:collapse;">
+                                                <tr>
+                                                    <td class="col col-66 text" style="padding-right:12px; vertical-align:top; font-family: Arial, Helvetica, sans-serif; font-size:14px; line-height:20px; color:#000000;">
+                                                        <div style="color:#000000;">{{LINK_NAME}}</div>
+                                                        <div class="muted" style="color:#757575;">{{LINK_TYPE}}</div>
+                                                    </td>
+                                                    <td class="col col-34" align="right" style="padding-left:12px; vertical-align:top; width:33.33%;">
+                                                        <a href="{{LINK_URL}}"
+                                                           class="btn"
+                                                           style="background:#2848F0; color:#FFFFFF !important; font-family: Arial, Helvetica, sans-serif; font-size:14px; line-height:18px; font-weight:bold; border-radius:8px; padding:12px 18px; display:inline-block; text-decoration:none;">Access link</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="px-16" style="padding-left:16px; padding-right:16px;">
+                                <table role="presentation" width="100%" class="card" style="background:#FFFFFF; border-spacing:0; border-collapse:collapse;">
+                                    <tr>
+                                        <td class="px-16 pt-16" style="padding-left:16px; padding-right:16px; padding-top:16px;">
+                                            <h2 class="text" style="margin:0; font-family: Arial, Helvetica, sans-serif; font-size:18px; line-height:24px; color:#000000;"><strong>Order Summary</strong></h2>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-16 pb-16 text" style="padding-left:16px; padding-right:16px; padding-bottom:16px; font-family: Arial, Helvetica, sans-serif; font-size:14px; line-height:20px; color:#000000;">
+                                            <div style="color:#000000;"><strong>Date:</strong> {{DATE}}</div>
+                                            <div style="color:#000000;"><strong>Order #:</strong> {{ORDER_ID}}</div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="px-16 pb-16" style="padding-left:16px; padding-right:16px; padding-bottom:16px;">
+                                <table role="presentation" width="100%" class="card" style="background:#FFFFFF; border-spacing:0; border-collapse:collapse;">
+                                    <tr>
+                                        <td class="px-16 py-16" style="padding:16px;">
+                                            <table role="presentation" width="100%" class="row stack" style="border-spacing:0; border-collapse:collapse;">
+                                                <tr>
+                                                    <td class="col col-25" style="padding-right:12px; vertical-align:top; width:25%;" align="left">
+                                                        <a href="">
+                                                            <img src="{{PRODUCT_IMAGE}}"
+                                                                 width="128" alt="product image" style="width:128px; max-width:100%; height:auto; display:block; border:0; outline:none; text-decoration:none;">
+                                                        </a>
+                                                    </td>
+                                                    <td class="col col-75 text" style="padding-left:12px; vertical-align:top; font-family: Arial, Helvetica, sans-serif; font-size:14px; line-height:20px; color:#000000; width:75%;">
+                                                        <div style="color:#000000;">{{PRODUCT_NAME}}</div>
+                                                        <div class="muted" style="color:#757575;">{{PRICE}}</div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="px-16 pb-16 text" style="padding-left:16px; padding-right:16px; padding-bottom:16px; font-family: Arial, Helvetica, sans-serif; font-size:14px; line-height:20px; color:#000000;">
+                                            Visit the
+                                            <a href="{{CUSTOMER_PORTAL_URL}}" style="color:#2848F0; text-decoration:none;">customer portal</a>
+                                            to manage your order and access your content any time.
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="px-16" style="padding-left:16px; padding-right:16px;">
+                                <table role="presentation" width="100%" class="card" style="background:#FFFFFF; border-spacing:0; border-collapse:collapse;">
+                                    <tr>
+                                        <td class="px-16 pt-16" style="padding-left:16px; padding-right:16px; padding-top:16px;">
+                                            <h2 class="text" style="margin:0; font-family: Arial, Helvetica, sans-serif; font-size:18px; line-height:24px; color:#000000;">Your feedback matters!</h2>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-16 text" style="padding-left:16px; padding-right:16px; font-family: Arial, Helvetica, sans-serif; font-size:14px; line-height:20px; color:#000000;">
+                                            Share your experience and help others with your product review!
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="px-16 pt-16" align="center" style="padding-left:16px; padding-right:16px; padding-top:16px;">
+                                            <table role="presentation" align="center" cellpadding="0" cellspacing="8" style="border-spacing:0; border-collapse:collapse;">
+                                                <tr>
+                                                    <td style="padding:0;"><a href="{{REVIEW_URL}}"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" alt="★" style="display:block; border:0; outline:none; text-decoration:none;"></a></td>
+                                                    <td style="padding:0;"><a href="{{REVIEW_URL}}"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" alt="★" style="display:block; border:0; outline:none; text-decoration:none;"></a></td>
+                                                    <td style="padding:0;"><a href="{{REVIEW_URL}}"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" alt="★" style="display:block; border:0; outline:none; text-decoration:none;"></a></td>
+                                                    <td style="padding:0;"><a href="{{REVIEW_URL}}"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" alt="★" style="display:block; border:0; outline:none; text-decoration:none;"></a></td>
+                                                    <td style="padding:0;"><a href="{{REVIEW_URL}}"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" alt="★" style="display:block; border:0; outline:none; text-decoration:none;"></a></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="px-16 pb-24" align="center" style="padding-left:16px; padding-right:16px; padding-bottom:24px;">
+                                            <a href="{{REVIEW_URL}}"
+                                               class="btn"
+                                               style="background:#2848F0; color:#FFFFFF !important; font-family: Arial, Helvetica, sans-serif; font-size:14px; line-height:18px; font-weight:bold; border-radius:8px; padding:12px 18px; display:inline-block; text-decoration:none;">Leave a review</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="px-16" style="padding-left:16px; padding-right:16px;">
+                                <table role="presentation" width="100%" class="card" style="background:#FFFFFF; border-spacing:0; border-collapse:collapse;">
+                                    <tr>
+                                        <td class="px-16 pt-16" style="padding-left:16px; padding-right:16px; padding-top:16px;">
+                                            <h2 class="text" style="margin:0; font-family: Arial, Helvetica, sans-serif; font-size:18px; line-height:24px; color:#000000;">Need help?</h2>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-16 pb-32 text" style="padding-left:16px; padding-right:16px; padding-bottom:32px; font-family: Arial, Helvetica, sans-serif; font-size:14px; line-height:20px; color:#000000;">
+                                            If you have any questions or need assistance with your order, feel free to contact {{SELLER_NAME}} directly.
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="px-16 pb-32" align="center" style="padding-left:16px; padding-right:16px; padding-bottom:32px;">
+                                <a href="#">
+                                    <img src="https://cdn.beacons.ai/images/beacons_assets/made-with-beacons.png" alt="made with beacons" style="height:40px; width:auto; display:block; border:0; outline:none; text-decoration:none;">
+                                </a>
+
+                                <div class="text muted" style="padding-top:24px; font-family: Arial, Helvetica, sans-serif; font-size:14px; line-height:20px; color:#757575;">
+                                    You are getting this receipt email because you bought a product from
+                                    <a style="font-weight:bold; color:#757575; text-decoration:none;" href="#" target="_blank">{{SELLER_NAME}}</a>.
+                                    If you would like to stop receiving future marketing messages,
+                                    <a style="text-decoration:underline; color:#757575;" href="#" target="_blank">unsubscribe</a> from the list.
+                                </div>
+                            </td>
+                        </tr>
+
+                    </table>
                     </td>
-                  </tr>
-                </table>
-              </td>
             </tr>
+        </table>
+    </center>
 
-            <!-- Help -->
-            <tr>
-              <td class="px-16">
-                <table role="presentation" width="100%" class="card">
-                  <tr>
-                    <td class="px-16 pt-16">
-                      <h2 class="text">Need help?</h2>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="px-16 pb-32 text">
-                      If you have any questions or need assistance with your order, feel free to contact {{SELLER_NAME}} directly.
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
-
-            <!-- Beacons badge and footer -->
-            <tr>
-              <td class="px-16 pb-32" align="center">
-                <img src="https://cdn.beacons.ai/images/beacons_assets/made-with-beacons.png" alt="made with beacons" style="height:40px; width:auto;">
-
-                <div class="text muted" style="padding-top:24px;">
-                  You are getting this receipt email because you bought a product from <a style="font-weight:bold; color:#757575;" href="#">{{SELLER_NAME}}</a>.
-                  If you would like to stop receiving future marketing messages, <a style="text-decoration:underline; color:#757575;" href="#">unsubscribe</a> from the list.
-                </div>
-              </td>
-            </tr>
-
-          </table>
-          <!-- /container -->
-
-        </td>
-      </tr>
-    </table>
-  </center>
+    <img src="https://example.com/tracking.png"
+        alt="" width="1" height="1" style="display:block; width:1px; height:1px; border:0;">
 </body>
 </html>`,
 
