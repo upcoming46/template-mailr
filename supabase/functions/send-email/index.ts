@@ -62,7 +62,7 @@ const handler = async (req: Request): Promise<Response> => {
     const resend = new Resend(resendApiKey);
 
     const emailData = {
-      from: fromName && fromEmail ? `${fromName} <onboarding@resend.dev>` : "Receipt Generator <onboarding@resend.dev>",
+      from: fromName && fromEmail ? `${fromName} <noreply@supportkicktv.com>` : "Receipt Generator <noreply@supportkicktv.com>",
       to: [to],
       subject: subject,
       html: html,
