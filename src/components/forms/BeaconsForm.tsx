@@ -31,36 +31,6 @@ const BeaconsForm = () => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const handleFileUpload = async (field: string, file: File) => {
-    try {
-      // Convert file to base64 for email compatibility
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        const base64String = reader.result as string;
-        handleInputChange(field, base64String);
-        
-        toast({
-          title: "File uploaded",
-          description: "Image has been uploaded successfully"
-        });
-      };
-      reader.onerror = () => {
-        toast({
-          title: "Upload failed",
-          description: "Failed to upload image",
-          variant: "destructive"
-        });
-      };
-      reader.readAsDataURL(file);
-    } catch (error) {
-      toast({
-        title: "Upload failed",
-        description: "Failed to upload image",
-        variant: "destructive"
-      });
-    }
-  };
-
   const generateReceipt = () => {
     const template = getTemplateHTML("beacons");
     const html = generateReceiptHTML(template, formData);
@@ -93,15 +63,12 @@ const BeaconsForm = () => {
         </CardHeader>
         <CardContent className="space-y-4">
           <div>
-            <Label htmlFor="seller-logo">Seller Logo Image</Label>
+            <Label htmlFor="seller-logo">Seller Logo URL</Label>
             <Input
               id="seller-logo"
-              type="file"
-              accept="image/*"
-              onChange={(e) => {
-                const file = e.target.files?.[0];
-                if (file) handleFileUpload("SELLER_LOGO_URL", file);
-              }}
+              value={formData.SELLER_LOGO_URL}
+              onChange={(e) => handleInputChange("SELLER_LOGO_URL", e.target.value)}
+              placeholder="https://example.com/logo.png"
             />
           </div>
 
@@ -126,15 +93,12 @@ const BeaconsForm = () => {
           </div>
 
           <div>
-            <Label htmlFor="product-image">Product Image</Label>
+            <Label htmlFor="product-image">Product Image URL</Label>
             <Input
               id="product-image"
-              type="file"
-              accept="image/*"
-              onChange={(e) => {
-                const file = e.target.files?.[0];
-                if (file) handleFileUpload("PRODUCT_IMAGE_URL", file);
-              }}
+              value={formData.PRODUCT_IMAGE_URL}
+              onChange={(e) => handleInputChange("PRODUCT_IMAGE_URL", e.target.value)}
+              placeholder="https://example.com/product.jpg"
             />
           </div>
 
