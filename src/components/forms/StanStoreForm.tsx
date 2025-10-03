@@ -7,12 +7,13 @@ import { useToast } from "@/hooks/use-toast";
 import { generateReceiptHTML, getTemplateHTML } from "@/lib/templateUtils";
 import { Link } from "react-router-dom";
 import { Mail } from "lucide-react";
+import { format } from "date-fns";
 
 const StanStoreForm = () => {
   const [formData, setFormData] = useState({
     RECEIPT_ID: "",
     AMOUNT_PAID: "",
-    DATE_PAID: new Date().toLocaleDateString(),
+    DATE_PAID: format(new Date(), "MMM dd, yyyy, h:mm:ss a"),
     PAYMENT_METHOD: "MasterCard",
     CARD_LAST4: "",
     PRODUCT_NAME: "",
@@ -106,7 +107,7 @@ const StanStoreForm = () => {
               id="date-paid"
               value={formData.DATE_PAID}
               onChange={(e) => handleInputChange("DATE_PAID", e.target.value)}
-              placeholder="MM/DD/YYYY"
+              placeholder="Mar 19, 2025, 4:03:08 AM"
             />
           </div>
 
