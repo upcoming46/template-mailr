@@ -401,7 +401,7 @@ export const getTemplateHTML = (templateId: string): string => {
     </tbody>
   </table>
 
-  <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:0px 16px 0px 16px;" bgcolor="#FFFFFF" data-distribution="1">
+  <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:16px 16px 16px 16px;" bgcolor="#FFFFFF" data-distribution="1">
     <tbody>
       <tr role="module-content">
         <td height="100%" valign="top">
@@ -418,6 +418,31 @@ export const getTemplateHTML = (templateId: string): string => {
                       </tr>
                     </tbody>
                   </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="module" role="module" data-type="spacer" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="spacer1">
+    <tbody>
+      <tr>
+        <td style="padding:0px 0px 8px 0px;" role="module-content" bgcolor=""></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:16px 16px 16px 16px;" bgcolor="#FFFFFF" data-distribution="1">
+    <tbody>
+      <tr role="module-content">
+        <td height="100%" valign="top">
+          <table width="536" style="width:536px; border-spacing:0; border-collapse:collapse; margin:0px 0px 0px 0px;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-0">
+            <tbody>
+              <tr>
+                <td style="padding:0px;margin:0px;border-spacing:0;">
                   <table class="module" role="module" data-type="code" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="787a67e5-36d1-4587-b07f-635e56b899f7">
                     <tbody>
                       <tr>
@@ -434,55 +459,60 @@ export const getTemplateHTML = (templateId: string): string => {
           </table>
         </td>
       </tr>
+    </tbody>
+  </table>
+
+  <table class="module" role="module" data-type="spacer" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="spacer2">
+    <tbody>
+      <tr>
+        <td style="padding:0px 0px 8px 0px;" role="module-content" bgcolor=""></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:16px 16px 16px 16px;" bgcolor="#FFFFFF" data-distribution="1,3">
+    <tbody>
       <tr role="module-content">
-        <td height="100%" valign="top">
-          <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:8px 16px 8px 16px;" bgcolor="#FFFFFF" data-distribution="1,3">
+        <td height="100%" valign="top" style="vertical-align: top;">
+          <table width="128" style="width:128px; border-spacing:0; border-collapse:collapse; margin:0px 12px 0px 0px;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-0">
             <tbody>
-              <tr role="module-content">
-                <td height="100%" valign="top" style="vertical-align: top;">
-                  <table width="128" style="width:128px; border-spacing:0; border-collapse:collapse; margin:0px 12px 0px 0px;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-0">
+              <tr>
+                <td style="padding:0px;margin:0px;border-spacing:0;">
+                  <table class="wrapper" role="module" data-type="image" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="604e0d4b-6d89-42bc-b4ec-90cc9536aa1c">
                     <tbody>
                       <tr>
-                        <td style="padding:0px;margin:0px;border-spacing:0;">
-                          <table class="wrapper" role="module" data-type="image" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="604e0d4b-6d89-42bc-b4ec-90cc9536aa1c">
-                            <tbody>
-                              <tr>
-                                <td style="font-size:6px; line-height:10px; padding:0px 0px 0px 0px;" valign="top" align="left">
-                                  <a href="">
-                                    <img class="max-width" border="0" style="display:block; color:#000000; text-decoration:none; font-family:Helvetica, arial, sans-serif; font-size:16px; max-width:100% !important; width:100%; height:auto !important;" width="128" alt="product image" data-proportionally-constrained="true" data-responsive="true" src="{{PRODUCT_IMAGE_URL}}">
-                                  </a>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
+                        <td style="font-size:6px; line-height:10px; padding:0px 0px 0px 0px;" valign="top" align="left">
+                          <a href="">
+                            <img class="max-width" border="0" style="display:block; color:#000000; text-decoration:none; font-family:Helvetica, arial, sans-serif; font-size:16px; max-width:100% !important; width:100%; height:auto !important;" width="128" alt="product image" data-proportionally-constrained="true" data-responsive="true" src="{{PRODUCT_IMAGE_URL}}">
+                          </a>
                         </td>
                       </tr>
                     </tbody>
                   </table>
                 </td>
-                <td height="100%" valign="top" style="vertical-align: top;">
-                  <table width="384" style="width:384px; border-spacing:0; border-collapse:collapse; margin:0px 0px 0px 12px;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-1">
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <td height="100%" valign="top" style="vertical-align: top;">
+          <table width="384" style="width:384px; border-spacing:0; border-collapse:collapse; margin:0px 0px 0px 12px;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-1">
+            <tbody>
+              <tr>
+                <td style="padding:0px;margin:0px;border-spacing:0;">
+                  <table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="017a5c60-9f05-478c-9915-5c4bdc0804de" data-mc-module-version="2019-10-22">
                     <tbody>
                       <tr>
-                        <td style="padding:0px;margin:0px;border-spacing:0;">
-                          <table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="017a5c60-9f05-478c-9915-5c4bdc0804de" data-mc-module-version="2019-10-22">
-                            <tbody>
-                              <tr>
-                                <td style="padding:0px 0px 0px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
-                                  <div><div style="font-family: inherit; text-align: inherit">{{PRODUCT_NAME}}</div><div></div></div>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                          <table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="017a5c60-9f05-478c-9915-5c4bdc0804de.1" data-mc-module-version="2019-10-22">
-                            <tbody>
-                              <tr>
-                                <td style="padding:0px 0px 0px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
-                                  <div><div style="font-family: inherit; text-align: inherit"><span style="color: #757575; font-family: helvetica, sans-serif; font-size: 14px;">{{PRICE}}</span></div><div></div></div>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
+                        <td style="padding:0px 0px 0px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
+                          <div><div style="font-family: inherit; text-align: inherit">{{PRODUCT_NAME}}</div><div></div></div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="017a5c60-9f05-478c-9915-5c4bdc0804de.1" data-mc-module-version="2019-10-22">
+                    <tbody>
+                      <tr>
+                        <td style="padding:0px 0px 0px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
+                          <div><div style="font-family: inherit; text-align: inherit"><span style="color: #757575; font-family: helvetica, sans-serif; font-size: 14px;">{{PRICE}}</span></div><div></div></div>
                         </td>
                       </tr>
                     </tbody>
@@ -493,25 +523,30 @@ export const getTemplateHTML = (templateId: string): string => {
           </table>
         </td>
       </tr>
+    </tbody>
+  </table>
+
+  <table class="module" role="module" data-type="spacer" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="spacer3">
+    <tbody>
+      <tr>
+        <td style="padding:0px 0px 8px 0px;" role="module-content" bgcolor=""></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:16px 16px 16px 16px;" bgcolor="#FFFFFF" data-distribution="1">
+    <tbody>
       <tr role="module-content">
         <td height="100%" valign="top">
-          <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:8px 16px 16px 16px;" bgcolor="#FFFFFF" data-distribution="1">
+          <table width="536" style="width:536px; border-spacing:0; border-collapse:collapse; margin:0px 0px 0px 0px;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-0">
             <tbody>
-              <tr role="module-content">
-                <td height="100%" valign="top">
-                  <table width="536" style="width:536px; border-spacing:0; border-collapse:collapse; margin:0px 0px 0px 0px;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-0">
+              <tr>
+                <td style="padding:0px;margin:0px;border-spacing:0;">
+                  <table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="c8ae93ae-50d0-4cf3-8e86-81f41c5771c5.2.1.1.1" data-mc-module-version="2019-10-22">
                     <tbody>
                       <tr>
-                        <td style="padding:0px;margin:0px;border-spacing:0;">
-                          <table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="c8ae93ae-50d0-4cf3-8e86-81f41c5771c5.2.1.1.1" data-mc-module-version="2019-10-22">
-                            <tbody>
-                              <tr>
-                                <td style="padding:0px 0px 0px 0px; line-height:20px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
-                                  <div><div style="font-family: inherit; text-align: inherit"><span style="white-space-collapse: preserve; text-wrap-mode: wrap; text-wrap-style: initial">Visit the </span><a href="{{CUSTOMER_PORTAL_URL}}"><span style="white-space-collapse: preserve; text-wrap-mode: wrap; text-wrap-style: initial">customer portal</span></a><span style="white-space-collapse: preserve; text-wrap-mode: wrap; text-wrap-style: initial"> to manage your order and access your content any time.</span></div><div></div></div>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
+                        <td style="padding:0px 0px 0px 0px; line-height:20px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
+                          <div><div style="font-family: inherit; text-align: inherit"><span style="white-space-collapse: preserve; text-wrap-mode: wrap; text-wrap-style: initial">Visit the </span><a href="{{CUSTOMER_PORTAL_URL}}"><span style="white-space-collapse: preserve; text-wrap-mode: wrap; text-wrap-style: initial">customer portal</span></a><span style="white-space-collapse: preserve; text-wrap-mode: wrap; text-wrap-style: initial"> to manage your order and access your content any time.</span></div><div></div></div>
                         </td>
                       </tr>
                     </tbody>
