@@ -35,7 +35,7 @@ const SendReceipt = () => {
       if (receiptData.html?.includes('stan.store') || receiptData.html?.includes('Stan Store')) {
         defaultSettings = {
           subject: "Receipt from Stan - Your Creator Store",
-          fromName: "Stan Store",
+          fromName: "Stan",
           fromEmail: "no-reply@stan.store"
         };
       } else if (receiptData.html?.includes('fanbasis') || receiptData.html?.includes('Fanbasis')) {
