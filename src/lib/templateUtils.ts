@@ -248,14 +248,17 @@ export const getTemplateHTML = (templateId: string): string => {
                         <tr>
                           <td>
                             <table width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%; max-width:600px;" align="center">
-                                      <tr>
-                                        <td role="modules-container" style="padding:16px 16px 16px 16px; color:#000000; text-align:left;" bgcolor="#Eaeaea" width="100%" align="left"><table class="module preheader preheader-hide" role="module" data-type="preheader" border="0" cellpadding="0" cellspacing="0" width="100%" style="display: none !important; mso-hide: all; visibility: hidden; opacity: 0; color: transparent; height: 0; width: 0;">
+                                        <tr>
+                                          <td role="modules-container" style="padding:16px 16px 16px 16px; color:#000000; text-align:left;" bgcolor="#Eaeaea" width="100%" align="left"><table class="module preheader preheader-hide" role="module" data-type="preheader" border="0" cellpadding="0" cellspacing="0" width="100%" style="display: none !important; mso-hide: all; visibility: hidden; opacity: 0; color: transparent; height: 0; width: 0;">
     <tr>
       <td role="module-content">
-        <p>Your purchase from {{SELLER_NAME}}!</p>
+        <p>Thank you for your order! {{PRODUCT_NAME}} from {{SELLER_NAME}} - Order #{{ORDER_ID}} {{DATE}}</p>
       </td>
     </tr>
   </table>
+  <div style="display:none;max-height:0px;overflow:hidden;">
+    &#847; &zwnj; &nbsp; &#847; &zwnj; &nbsp; &#847; &zwnj; &nbsp; &#847; &zwnj; &nbsp; &#847; &zwnj; &nbsp; &#847; &zwnj; &nbsp; &#847; &zwnj; &nbsp; &#847; &zwnj; &nbsp; &#847; &zwnj; &nbsp; &#847; &zwnj; &nbsp; &#847; &zwnj; &nbsp; &#847; &zwnj; &nbsp;
+  </div>
   
   <table class="wrapper" role="module" data-type="image" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="edb73c3a-7676-4aad-a776-191820fb1587">
     <tbody>
@@ -720,7 +723,7 @@ export const getTemplateHTML = (templateId: string): string => {
         <td align="center" height="0" style="border:0;margin:0;padding:0;color:#ffffff;display:none!important;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden">
           <span class="m_2435347494993575023st-Delink m_2435347494993575023st-Delink--preheader" style="color:#ffffff;text-decoration:none">
             
-      Receipt from Stan - Your Creator Store [#{{RECEIPT_ID}}] Amount paid {{AMOUNT_PAID}} Date paid {{DATE_PAID}}  
+      Receipt for {{PRODUCT_NAME}} - Order #{{RECEIPT_ID}} - {{AMOUNT_PAID}} paid on {{DATE_PAID}}  
             
              ͏  ͏  ͏  ͏  ͏  ͏ 
              ͏  ͏  ͏  ͏  ͏  ͏ 

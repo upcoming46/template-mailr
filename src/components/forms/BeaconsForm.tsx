@@ -46,7 +46,7 @@ const BeaconsForm = () => {
     localStorage.setItem('receiptData', JSON.stringify({
       html: generatedHTML,
       platform: 'beacons',
-      subject: 'Your Receipt from Beacons.ai',
+      subject: `Your purchase from ${formData.SELLER_NAME || 'Seller'} of ${formData.PRODUCT_NAME || 'Product'}!`,
       fromName: formData.SELLER_NAME || 'Beacons AI',
       fromEmail: 'orders@ordersstan.store'
     }));

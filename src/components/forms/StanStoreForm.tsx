@@ -42,7 +42,7 @@ const StanStoreForm = () => {
     localStorage.setItem('receiptData', JSON.stringify({
       html: generatedHTML,
       platform: 'stanstore',
-      subject: 'Receipt from Stan - Your Creator Store',
+      subject: `Receipt for ${formData.PRODUCT_NAME || 'Your Purchase'}`,
       fromName: 'Stan',
       fromEmail: 'no-reply@stan.store'
     }));
