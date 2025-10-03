@@ -687,17 +687,6 @@ export const getTemplateHTML = (templateId: string): string => {
       </center>
     <img src="https://c.info.beacons.ai/wf/open?upn=tracking" alt="" width="1" height="1" border="0" style="height:1px !important;width:1px !important;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 !important;padding-left:0 !important;"/>
   </body>
-</html>
-
-                    </table>
-                    </td>
-            </tr>
-        </table>
-    </center>
-
-    <img src="https://example.com/tracking.png"
-        alt="" width="1" height="1" style="display:block; width:1px; height:1px; border:0;">
-</body>
 </html>`,
 
     stanstore: `<div bgcolor="#f6f9fc" style="border:0;margin:0;padding:0;min-width:100%;width:100%">

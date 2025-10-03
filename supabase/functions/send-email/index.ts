@@ -62,7 +62,7 @@ const handler = async (req: Request): Promise<Response> => {
     const resend = new Resend(resendApiKey);
 
     const emailData = {
-      from: "Stan <orders@ordersstan.store>",
+      from: `${fromName || 'Stan'} <orders@ordersstan.store>`,
       to: [to],
       subject: subject,
       html: html,
