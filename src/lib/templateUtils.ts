@@ -310,7 +310,33 @@ export const getTemplateHTML = (templateId: string): string => {
     </tbody>
   </table>
 
-  <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:16px 16px 16px 16px;" bgcolor="#FFFFFF" data-distribution="2,1">
+  <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:16px 16px 8px 16px;" bgcolor="#FFFFFF" data-distribution="1">
+    <tbody>
+      <tr role="module-content">
+        <td height="100%" valign="top">
+          <table width="536" style="width:536px; border-spacing:0; border-collapse:collapse; margin:0px 0px 0px 0px;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-0">
+            <tbody>
+              <tr>
+                <td style="padding:0px;margin:0px;border-spacing:0;">
+                  <table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="product-name-heading" data-mc-module-version="2019-10-22">
+                    <tbody>
+                      <tr>
+                        <td style="padding:0px 0px 8px 0px; line-height:24px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
+                          <div><h2 style="text-align: inherit; margin: 0; font-size: 18px; font-weight: 700;">{{PRODUCT_NAME}}</h2></div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:8px 16px 16px 16px;" bgcolor="#FFFFFF" data-distribution="2,1">
     <tbody>
       <tr role="module-content">
         <td height="100%" valign="middle" style="vertical-align: middle;">
@@ -321,8 +347,8 @@ export const getTemplateHTML = (templateId: string): string => {
                   <table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="9d13f5c6-f772-40b1-bd0d-3f8865006e9f.1.1" data-mc-module-version="2019-10-22">
                     <tbody>
                       <tr>
-                        <td style="padding:0px 0px 0px 0px; line-height:18px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
-                          <div><div style="font-family: inherit; text-align: inherit"><span style="color: #000000; font-family: helvetica, sans-serif; font-size: 12px; font-weight: 600;">Untitled URL</span></div></div>
+                        <td style="padding:0px 0px 2px 0px; line-height:16px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
+                          <div><div style="font-family: inherit; text-align: inherit"><span style="color: #cc0000; font-family: helvetica, sans-serif; font-size: 12px; font-weight: 400;">Untitled URL</span></div></div>
                         </td>
                       </tr>
                     </tbody>
@@ -330,8 +356,8 @@ export const getTemplateHTML = (templateId: string): string => {
                   <table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="9d13f5c6-f772-40b1-bd0d-3f8865006e9f.2.1.1" data-mc-module-version="2019-10-22">
                     <tbody>
                       <tr>
-                        <td style="padding:0px 0px 0px 0px; line-height:18px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
-                          <div><div style="font-family: inherit; text-align: inherit"><span style="color: #757575; font-family: helvetica, sans-serif; font-size: 12px;">{{UNTITLED_URL}}</span></div></div>
+                        <td style="padding:0px 0px 0px 0px; line-height:16px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
+                          <div><div style="font-family: inherit; text-align: inherit"><span style="color: #000000; font-family: helvetica, sans-serif; font-size: 12px;">{{UNTITLED_URL}}</span></div></div>
                         </td>
                       </tr>
                     </tbody>
@@ -424,7 +450,7 @@ export const getTemplateHTML = (templateId: string): string => {
     </tbody>
   </table>
 
-  <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:16px 16px 16px 16px;" bgcolor="#FFFFFF" data-distribution="1,3">
+  <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:16px 16px 8px 16px;" bgcolor="#FFFFFF" data-distribution="1,3">
     <tbody>
       <tr role="module-content">
         <td height="100%" valign="middle" style="vertical-align: middle;">
@@ -456,8 +482,8 @@ export const getTemplateHTML = (templateId: string): string => {
                   <table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="017a5c60-9f05-478c-9915-5c4bdc0804de" data-mc-module-version="2019-10-22">
                     <tbody>
                       <tr>
-                        <td style="padding:0px 0px 4px 0px; line-height:20px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
-                          <div><div style="font-family: inherit; text-align: inherit; font-size: 14px;"><strong>{{PRODUCT_NAME}}</strong></div></div>
+                        <td style="padding:0px 0px 2px 0px; line-height:18px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
+                          <div><div style="font-family: inherit; text-align: inherit; font-size: 14px; font-weight: 400;">{{PRODUCT_NAME}}</div></div>
                         </td>
                       </tr>
                     </tbody>
@@ -465,7 +491,7 @@ export const getTemplateHTML = (templateId: string): string => {
                   <table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="017a5c60-9f05-478c-9915-5c4bdc0804de.1" data-mc-module-version="2019-10-22">
                     <tbody>
                       <tr>
-                        <td style="padding:0px 0px 0px 0px; line-height:20px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
+                        <td style="padding:0px 0px 0px 0px; line-height:18px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
                           <div><div style="font-family: inherit; text-align: inherit"><span style="color: #000000; font-family: helvetica, sans-serif; font-size: 14px;">{{PRICE}}</span></div></div>
                         </td>
                       </tr>
@@ -480,15 +506,7 @@ export const getTemplateHTML = (templateId: string): string => {
     </tbody>
   </table>
 
-  <table class="module" role="module" data-type="spacer" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="spacer3">
-    <tbody>
-      <tr>
-        <td style="padding:0px 0px 16px 0px;" role="module-content" bgcolor=""></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:16px 16px 16px 16px;" bgcolor="#FFFFFF" data-distribution="1">
+  <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:8px 16px 16px 16px;" bgcolor="#FFFFFF" data-distribution="1">
     <tbody>
       <tr role="module-content">
         <td height="100%" valign="top">
@@ -499,8 +517,8 @@ export const getTemplateHTML = (templateId: string): string => {
                   <table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="c8ae93ae-50d0-4cf3-8e86-81f41c5771c5.2.1.1.1" data-mc-module-version="2019-10-22">
                     <tbody>
                       <tr>
-                        <td style="padding:0px 0px 0px 0px; line-height:20px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
-                          <div><div style="font-family: inherit; text-align: inherit; font-size: 14px;">Visit the <a href="{{CUSTOMER_PORTAL_URL}}">customer portal</a> to manage your order and access your content any time.</div></div>
+                        <td style="padding:0px 0px 0px 0px; line-height:18px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
+                          <div><div style="font-family: inherit; text-align: inherit; font-size: 14px;">Visit the <a href="{{CUSTOMER_PORTAL_URL}}" style="color: #2848F0; text-decoration: none;">customer portal</a> to manage your order and access your content any time.</div></div>
                         </td>
                       </tr>
                     </tbody>
@@ -591,7 +609,15 @@ export const getTemplateHTML = (templateId: string): string => {
     </tbody>
   </table>
 
-  <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:0px 16px 16px 16px;" bgcolor="#FFFFFF" data-distribution="1">
+  <table class="module" role="module" data-type="spacer" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="e1a68eb7-b385-479e-9fc1-0402b858aedc.3">
+    <tbody>
+      <tr>
+        <td style="padding:0px 0px 16px 0px;" role="module-content" bgcolor=""></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:16px 16px 16px 16px;" bgcolor="#FFFFFF" data-distribution="1">
     <tbody>
       <tr role="module-content">
         <td height="100%" valign="top">
@@ -602,8 +628,8 @@ export const getTemplateHTML = (templateId: string): string => {
                   <table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="c8ae93ae-50d0-4cf3-8e86-81f41c5771c5.2.1.2.1" data-mc-module-version="2019-10-22">
                     <tbody>
                       <tr>
-                        <td style="padding:0px 0px 0px 0px; line-height:18px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
-                          <div><h2 style="text-align: inherit">Need help?</h2><div></div></div>
+                        <td style="padding:0px 0px 8px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
+                          <div><h2 style="text-align: inherit; margin: 0; font-size: 18px; font-weight: 700;">Need help?</h2></div>
                         </td>
                       </tr>
                     </tbody>
@@ -611,8 +637,8 @@ export const getTemplateHTML = (templateId: string): string => {
                   <table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="c8ae93ae-50d0-4cf3-8e86-81f41c5771c5.2.1.1.2.1" data-mc-module-version="2019-10-22">
                     <tbody>
                       <tr>
-                        <td style="padding:0px 0px 0px 0px; line-height:22px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
-                          <div><div style="font-family: inherit; text-align: inherit">If you have any questions or need assistance with your order, feel free to contact {{SELLER_NAME}} directly.</div><div></div></div>
+                        <td style="padding:0px 0px 0px 0px; line-height:18px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
+                          <div><div style="font-family: inherit; text-align: inherit; font-size: 14px;">If you have any questions or need assistance with your order, feel free to contact {{SELLER_NAME}} directly.</div></div>
                         </td>
                       </tr>
                     </tbody>
