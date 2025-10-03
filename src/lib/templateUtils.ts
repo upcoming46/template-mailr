@@ -313,20 +313,11 @@ export const getTemplateHTML = (templateId: string): string => {
   <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:16px 16px 16px 16px;" bgcolor="#FFFFFF" data-distribution="2,1">
     <tbody>
       <tr role="module-content">
-        <td height="100%" valign="top" style="vertical-align: middle;">
+        <td height="100%" valign="middle" style="vertical-align: middle;">
           <table width="341" style="width:341px; border-spacing:0; border-collapse:collapse; margin:0px 12px 0px 0px;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="" class="column column-0">
             <tbody>
               <tr>
                 <td style="padding:0px;margin:0px;border-spacing:0;">
-                  <table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="c8ae93ae-50d0-4cf3-8e86-81f41c5771c5.2.1" data-mc-module-version="2019-10-22">
-                    <tbody>
-                      <tr>
-                        <td style="padding:0px 0px 0px 0px; line-height:18px; text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
-                          <div><h2 style="text-align: inherit; margin: 0 0 4px 0;"><span style="white-space-collapse: preserve; text-wrap-mode: wrap; text-wrap-style: initial; font-size: 18px"><strong>{{PRODUCT_NAME}}</strong></span></h2></div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
                   <table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="9d13f5c6-f772-40b1-bd0d-3f8865006e9f.1.1" data-mc-module-version="2019-10-22">
                     <tbody>
                       <tr>
