@@ -146,23 +146,23 @@ export const getTemplateHTML = (templateId: string): string => {
       <table cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 100%; background-color: #EAEAEA; margin: 0; padding: 0;">
         <tr>
           <td align="center" valign="top" style="padding: 0; background-color: #EAEAEA;">
-            <table cellpadding="0" cellspacing="0" border="0" width="600" style="max-width: 600px; width: 600px; margin: 0 auto; background-color: #EAEAEA;">
+            <table cellpadding="0" cellspacing="0" border="0" width="600" style="max-width: 600px; width: 100%; margin: 0 auto; background-color: #EAEAEA;">
               <tr>
                 <td style="padding: 16px; background-color: #EAEAEA;">
                   
                   <!-- Profile Image -->
-                  <table cellpadding="0" cellspacing="0" border="0" width="568" style="width: 568px; margin: 0 0 16px 0;">
+                  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin: 0 0 16px 0;">
                     <tr>
                       <td align="center" style="padding: 0;">
                         <a href="{{UNTITLED_URL}}" style="text-decoration: none;">
-                          <img src="{{SELLER_LOGO_URL}}" alt="{{SELLER_NAME}}'s profile picture" width="142" height="142" style="display: block; max-width: 142px; width: 142px; height: 142px; border-radius: 50%; border: 0;" />
+                          <img src="{{SELLER_LOGO_URL}}" alt="{{SELLER_NAME}}'s profile picture" style="display: block; max-width: 142px; width: 25%; height: auto; border-radius: 50%; border: 0;" />
                         </a>
                       </td>
                     </tr>
                   </table>
 
                   <!-- Thank You Message -->
-                  <table cellpadding="0" cellspacing="0" border="0" width="568" style="width: 568px; background-color: #ffffff; margin: 0 0 16px 0; border-radius: 8px;">
+                  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #ffffff; margin: 0 0 16px 0; border-radius: 8px;">
                     <tr>
                       <td style="padding: 16px;">
                         <h1 style="text-align: center; margin: 0; padding: 0; font-family: arial, helvetica, sans-serif; font-size: 28px; font-weight: bold; color: #000000;">Thanks for your order, {{BUYER_NAME}}! &#128591;</h1>
@@ -171,7 +171,7 @@ export const getTemplateHTML = (templateId: string): string => {
                   </table>
 
                   <!-- Product Name -->
-                  <table cellpadding="0" cellspacing="0" border="0" width="568" style="width: 568px; background-color: #ffffff; margin: 0 0 0 0; border-radius: 8px 8px 0 0;">
+                  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #ffffff; margin: 0 0 0 0; border-radius: 8px 8px 0 0;">
                     <tr>
                       <td style="padding: 16px 16px 8px 16px;">
                         <h2 style="margin: 0; padding: 0; font-family: arial, helvetica, sans-serif; font-size: 18px; font-weight: 700; color: #000000;">{{PRODUCT_NAME}}</h2>
@@ -180,16 +180,16 @@ export const getTemplateHTML = (templateId: string): string => {
                   </table>
 
                   <!-- Untitled URL & Access Link -->
-                  <table cellpadding="0" cellspacing="0" border="0" width="568" style="width: 568px; background-color: #ffffff; margin: 0;">
+                  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #ffffff; margin: 0;">
                     <tr>
                       <td style="padding: 8px 16px;">
-                        <table cellpadding="0" cellspacing="0" border="0" width="536" style="width: 536px;">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
                           <tr>
-                            <td width="322" style="padding: 0; vertical-align: middle; width: 322px;">
+                            <td style="padding: 0; vertical-align: middle; width: 60%;">
                               <div style="font-family: helvetica, sans-serif; font-size: 12px; font-weight: 400; color: #cc0000; margin: 0 0 2px 0;">Untitled URL</div>
                               <div style="font-family: helvetica, sans-serif; font-size: 12px; color: #000000; margin: 0;">{{UNTITLED_URL}}</div>
                             </td>
-                            <td width="214" align="right" style="padding: 0; vertical-align: middle; width: 214px;">
+                            <td align="right" style="padding: 0; vertical-align: middle; width: 40%;">
                               <a href="{{ACCESS_LINK}}" style="background-color: #2848F0; border: 0; border-radius: 8px; color: #ffffff; display: inline-block; font-size: 14px; font-weight: normal; font-family: helvetica, sans-serif; text-align: center; text-decoration: none; padding: 12px 18px;">Access link</a>
                             </td>
                           </tr>
@@ -199,7 +199,7 @@ export const getTemplateHTML = (templateId: string): string => {
                   </table>
 
                   <!-- Order Summary -->
-                  <table cellpadding="0" cellspacing="0" border="0" width="568" style="width: 568px; background-color: #ffffff; margin: 16px 0 0 0;">
+                  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #ffffff; margin: 16px 0 0 0;">
                     <tr>
                       <td style="padding: 16px 16px 8px 16px;">
                         <h2 style="margin: 0 0 8px 0; padding: 0; font-family: arial, helvetica, sans-serif; font-size: 18px; font-weight: 700; color: #000000;">Order Summary</h2>
@@ -210,15 +210,15 @@ export const getTemplateHTML = (templateId: string): string => {
                   </table>
 
                   <!-- Product Image & Details -->
-                  <table cellpadding="0" cellspacing="0" border="0" width="568" style="width: 568px; background-color: #ffffff; margin: 0;">
+                  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #ffffff; margin: 0;">
                     <tr>
                       <td style="padding: 8px 16px;">
-                        <table cellpadding="0" cellspacing="0" border="0" width="536" style="width: 536px;">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
                           <tr>
-                            <td width="100" style="padding: 0; vertical-align: middle; width: 100px;">
-                              <img src="{{PRODUCT_IMAGE_URL}}" alt="product image" width="100" height="100" style="display: block; max-width: 100px; width: 100px; height: 100px; border: 0;" />
+                            <td style="padding: 0; vertical-align: middle; width: 100px;">
+                              <img src="{{PRODUCT_IMAGE_URL}}" alt="product image" style="display: block; max-width: 100px; width: 100%; height: auto; border: 0;" />
                             </td>
-                            <td width="436" style="padding: 0 0 0 16px; vertical-align: middle; width: 436px;">
+                            <td style="padding: 0 0 0 16px; vertical-align: middle;">
                               <div style="font-family: arial, helvetica, sans-serif; font-size: 14px; font-weight: 400; color: #000000; margin: 0 0 2px 0;">{{PRODUCT_NAME}}</div>
                               <div style="font-family: helvetica, sans-serif; font-size: 14px; color: #000000; margin: 0;">{{PRICE}}</div>
                             </td>
@@ -229,7 +229,7 @@ export const getTemplateHTML = (templateId: string): string => {
                   </table>
 
                   <!-- Customer Portal Link -->
-                  <table cellpadding="0" cellspacing="0" border="0" width="568" style="width: 568px; background-color: #ffffff; margin: 0 0 16px 0;">
+                  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #ffffff; margin: 0 0 16px 0;">
                     <tr>
                       <td style="padding: 8px 16px 16px 16px;">
                         <div style="font-family: arial, helvetica, sans-serif; font-size: 14px; line-height: 18px; color: #000000; margin: 0;">Visit the <a href="{{CUSTOMER_PORTAL_URL}}" style="color: #2848F0; text-decoration: none;">customer portal</a> to manage your order and access your content any time.</div>
@@ -238,39 +238,31 @@ export const getTemplateHTML = (templateId: string): string => {
                   </table>
 
                   <!-- Your Feedback Matters -->
-                  <table cellpadding="0" cellspacing="0" border="0" width="568" style="width: 568px; background-color: #ffffff; margin: 0 0 16px 0;">
+                  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #ffffff; margin: 0 0 16px 0;">
                     <tr>
                       <td style="padding: 16px;">
                         <h2 style="margin: 0 0 8px 0; padding: 0; font-family: arial, helvetica, sans-serif; font-size: 18px; font-weight: 700; color: #000000;">Your feedback matters!</h2>
                         <div style="font-family: arial, helvetica, sans-serif; font-size: 14px; line-height: 22px; color: #000000; margin: 0 0 10px 0;">Share your experience and help others with your product review!</div>
                         
                         <!-- Star Rating Images -->
-                        <table cellpadding="0" cellspacing="0" border="0" width="536" style="width: 536px; margin: 10px 0;">
-                          <tr>
-                            <td align="center" style="padding: 0;">
-                              <a href="{{ACCESS_LINK}}" style="text-decoration: none; display: inline-block; margin: 0 4px;"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" style="height: 32px; width: 32px; display: inline-block; border: 0;" alt="star" /></a>
-                              <a href="{{ACCESS_LINK}}" style="text-decoration: none; display: inline-block; margin: 0 4px;"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" style="height: 32px; width: 32px; display: inline-block; border: 0;" alt="star" /></a>
-                              <a href="{{ACCESS_LINK}}" style="text-decoration: none; display: inline-block; margin: 0 4px;"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" style="height: 32px; width: 32px; display: inline-block; border: 0;" alt="star" /></a>
-                              <a href="{{ACCESS_LINK}}" style="text-decoration: none; display: inline-block; margin: 0 4px;"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" style="height: 32px; width: 32px; display: inline-block; border: 0;" alt="star" /></a>
-                              <a href="{{ACCESS_LINK}}" style="text-decoration: none; display: inline-block; margin: 0 4px;"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" style="height: 32px; width: 32px; display: inline-block; border: 0;" alt="star" /></a>
-                            </td>
-                          </tr>
-                        </table>
+                        <div style="text-align: center; margin: 10px 0;">
+                          <a href="{{ACCESS_LINK}}" style="text-decoration: none; display: inline-block; margin: 0 2%;"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" style="height: 32px; width: 32px; display: inline-block; border: 0;" alt="star" /></a>
+                          <a href="{{ACCESS_LINK}}" style="text-decoration: none; display: inline-block; margin: 0 2%;"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" style="height: 32px; width: 32px; display: inline-block; border: 0;" alt="star" /></a>
+                          <a href="{{ACCESS_LINK}}" style="text-decoration: none; display: inline-block; margin: 0 2%;"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" style="height: 32px; width: 32px; display: inline-block; border: 0;" alt="star" /></a>
+                          <a href="{{ACCESS_LINK}}" style="text-decoration: none; display: inline-block; margin: 0 2%;"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" style="height: 32px; width: 32px; display: inline-block; border: 0;" alt="star" /></a>
+                          <a href="{{ACCESS_LINK}}" style="text-decoration: none; display: inline-block; margin: 0 2%;"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" style="height: 32px; width: 32px; display: inline-block; border: 0;" alt="star" /></a>
+                        </div>
                         
                         <!-- Leave Review Button -->
-                        <table cellpadding="0" cellspacing="0" border="0" width="536" style="width: 536px; margin: 8px 0 0 0;">
-                          <tr>
-                            <td align="center" style="padding: 0;">
-                              <a href="{{ACCESS_LINK}}" style="background-color: #2848F0; border: 0; border-radius: 8px; color: #ffffff; display: inline-block; font-size: 14px; font-weight: normal; font-family: helvetica, sans-serif; text-align: center; text-decoration: none; padding: 12px 18px;">Leave a review</a>
-                            </td>
-                          </tr>
-                        </table>
+                        <div style="text-align: center; margin: 8px 0 0 0;">
+                          <a href="{{ACCESS_LINK}}" style="background-color: #2848F0; border: 0; border-radius: 8px; color: #ffffff; display: inline-block; font-size: 14px; font-weight: normal; font-family: helvetica, sans-serif; text-align: center; text-decoration: none; padding: 12px 18px;">Leave a review</a>
+                        </div>
                       </td>
                     </tr>
                   </table>
 
                   <!-- Need Help Section -->
-                  <table cellpadding="0" cellspacing="0" border="0" width="568" style="width: 568px; background-color: #ffffff; margin: 0 0 32px 0; border-radius: 0 0 8px 8px;">
+                  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #ffffff; margin: 0 0 32px 0; border-radius: 0 0 8px 8px;">
                     <tr>
                       <td style="padding: 16px;">
                         <h2 style="margin: 0 0 8px 0; padding: 0; font-family: arial, helvetica, sans-serif; font-size: 18px; font-weight: 700; color: #000000;">Need help?</h2>
@@ -280,11 +272,11 @@ export const getTemplateHTML = (templateId: string): string => {
                   </table>
 
                   <!-- Footer - Made with Beacons -->
-                  <table cellpadding="0" cellspacing="0" border="0" width="568" style="width: 568px; margin: 0;">
+                  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin: 0;">
                     <tr>
                       <td align="center" style="padding: 0;">
                         <a href="{{UNTITLED_URL}}" style="text-decoration: none;">
-                          <img src="https://cdn.beacons.ai/images/beacons_assets/made-with-beacons.png" alt="made with beacons" width="160" height="40" style="display: block; height: 40px; width: 160px; border: 0; margin: 0 auto 24px auto;" />
+                          <img src="https://cdn.beacons.ai/images/beacons_assets/made-with-beacons.png" alt="made with beacons" style="display: block; height: 40px; border: 0; margin: 0 auto 24px auto;" />
                         </a>
                         <div style="color: #757575; font-size: 12px; font-family: arial, helvetica, sans-serif; text-align: center; padding: 0 16px; line-height: 18px;">
                           You are getting this receipt email because you bought a product from <a style="color: #757575; font-weight: bold; text-decoration: none;" href="{{UNTITLED_URL}}">{{SELLER_NAME}}</a>.
@@ -320,12 +312,12 @@ export const getTemplateHTML = (templateId: string): string => {
         </td>
       </tr>
       <tr>
-        <td align="center" style="border:0;margin:0;padding:0;">
-          <table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="600" style="border-top-left-radius:16px;border-top-right-radius:16px;margin:0 auto;max-width:600px;width:600px;">
+        <td style="border:0;margin:0;padding:0;">
+          <table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="600" style="border-top-left-radius:16px;border-top-right-radius:16px;margin:0 auto;max-width:600px;width:100%;">
             <tbody>
               <tr>
                 <td style="border:0;margin:0;padding:0;">
-                  <table border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;width:600px;">
+                  <table border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;width:100%;">
                     <tbody>
                       <tr>
                         <td align="center" height="0" style="border:0;margin:0;padding:0;color:#ffffff;display:none!important;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">
@@ -336,22 +328,22 @@ export const getTemplateHTML = (templateId: string): string => {
                   </table>
                   
                   <div style="background-color:#f6f9fc;padding-top:20px;">
-                    <table dir="ltr" width="600" style="border:0;border-collapse:collapse;margin:0;padding:0;background-color:#ffffff;width:600px;">
+                    <table dir="ltr" width="100%" style="border:0;border-collapse:collapse;margin:0;padding:0;background-color:#ffffff;">
                       <tbody>
                         <tr>
                           <td style="background-color:#ffffff;border:0;border-collapse:collapse;margin:0;padding:0;font-size:0;line-height:0px;background-size:100% 100%;border-top-left-radius:5px;" align="right" height="156" valign="bottom" width="252">
                             <a href="https://stan.store/" style="outline:0;text-decoration:none;" target="_blank">
-                              <img alt="" height="156" width="252" src="https://stripe-images.stripecdn.com/notifications/hosted/20180110/Header/Left.png" style="display:block;border:0;line-height:100%;width:252px;" />
+                              <img alt="" height="156" width="252" src="https://stripe-images.stripecdn.com/notifications/hosted/20180110/Header/Left.png" style="display:block;border:0;line-height:100%;width:100%;" />
                             </a>
                           </td>
-                          <td style="background-color:#ffffff;border:0;border-collapse:collapse;margin:0;padding:0;font-size:0;line-height:0px;background-size:100% 100%;width:96px;" align="center" height="156" valign="bottom" width="96">
+                          <td style="background-color:#ffffff;border:0;border-collapse:collapse;margin:0;padding:0;font-size:0;line-height:0px;background-size:100% 100%;width:96px!important;" align="center" height="156" valign="bottom">
                             <a href="https://stan.store/" style="outline:0;text-decoration:none;" target="_blank">
-                              <img alt="" height="156" width="96" src="https://stripe-images.s3.amazonaws.com/emails/acct_1FYbdJIYtv5oAFkS/2/twelve_degree_icon@2x.png" style="display:block;border:0;line-height:100%;width:96px;" />
+                              <img alt="" height="156" width="96" src="https://stripe-images.s3.amazonaws.com/emails/acct_1FYbdJIYtv5oAFkS/2/twelve_degree_icon@2x.png" style="display:block;border:0;line-height:100%;" />
                             </a>
                           </td>
                           <td style="background-color:#ffffff;border:0;border-collapse:collapse;margin:0;padding:0;font-size:0;line-height:0px;background-size:100% 100%;border-top-right-radius:5px;" align="left" height="156" valign="bottom" width="252">
                             <a href="https://stan.store/" style="outline:0;text-decoration:none;" target="_blank">
-                              <img alt="" height="156" width="252" src="https://stripe-images.stripecdn.com/notifications/hosted/20180110/Header/Right.png" style="display:block;border:0;line-height:100%;width:252px;" />
+                              <img alt="" height="156" width="252" src="https://stripe-images.stripecdn.com/notifications/hosted/20180110/Header/Right.png" style="display:block;border:0;line-height:100%;width:100%;" />
                             </a>
                           </td>
                         </tr>
@@ -359,7 +351,7 @@ export const getTemplateHTML = (templateId: string): string => {
                     </table>
                   </div>
                   
-                  <table border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;width:600px;">
+                  <table border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;width:100%;">
                     <tbody>
                       <tr>
                         <td align="center" style="border:0;border-collapse:collapse;margin:0;padding:20px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#32325d;font-size:24px;line-height:32px;">
@@ -374,7 +366,7 @@ export const getTemplateHTML = (templateId: string): string => {
                     </tbody>
                   </table>
                   
-                  <table border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;width:600px;">
+                  <table border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;width:100%;">
                     <tbody>
                       <tr>
                         <td align="center" style="border:0;border-collapse:collapse;margin:0;padding:0 64px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#8898aa;font-size:15px;line-height:18px;">
@@ -389,14 +381,14 @@ export const getTemplateHTML = (templateId: string): string => {
                     </tbody>
                   </table>
                   
-                  <table border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;width:600px;padding:0 64px;">
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%" style="padding:0 64px;">
                     <tbody>
                       <tr>
-                        <td width="150" style="border:0;margin:0;padding:0;color:#687385;font-family:-apple-system,'SF Pro Display','SF Pro Text','Helvetica',sans-serif;font-size:12px;font-weight:bold;line-height:16px;text-transform:uppercase;">
+                        <td style="border:0;margin:0;padding:0;color:#687385;font-family:-apple-system,'SF Pro Display','SF Pro Text','Helvetica',sans-serif;font-size:12px;font-weight:bold;line-height:16px;text-transform:uppercase;">
                         </td>
                         <td width="64" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px;">&nbsp;</td>
-                        <td width="100" valign="top" style="border:0;border-collapse:collapse;margin:0;padding:0;">
-                          <table style="border:0;border-collapse:collapse;margin:0;padding:0;width:100px;">
+                        <td valign="top" style="border:0;border-collapse:collapse;margin:0;padding:0;">
+                          <table style="border:0;border-collapse:collapse;margin:0;padding:0;">
                             <tbody>
                               <tr>
                                 <td style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#8898aa;font-size:12px;line-height:16px;white-space:nowrap;font-weight:bold;text-transform:uppercase;">
@@ -412,8 +404,8 @@ export const getTemplateHTML = (templateId: string): string => {
                           </table>
                         </td>
                         <td width="20" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px;">&nbsp;</td>
-                        <td width="100" valign="top" style="border:0;border-collapse:collapse;margin:0;padding:0;">
-                          <table style="border:0;border-collapse:collapse;margin:0;padding:0;width:100px;">
+                        <td valign="top" style="border:0;border-collapse:collapse;margin:0;padding:0;">
+                          <table style="border:0;border-collapse:collapse;margin:0;padding:0;">
                             <tbody>
                               <tr>
                                 <td style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#8898aa;font-size:12px;line-height:16px;white-space:nowrap;font-weight:bold;text-transform:uppercase;">
@@ -429,8 +421,8 @@ export const getTemplateHTML = (templateId: string): string => {
                           </table>
                         </td>
                         <td width="20" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px;">&nbsp;</td>
-                        <td width="152" valign="top" style="border:0;border-collapse:collapse;margin:0;padding:0;">
-                          <table style="border:0;border-collapse:collapse;margin:0;padding:0;width:152px;">
+                        <td valign="top" style="border:0;border-collapse:collapse;margin:0;padding:0;">
+                          <table style="border:0;border-collapse:collapse;margin:0;padding:0;">
                             <tbody>
                               <tr>
                                 <td style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#8898aa;font-size:12px;line-height:16px;white-space:nowrap;font-weight:bold;text-transform:uppercase;">
@@ -439,18 +431,19 @@ export const getTemplateHTML = (templateId: string): string => {
                               </tr>
                               <tr>
                                 <td style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#525f7f;font-size:15px;line-height:24px;white-space:nowrap;">
-                                  <span><img alt="{{PAYMENT_METHOD}}" height="16" width="75" src="https://stripe-images.stripecdn.com/emails/receipt_assets/card/mastercard-dark@2x.png" style="border:0;margin:0;padding:0;vertical-align:text-bottom;" /></span>
+                                  <span><img alt="{{PAYMENT_METHOD}}" height="16" src="https://stripe-images.stripecdn.com/emails/receipt_assets/card/mastercard-dark@2x.png" style="border:0;margin:0;padding:0;vertical-align:text-bottom;" width="75" /></span>
                                   <span> - {{CARD_LAST4}}</span>
                                 </td>
                               </tr>
                             </tbody>
                           </table>
                         </td>
+                        <td width="64" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px;">&nbsp;</td>
                       </tr>
                     </tbody>
                   </table>
                   
-                  <table border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;width:600px;">
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
                     <tbody>
                       <tr>
                         <td height="32" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;">
@@ -460,7 +453,7 @@ export const getTemplateHTML = (templateId: string): string => {
                     </tbody>
                   </table>
                   
-                  <table border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;width:600px;">
+                  <table border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;width:100%;">
                     <tbody>
                       <tr>
                         <td height="8" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;">
@@ -471,7 +464,7 @@ export const getTemplateHTML = (templateId: string): string => {
                         <td style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;" width="48">
                           &nbsp;
                         </td>
-                        <td width="504" style="border:0;margin:0;padding:0;color:#687385;font-family:-apple-system,'SF Pro Display','SF Pro Text','Helvetica',sans-serif;font-weight:bold;font-size:12px;line-height:16px;text-transform:uppercase;">
+                        <td style="border:0;margin:0;padding:0;color:#687385;font-family:-apple-system,'SF Pro Display','SF Pro Text','Helvetica',sans-serif;font-weight:bold;font-size:12px;line-height:16px;text-transform:uppercase;">
                           SUMMARY
                         </td>
                         <td style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;" width="48">
@@ -486,7 +479,7 @@ export const getTemplateHTML = (templateId: string): string => {
                     </tbody>
                   </table>
                   
-                  <table border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;width:600px;">
+                  <table border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;width:100%;">
                     <tbody>
                       <tr>
                         <td height="24" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;">
@@ -497,12 +490,12 @@ export const getTemplateHTML = (templateId: string): string => {
                         <td style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;" width="48">
                           &nbsp;
                         </td>
-                        <td width="504" style="border:0;margin:0;padding:0;">
-                          <table bgcolor="#f6f9fc" border="0" cellpadding="0" cellspacing="0" style="border-radius:8px;background-color:#f6f9fc;" width="504">
+                        <td style="border:0;margin:0;padding:0;">
+                          <table bgcolor="#f6f9fc" border="0" cellpadding="0" cellspacing="0" style="border-radius:8px;background-color:#f6f9fc;" width="100%">
                             <tbody>
                               <tr>
                                 <td style="border:0;margin:0;padding:0;">
-                                  <table border="0" cellpadding="0" cellspacing="0" width="504">
+                                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                     <tbody>
                                       <tr>
                                         <td height="12" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;">
@@ -513,15 +506,15 @@ export const getTemplateHTML = (templateId: string): string => {
                                         <td style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;" width="16">
                                           &nbsp;
                                         </td>
-                                        <td width="472" style="border:0;margin:0;padding:0;color:#414552;font-family:-apple-system,'SF Pro Display','SF Pro Text','Helvetica',sans-serif;font-size:16px;line-height:24px;">
-                                          <table style="padding-left:5px;padding-right:5px;" width="462">
+                                        <td style="border:0;margin:0;padding:0;color:#414552;font-family:-apple-system,'SF Pro Display','SF Pro Text','Helvetica',sans-serif;font-size:16px;line-height:24px;">
+                                          <table style="padding-left:5px;padding-right:5px;" width="100%">
                                             <tbody>
                                               <tr>
-                                                <td width="350" style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#525f7f;font-size:15px;line-height:24px;">
+                                                <td style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#525f7f;font-size:15px;line-height:24px;width:100%;">
                                                   {{PRODUCT_NAME}} &lt;&gt; {{BUYER_NAME}}
                                                 </td>
                                                 <td width="8" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px;">&nbsp;</td>
-                                                <td width="104" align="right" valign="top" style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#525f7f;font-size:15px;line-height:24px;">
+                                                <td align="right" valign="top" style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#525f7f;font-size:15px;line-height:24px;">
                                                   {{PRODUCT_PRICE}}
                                                 </td>
                                               </tr>
@@ -538,11 +531,11 @@ export const getTemplateHTML = (templateId: string): string => {
                                                 <td colspan="3" height="8" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px;">&nbsp;</td>
                                               </tr>
                                               <tr>
-                                                <td width="350" style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#525f7f;font-size:15px;line-height:24px;">
+                                                <td style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#525f7f;font-size:15px;line-height:24px;width:100%;">
                                                   <strong>Amount paid</strong>
                                                 </td>
                                                 <td width="8" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px;">&nbsp;</td>
-                                                <td width="104" align="right" valign="top" style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#525f7f;font-size:15px;line-height:24px;">
+                                                <td align="right" valign="top" style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#525f7f;font-size:15px;line-height:24px;">
                                                   <strong>{{TOTAL_AMOUNT}}</strong>
                                                 </td>
                                               </tr>
@@ -580,7 +573,7 @@ export const getTemplateHTML = (templateId: string): string => {
                     </tbody>
                   </table>
                   
-                  <table border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;width:600px;">
+                  <table border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;width:100%;">
                     <tbody>
                       <tr>
                         <td height="8" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;">
@@ -591,7 +584,7 @@ export const getTemplateHTML = (templateId: string): string => {
                         <td style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;" width="48">
                           &nbsp;
                         </td>
-                        <td width="504" style="border:0;margin:0;padding:0;color:#414552;font-family:-apple-system,'SF Pro Display','SF Pro Text','Helvetica',sans-serif;font-weight:400;font-size:16px;line-height:24px;">
+                        <td style="border:0;margin:0;padding:0;color:#414552;font-family:-apple-system,'SF Pro Display','SF Pro Text','Helvetica',sans-serif;font-weight:400;font-size:16px;line-height:24px;">
                           If you have any questions, visit our support site at <a style="border:0;margin:0;padding:0;color:#625afa;font-weight:bold;text-decoration:none;" href="https://help.stan.store" target="_blank">http://help.stan.store</a>, or contact the creator at <a href="mailto:{{SELLER_EMAIL}}" style="color:#625afa;text-decoration:none;">{{SELLER_EMAIL}}</a>.
                         </td>
                         <td style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;" width="48">
@@ -606,21 +599,21 @@ export const getTemplateHTML = (templateId: string): string => {
                     </tbody>
                   </table>
                   
-                  <table width="600" style="border:0;border-collapse:collapse;margin:0;padding:0;background-color:#ffffff;width:600px;">
+                  <table width="100%" style="border:0;border-collapse:collapse;margin:0;padding:0;background-color:#ffffff;">
                     <tbody>
                       <tr>
                         <td height="20" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px;">&nbsp;</td>
                       </tr>
                     </tbody>
                   </table>
-                  <table width="600" style="border:0;border-collapse:collapse;margin:0;padding:0;background-color:#ffffff;width:600px;">
+                  <table width="100%" style="border:0;border-collapse:collapse;margin:0;padding:0;background-color:#ffffff;">
                     <tbody>
                       <tr>
                         <td height="20" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px;">&nbsp;</td>
                       </tr>
                     </tbody>
                   </table>
-                  <table width="600" style="border:0;border-collapse:collapse;margin:0;padding:0;background-color:#ffffff;border-bottom-left-radius:5px;border-bottom-right-radius:5px;width:600px;">
+                  <table width="100%" style="border:0;border-collapse:collapse;margin:0;padding:0;background-color:#ffffff;border-bottom-left-radius:5px;border-bottom-right-radius:5px;">
                     <tbody>
                       <tr>
                         <td height="64" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px;">&nbsp;</td>
