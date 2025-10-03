@@ -406,7 +406,7 @@ export const getTemplateHTML = (templateId: string): string => {
     </tbody>
   </table>
 
-  <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:16px 16px 16px 16px;" bgcolor="#FFFFFF" data-distribution="1">
+  <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:16px 16px 8px 16px;" bgcolor="#FFFFFF" data-distribution="1">
     <tbody>
       <tr role="module-content">
         <td height="100%" valign="top">
@@ -428,7 +428,7 @@ export const getTemplateHTML = (templateId: string): string => {
                       <tr>
                         <td height="100%" valign="top" role="module-content">
                           <div style="font-family: inherit; text-align: inherit; font-size: 14px; line-height: 20px;"><strong>Date: </strong>{{DATE}}</div>
-                          <div style="font-family: inherit; text-align: inherit; font-size: 14px; line-height: 20px;"><strong>Order #: </strong>{{ORDER_ID}}</div>
+                          <div style="font-family: inherit; text-align: inherit; font-size: 14px; line-height: 20px; margin-bottom: 12px;"><strong>Order #: </strong>{{ORDER_ID}}</div>
                         </td>
                       </tr>
                     </tbody>
@@ -442,15 +442,7 @@ export const getTemplateHTML = (templateId: string): string => {
     </tbody>
   </table>
 
-  <table class="module" role="module" data-type="spacer" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="spacer2">
-    <tbody>
-      <tr>
-        <td style="padding:0px 0px 16px 0px;" role="module-content" bgcolor=""></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:16px 16px 8px 16px;" bgcolor="#FFFFFF" data-distribution="1,3">
+  <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:8px 16px 8px 16px;" bgcolor="#FFFFFF" data-distribution="1,3">
     <tbody>
       <tr role="module-content">
         <td height="100%" valign="middle" style="vertical-align: middle;">
