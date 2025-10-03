@@ -145,52 +145,56 @@ export const getTemplateHTML = (templateId: string): string => {
     <body style="margin: 0; padding: 0; font-family: arial, helvetica, sans-serif; font-size: 14px; color: #000000; background-color: #EAEAEA;">
       <table cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 100%; background-color: #EAEAEA; margin: 0; padding: 0;">
         <tr>
-          <td align="center" valign="top" style="padding: 0; background-color: #EAEAEA;">
-            <table cellpadding="0" cellspacing="0" border="0" width="600" style="max-width: 600px; width: 100%; margin: 0 auto; background-color: #EAEAEA;">
+          <td align="center" valign="top" width="100%" style="padding: 0; background-color: #EAEAEA;">
+            <table cellpadding="0" cellspacing="0" border="0" width="600" style="max-width: 600px; width: 600px; margin: 0 auto; background-color: #EAEAEA;">
               <tr>
-                <td style="padding: 16px; background-color: #EAEAEA;">
+                <td width="600" style="padding: 16px; background-color: #EAEAEA;">
                   
                   <!-- Profile Image -->
-                  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin: 0 0 16px 0;">
+                  <table cellpadding="0" cellspacing="0" border="0" width="568" style="margin: 0 0 16px 0; width: 568px;">
                     <tr>
-                      <td align="center" style="padding: 0;">
+                      <td align="center" width="568" style="padding: 0;">
                         <a href="{{UNTITLED_URL}}" style="text-decoration: none;">
-                          <img src="{{SELLER_LOGO_URL}}" alt="{{SELLER_NAME}}'s profile picture" style="display: block; max-width: 142px; width: 25%; height: auto; border-radius: 50%; border: 0;" />
+                          <img src="{{SELLER_LOGO_URL}}" alt="{{SELLER_NAME}}'s profile picture" width="142" height="142" style="display: block; max-width: 142px; width: 142px; height: 142px; border-radius: 50%; border: 0;" />
                         </a>
                       </td>
                     </tr>
                   </table>
 
                   <!-- Thank You Message -->
-                  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #ffffff; margin: 0 0 16px 0; border-radius: 8px;">
+                  <table cellpadding="0" cellspacing="0" border="0" width="568" style="background-color: #ffffff; margin: 0 0 16px 0; border-radius: 8px; width: 568px;">
                     <tr>
-                      <td style="padding: 16px;">
+                      <td width="568" style="padding: 16px;">
                         <h1 style="text-align: center; margin: 0; padding: 0; font-family: arial, helvetica, sans-serif; font-size: 28px; font-weight: bold; color: #000000;">Thanks for your order, {{BUYER_NAME}}! &#128591;</h1>
                       </td>
                     </tr>
                   </table>
 
                   <!-- Product Name -->
-                  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #ffffff; margin: 0 0 0 0; border-radius: 8px 8px 0 0;">
+                  <table cellpadding="0" cellspacing="0" border="0" width="568" style="background-color: #ffffff; margin: 0 0 0 0; border-radius: 8px 8px 0 0; width: 568px;">
                     <tr>
-                      <td style="padding: 16px 16px 8px 16px;">
+                      <td width="568" style="padding: 16px 16px 8px 16px;">
                         <h2 style="margin: 0; padding: 0; font-family: arial, helvetica, sans-serif; font-size: 18px; font-weight: 700; color: #000000;">{{PRODUCT_NAME}}</h2>
                       </td>
                     </tr>
                   </table>
 
                   <!-- Untitled URL & Access Link -->
-                  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #ffffff; margin: 0;">
+                  <table cellpadding="0" cellspacing="0" border="0" width="568" style="background-color: #ffffff; margin: 0; width: 568px;">
                     <tr>
-                      <td style="padding: 8px 16px;">
-                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                      <td width="568" style="padding: 8px 16px;">
+                        <table cellpadding="0" cellspacing="0" border="0" width="536" style="width: 536px;">
                           <tr>
-                            <td style="padding: 0; vertical-align: middle; width: 60%;">
+                            <td width="322" style="padding: 0; vertical-align: middle;">
                               <div style="font-family: helvetica, sans-serif; font-size: 12px; font-weight: 400; color: #cc0000; margin: 0 0 2px 0;">Untitled URL</div>
                               <div style="font-family: helvetica, sans-serif; font-size: 12px; color: #000000; margin: 0;">{{UNTITLED_URL}}</div>
                             </td>
-                            <td align="right" style="padding: 0; vertical-align: middle; width: 40%;">
-                              <a href="{{ACCESS_LINK}}" style="background-color: #2848F0; border: 0; border-radius: 8px; color: #ffffff; display: inline-block; font-size: 14px; font-weight: normal; font-family: helvetica, sans-serif; text-align: center; text-decoration: none; padding: 12px 18px;">Access link</a>
+                            <td align="right" width="214" style="padding: 0; vertical-align: middle;">
+                              <a href="{{ACCESS_LINK}}" style="background-color: #2848F0; border: 0; border-radius: 8px; color: #ffffff; display: inline-block; font-size: 14px; font-weight: normal; font-family: helvetica, sans-serif; text-align: center; text-decoration: none; padding: 12px 18px; mso-padding-alt: 0; min-width: 110px;">
+                                <!--[if mso]><i style="letter-spacing: 27px;mso-font-width:-100%;mso-text-raise:30pt">&nbsp;</i><![endif]-->
+                                <span style="mso-text-raise:15pt;">Access link</span>
+                                <!--[if mso]><i style="letter-spacing: 27px;mso-font-width:-100%">&nbsp;</i><![endif]-->
+                              </a>
                             </td>
                           </tr>
                         </table>
@@ -199,9 +203,9 @@ export const getTemplateHTML = (templateId: string): string => {
                   </table>
 
                   <!-- Order Summary -->
-                  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #ffffff; margin: 16px 0 0 0;">
+                  <table cellpadding="0" cellspacing="0" border="0" width="568" style="background-color: #ffffff; margin: 16px 0 0 0; width: 568px;">
                     <tr>
-                      <td style="padding: 16px 16px 8px 16px;">
+                      <td width="568" style="padding: 16px 16px 8px 16px;">
                         <h2 style="margin: 0 0 8px 0; padding: 0; font-family: arial, helvetica, sans-serif; font-size: 18px; font-weight: 700; color: #000000;">Order Summary</h2>
                         <div style="font-family: arial, helvetica, sans-serif; font-size: 14px; line-height: 20px; color: #000000; margin: 0 0 4px 0;"><strong>Date: </strong>{{DATE}}</div>
                         <div style="font-family: arial, helvetica, sans-serif; font-size: 14px; line-height: 20px; color: #000000; margin: 0 0 12px 0;"><strong>Order #: </strong>{{ORDER_ID}}</div>
@@ -210,15 +214,15 @@ export const getTemplateHTML = (templateId: string): string => {
                   </table>
 
                   <!-- Product Image & Details -->
-                  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #ffffff; margin: 0;">
+                  <table cellpadding="0" cellspacing="0" border="0" width="568" style="background-color: #ffffff; margin: 0; width: 568px;">
                     <tr>
-                      <td style="padding: 8px 16px;">
-                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                      <td width="568" style="padding: 8px 16px;">
+                        <table cellpadding="0" cellspacing="0" border="0" width="536" style="width: 536px;">
                           <tr>
-                            <td style="padding: 0; vertical-align: middle; width: 100px;">
-                              <img src="{{PRODUCT_IMAGE_URL}}" alt="product image" style="display: block; max-width: 100px; width: 100%; height: auto; border: 0;" />
+                            <td width="100" style="padding: 0; vertical-align: middle;">
+                              <img src="{{PRODUCT_IMAGE_URL}}" alt="product image" width="100" height="100" style="display: block; max-width: 100px; width: 100px; height: 100px; border: 0;" />
                             </td>
-                            <td style="padding: 0 0 0 16px; vertical-align: middle;">
+                            <td width="420" style="padding: 0 0 0 16px; vertical-align: middle;">
                               <div style="font-family: arial, helvetica, sans-serif; font-size: 14px; font-weight: 400; color: #000000; margin: 0 0 2px 0;">{{PRODUCT_NAME}}</div>
                               <div style="font-family: helvetica, sans-serif; font-size: 14px; color: #000000; margin: 0;">{{PRICE}}</div>
                             </td>
@@ -229,42 +233,50 @@ export const getTemplateHTML = (templateId: string): string => {
                   </table>
 
                   <!-- Customer Portal Link -->
-                  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #ffffff; margin: 0 0 16px 0;">
+                  <table cellpadding="0" cellspacing="0" border="0" width="568" style="background-color: #ffffff; margin: 0 0 16px 0; width: 568px;">
                     <tr>
-                      <td style="padding: 8px 16px 16px 16px;">
+                      <td width="568" style="padding: 8px 16px 16px 16px;">
                         <div style="font-family: arial, helvetica, sans-serif; font-size: 14px; line-height: 18px; color: #000000; margin: 0;">Visit the <a href="{{CUSTOMER_PORTAL_URL}}" style="color: #2848F0; text-decoration: none;">customer portal</a> to manage your order and access your content any time.</div>
                       </td>
                     </tr>
                   </table>
 
                   <!-- Your Feedback Matters -->
-                  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #ffffff; margin: 0 0 16px 0;">
+                  <table cellpadding="0" cellspacing="0" border="0" width="568" style="background-color: #ffffff; margin: 0 0 16px 0; width: 568px;">
                     <tr>
-                      <td style="padding: 16px;">
+                      <td width="568" style="padding: 16px;">
                         <h2 style="margin: 0 0 8px 0; padding: 0; font-family: arial, helvetica, sans-serif; font-size: 18px; font-weight: 700; color: #000000;">Your feedback matters!</h2>
                         <div style="font-family: arial, helvetica, sans-serif; font-size: 14px; line-height: 22px; color: #000000; margin: 0 0 10px 0;">Share your experience and help others with your product review!</div>
                         
                         <!-- Star Rating Images -->
-                        <div style="text-align: center; margin: 10px 0;">
-                          <a href="{{ACCESS_LINK}}" style="text-decoration: none; display: inline-block; margin: 0 2%;"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" style="height: 32px; width: 32px; display: inline-block; border: 0;" alt="star" /></a>
-                          <a href="{{ACCESS_LINK}}" style="text-decoration: none; display: inline-block; margin: 0 2%;"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" style="height: 32px; width: 32px; display: inline-block; border: 0;" alt="star" /></a>
-                          <a href="{{ACCESS_LINK}}" style="text-decoration: none; display: inline-block; margin: 0 2%;"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" style="height: 32px; width: 32px; display: inline-block; border: 0;" alt="star" /></a>
-                          <a href="{{ACCESS_LINK}}" style="text-decoration: none; display: inline-block; margin: 0 2%;"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" style="height: 32px; width: 32px; display: inline-block; border: 0;" alt="star" /></a>
-                          <a href="{{ACCESS_LINK}}" style="text-decoration: none; display: inline-block; margin: 0 2%;"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" style="height: 32px; width: 32px; display: inline-block; border: 0;" alt="star" /></a>
-                        </div>
+                        <table cellpadding="0" cellspacing="0" border="0" width="536" align="center" style="margin: 10px 0; width: 536px;">
+                          <tr>
+                            <td align="center" width="536" style="text-align: center;">
+                              <a href="{{ACCESS_LINK}}" style="text-decoration: none; display: inline-block; margin: 0 6px;"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" style="height: 32px; width: 32px; display: inline-block; border: 0;" alt="star" /></a><a href="{{ACCESS_LINK}}" style="text-decoration: none; display: inline-block; margin: 0 6px;"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" style="height: 32px; width: 32px; display: inline-block; border: 0;" alt="star" /></a><a href="{{ACCESS_LINK}}" style="text-decoration: none; display: inline-block; margin: 0 6px;"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" style="height: 32px; width: 32px; display: inline-block; border: 0;" alt="star" /></a><a href="{{ACCESS_LINK}}" style="text-decoration: none; display: inline-block; margin: 0 6px;"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" style="height: 32px; width: 32px; display: inline-block; border: 0;" alt="star" /></a><a href="{{ACCESS_LINK}}" style="text-decoration: none; display: inline-block; margin: 0 6px;"><img src="http://cdn.mcauto-images-production.sendgrid.net/c3193010637ead88/f8c747f3-40be-4b6e-8219-4d9b55d7281f/68x65.png" width="32" height="32" style="height: 32px; width: 32px; display: inline-block; border: 0;" alt="star" /></a>
+                            </td>
+                          </tr>
+                        </table>
                         
                         <!-- Leave Review Button -->
-                        <div style="text-align: center; margin: 8px 0 0 0;">
-                          <a href="{{ACCESS_LINK}}" style="background-color: #2848F0; border: 0; border-radius: 8px; color: #ffffff; display: inline-block; font-size: 14px; font-weight: normal; font-family: helvetica, sans-serif; text-align: center; text-decoration: none; padding: 12px 18px;">Leave a review</a>
-                        </div>
+                        <table cellpadding="0" cellspacing="0" border="0" width="536" align="center" style="margin: 8px 0 0 0; width: 536px;">
+                          <tr>
+                            <td align="center" width="536" style="text-align: center;">
+                              <a href="{{ACCESS_LINK}}" style="background-color: #2848F0; border: 0; border-radius: 8px; color: #ffffff; display: inline-block; font-size: 14px; font-weight: normal; font-family: helvetica, sans-serif; text-align: center; text-decoration: none; padding: 12px 18px; mso-padding-alt: 0; min-width: 110px;">
+                                <!--[if mso]><i style="letter-spacing: 27px;mso-font-width:-100%;mso-text-raise:30pt">&nbsp;</i><![endif]-->
+                                <span style="mso-text-raise:15pt;">Leave a review</span>
+                                <!--[if mso]><i style="letter-spacing: 27px;mso-font-width:-100%">&nbsp;</i><![endif]-->
+                              </a>
+                            </td>
+                          </tr>
+                        </table>
                       </td>
                     </tr>
                   </table>
 
                   <!-- Need Help Section -->
-                  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #ffffff; margin: 0 0 32px 0; border-radius: 0 0 8px 8px;">
+                  <table cellpadding="0" cellspacing="0" border="0" width="568" style="background-color: #ffffff; margin: 0 0 32px 0; border-radius: 0 0 8px 8px; width: 568px;">
                     <tr>
-                      <td style="padding: 16px;">
+                      <td width="568" style="padding: 16px;">
                         <h2 style="margin: 0 0 8px 0; padding: 0; font-family: arial, helvetica, sans-serif; font-size: 18px; font-weight: 700; color: #000000;">Need help?</h2>
                         <div style="font-family: arial, helvetica, sans-serif; font-size: 14px; line-height: 18px; color: #000000; margin: 0;">If you have any questions or need assistance with your order, feel free to contact {{SELLER_NAME}} directly.</div>
                       </td>
@@ -272,11 +284,11 @@ export const getTemplateHTML = (templateId: string): string => {
                   </table>
 
                   <!-- Footer - Made with Beacons -->
-                  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin: 0;">
+                  <table cellpadding="0" cellspacing="0" border="0" width="568" style="margin: 0; width: 568px;">
                     <tr>
-                      <td align="center" style="padding: 0;">
+                      <td align="center" width="568" style="padding: 0;">
                         <a href="{{UNTITLED_URL}}" style="text-decoration: none;">
-                          <img src="https://cdn.beacons.ai/images/beacons_assets/made-with-beacons.png" alt="made with beacons" style="display: block; height: 40px; border: 0; margin: 0 auto 24px auto;" />
+                          <img src="https://cdn.beacons.ai/images/beacons_assets/made-with-beacons.png" alt="made with beacons" width="160" height="40" style="display: block; height: 40px; width: 160px; border: 0; margin: 0 auto 24px auto;" />
                         </a>
                         <div style="color: #757575; font-size: 12px; font-family: arial, helvetica, sans-serif; text-align: center; padding: 0 16px; line-height: 18px;">
                           You are getting this receipt email because you bought a product from <a style="color: #757575; font-weight: bold; text-decoration: none;" href="{{UNTITLED_URL}}">{{SELLER_NAME}}</a>.
