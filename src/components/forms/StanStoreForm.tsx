@@ -43,7 +43,7 @@ const StanStoreForm = () => {
       html: generatedHTML,
       platform: 'stanstore',
       subject: 'Receipt from Stan - Your Creator Store',
-      fromName: 'Stan Store',
+      fromName: 'Stan',
       fromEmail: 'no-reply@stan.store'
     }));
   };

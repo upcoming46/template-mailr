@@ -77,7 +77,7 @@ const BeaconsForm = () => {
       html: generatedHTML,
       platform: 'beacons',
       subject: 'Your Receipt from Beacons.ai',
-      fromName: 'Beacons AI',
+      fromName: formData.SELLER_NAME || 'Beacons AI',
       fromEmail: 'no-reply@beacons.ai'
     }));
   };
