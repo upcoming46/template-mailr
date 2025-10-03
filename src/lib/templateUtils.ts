@@ -699,371 +699,345 @@ export const getTemplateHTML = (templateId: string): string => {
   </body>
 </html>`,
 
-    stanstore: `<div bgcolor="#f6f9fc" style="border:0;margin:0;padding:0;min-width:100%;width:100%">
-        
-        <table bgcolor="#f6f9fc" border="0" cellpadding="0" cellspacing="0" width="100%" style="border:0;margin:0;padding:0">
-          <tbody>
-            <tr>
-              <td class="m_2435347494993575023st-Spacer m_2435347494993575023st-Spacer--kill m_2435347494993575023st-Spacer--height" height="64">
-                <div class="m_2435347494993575023st-Spacer m_2435347494993575023st-Spacer--kill">&nbsp;</div>
-              </td>
-            </tr>
-            
-            <tr>
-              <td style="border:0;margin:0;padding:0">
-                
-                <table class="m_2435347494993575023st-Wrapper" align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="600" style="border-top-left-radius:16px;border-top-right-radius:16px;margin:0 auto;min-width:600px">
-                  <tbody>
-                    <tr>
-                      <td style="border:0;margin:0;padding:0">
-                        
-    <table class="m_2435347494993575023st-Width m_2435347494993575023st-Width--mobile" border="0" cellpadding="0" cellspacing="0" width="600" style="min-width:600px">
+    stanstore: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Receipt from Stan</title>
+</head>
+<body style="margin:0;padding:0;background-color:#f6f9fc;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;">
+  <table bgcolor="#f6f9fc" border="0" cellpadding="0" cellspacing="0" width="100%" style="border:0;margin:0;padding:0;background-color:#f6f9fc;">
     <tbody>
       <tr>
-        <td align="center" height="0" style="border:0;margin:0;padding:0;color:#ffffff;display:none!important;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden">
-          <span class="m_2435347494993575023st-Delink m_2435347494993575023st-Delink--preheader" style="color:#ffffff;text-decoration:none">
-            
-      Receipt for {{PRODUCT_NAME}} - Order #{{RECEIPT_ID}} - {{AMOUNT_PAID}} paid on {{DATE_PAID}}  
-            
-             ͏  ͏  ͏  ͏  ͏  ͏ 
-             ͏  ͏  ͏  ͏  ͏  ͏ 
-             ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏ 
-             ͏  ͏  ͏  ͏  ͏  ͏ 
-             ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏ 
-             ͏  ͏  ͏  ͏  ͏  ͏ 
-             ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏ 
-             ͏  ͏  ͏  ͏  ͏  ͏ 
-             ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏ 
-             ͏  ͏  ͏  ͏  ͏  ͏ 
-             ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏ 
-             ͏  ͏  ͏  ͏  ͏  ͏ 
-             ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏  ͏ 
-             ͏  ͏  ͏  ͏  ͏  ͏ 
-            ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ 
-            ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ 
-            ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ 
-            ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ 
-            ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ ­ 
-            &nbsp; 
-           </span>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-    
-    <div style="background-color:#f6f9fc;padding-top:20px">
-      <table dir="ltr" width="100%" style="border:0;border-collapse:collapse;margin:0;padding:0;background-color:#ffffff">
-        <tbody>
-        <tr>
-          <td style="background-color:#ffffff;border:0;border-collapse:collapse;margin:0;padding:0;font-size:0;line-height:0px;background-size:100% 100%;border-top-left-radius:5px" align="right" height="156" valign="bottom" width="252">
-              <a href="https://stan.store/" style="outline:0;text-decoration:none" target="_blank">
-                <img alt="" height="156" width="252" src="https://stripe-images.stripecdn.com/notifications/hosted/20180110/Header/Left.png" style="display:block;border:0;line-height:100%;width:100%">
-              </a>
-          </td>
-          <td style="background-color:#ffffff;border:0;border-collapse:collapse;margin:0;padding:0;font-size:0;line-height:0px;background-size:100% 100%;width:96px!important" align="center" height="156" valign="bottom">
-            <a href="https://stan.store/" style="outline:0;text-decoration:none" target="_blank">
-              <img alt="" height="156" width="96" src="https://stripe-images.s3.amazonaws.com/emails/acct_1FYbdJIYtv5oAFkS/2/twelve_degree_icon@2x.png" style="display:block;border:0;line-height:100%">
-            </a>
-          </td>
-          <td style="background-color:#ffffff;border:0;border-collapse:collapse;margin:0;padding:0;font-size:0;line-height:0px;background-size:100% 100%;border-top-right-radius:5px" align="left" height="156" valign="bottom" width="252">
-              <a href="https://stan.store/" style="outline:0;text-decoration:none" target="_blank">
-                <img alt="" height="156" width="252" src="https://stripe-images.stripecdn.com/notifications/hosted/20180110/Header/Right.png" style="display:block;border:0;line-height:100%;width:100%">
-              </a>
-          </td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
-    <table class="m_2435347494993575023st-Width m_2435347494993575023st-Width--mobile" border="0" cellpadding="0" cellspacing="0" width="600" style="min-width:600px">
-      <tbody>
-        <tr>
-          <td align="center" style="border:0;border-collapse:collapse;margin:0;padding:0;width:472px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#32325d;font-size:24px;line-height:32px">
-              Receipt from Stan - Your Creator Store
-          </td>
-        </tr>
-        <tr>
-          <td class="m_2435347494993575023st-Spacer" colspan="3" height="12" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px">
-            <div class="m_2435347494993575023st-Spacer">&nbsp;</div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    
-    <table class="m_2435347494993575023st-Width m_2435347494993575023st-Width--mobile" border="0" cellpadding="0" cellspacing="0" width="600" style="min-width:600px">
-      <tbody>
-        <tr>
-          <td align="center" style="border:0;border-collapse:collapse;margin:0;padding:0;width:472px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#8898aa;font-size:15px;line-height:18px">
-            Receipt #{{RECEIPT_ID}}
-          </td>
-        </tr>
-        <tr>
-          <td class="m_2435347494993575023st-Spacer" colspan="3" height="12" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px">
-            <div class="m_2435347494993575023st-Spacer">&nbsp;</div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-      <table class="m_2435347494993575023st-Spacer m_2435347494993575023st-Width m_2435347494993575023st-Width--mobile" border="0" cellpadding="0" cellspacing="0" width="100%">
-    <tbody>
-      <tr>
-        <td height="20" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;max-height:1px">
-          <div class="m_2435347494993575023st-Spacer">&nbsp;</div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-    
-    <table border="0" cellpadding="0" cellspacing="0" width="100%">
-    <tbody>
-      <tr>
-        <td class="m_2435347494993575023st-Font m_2435347494993575023st-Font--caption" style="border:0;margin:0;padding:0;color:#687385;font-family:-apple-system,'SF Pro Display','SF Pro Text','Helvetica',sans-serif;font-size:12px;font-weight:bold;line-height:16px;text-transform:uppercase">
-        
-      </td> <td width="64" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px">&nbsp;</td>
-      <td valign="top" style="border:0;border-collapse:collapse;margin:0;padding:0">
-      <table style="border:0;border-collapse:collapse;margin:0;padding:0">
-        <tbody>
-        <tr>
-          <td style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#8898aa;font-size:12px;line-height:16px;white-space:nowrap;font-weight:bold;text-transform:uppercase">
-            Amount paid
-          </td>
-        </tr>
-        <tr>
-          <td style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#525f7f;font-size:15px;line-height:24px;white-space:nowrap">
-           
-         {{AMOUNT_PAID}}    
-          
-          </td>
-        </tr>
-        </tbody>
-      </table>
-    </td>
-      <td width="20" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px">&nbsp;</td>
-      <td valign="top" style="border:0;border-collapse:collapse;margin:0;padding:0">
-      <table style="border:0;border-collapse:collapse;margin:0;padding:0">
-        <tbody>
-        <tr>
-          <td style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#8898aa;font-size:12px;line-height:16px;white-space:nowrap;font-weight:bold;text-transform:uppercase">
-            Date paid
-          </td>
-        </tr>
-        <tr>
-          <td style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#525f7f;font-size:15px;line-height:24px;white-space:nowrap">{{DATE_PAID}}    
-          
-          </td>
-        </tr>
-        </tbody>
-      </table>
-    </td>
-      <td width="20" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px">&nbsp;</td>
-        <td valign="top" style="border:0;border-collapse:collapse;margin:0;padding:0">
-      <table style="border:0;border-collapse:collapse;margin:0;padding:0">
-        <tbody>
-        <tr>
-          <td style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#8898aa;font-size:12px;line-height:16px;white-space:nowrap;font-weight:bold;text-transform:uppercase">
-            Payment method
-          </td>
-        </tr>
-        <tr>
-          <td style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#525f7f;font-size:15px;line-height:24px;white-space:nowrap">
-           
-          <span>      <img alt="{{PAYMENT_METHOD}}" height="16" src="https://stripe-images.stripecdn.com/emails/receipt_assets/card/mastercard-dark@2x.png" style="border:0;margin:0;padding:0;vertical-align:text-bottom" width="75">    </span>    <span>      - {{CARD_LAST4}}</span></td>
-        </tr>
-        </tbody>
-      </table>
-    </td>
-      <td width="64" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px">&nbsp;</td>
-   
-        
-      </tr>
-    </tbody>
-  </table>
-    
-    <table class="m_2435347494993575023st-Spacer m_2435347494993575023st-Width m_2435347494993575023st-Width--mobile" border="0" cellpadding="0" cellspacing="0" width="100%">
-    <tbody>
-      <tr>
-        <td height="32" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;max-height:1px">
-          <div class="m_2435347494993575023st-Spacer">&nbsp;</div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-    
-    <table class="m_2435347494993575023st-Width m_2435347494993575023st-Width--mobile" border="0" cellpadding="0" cellspacing="0" width="600" style="min-width:600px">
-    <tbody>
-      <tr>
-        <td class="m_2435347494993575023st-Spacer" colspan="3" height="8" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px">
-          <div class="m_2435347494993575023st-Spacer">&nbsp;</div>
+        <td style="border:0;margin:0;padding:0;" height="64">
+          &nbsp;
         </td>
       </tr>
       <tr>
-        <td class="m_2435347494993575023st-Spacer m_2435347494993575023st-Spacer--gutter" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px" width="48">
-          <div class="m_2435347494993575023st-Spacer">&nbsp;</div>
-        </td>
-        <td class="m_2435347494993575023st-Font m_2435347494993575023st-Font--caption" style="border:0;margin:0;padding:0;color:#687385;font-family:-apple-system,'SF Pro Display','SF Pro Text','Helvetica',sans-serif;font-weight:400;font-size:12px;line-height:16px;text-transform:uppercase">
-        
-        <span class="m_2435347494993575023st-Delink" style="border:0;margin:0;padding:0;font-weight:bold">
-          Summary
-        </span>    
-         
-         </td>
-        <td class="m_2435347494993575023st-Spacer m_2435347494993575023st-Spacer--gutter" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px" width="48">
-          <div class="m_2435347494993575023st-Spacer">&nbsp;</div>
-        </td>
-      </tr>
-      <tr>
-        <td class="m_2435347494993575023st-Spacer" colspan="3" height="8" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px">
-          <div class="m_2435347494993575023st-Spacer">&nbsp;</div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-    <table class="m_2435347494993575023st-Blocks m_2435347494993575023st-Width m_2435347494993575023st-Width--mobile" border="0" cellpadding="0" cellspacing="0" width="600" style="min-width:600px">
-    <tbody>
-      <tr>
-        <td class="m_2435347494993575023st-Spacer" colspan="3" height="24" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px">
-          <div class="m_2435347494993575023st-Spacer">&nbsp;</div>
-        </td>
-      </tr>
-      <tr>
-        <td class="m_2435347494993575023st-Spacer m_2435347494993575023st-Spacer--kill" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px" width="48">
-          <div class="m_2435347494993575023st-Spacer">&nbsp;</div>
-        </td>
-        <td style="border:0;margin:0;padding:0">
-          <table class="m_2435347494993575023st-Blocks-inner" bgcolor="#f6f9fc" border="0" cellpadding="0" cellspacing="0" style="border-radius:8px" width="100%">
+        <td style="border:0;margin:0;padding:0;">
+          <table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="600" style="border-top-left-radius:16px;border-top-right-radius:16px;margin:0 auto;max-width:600px;width:100%;">
             <tbody>
-             
-    <tr>
-    <td style="border:0;margin:0;padding:0">
-      <table class="m_2435347494993575023st-Blocks-item" border="0" cellpadding="0" cellspacing="0" width="100%">
-        <tbody>
-          <tr>
-            <td class="m_2435347494993575023st-Spacer" colspan="3" height="12" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px">
-              <div class="m_2435347494993575023st-Spacer">&nbsp;</div>
-            </td>
-          </tr>
-          <tr>
-            <td class="m_2435347494993575023st-Spacer m_2435347494993575023st-Spacer--gutter" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px" width="16">
-              <div class="m_2435347494993575023st-Spacer">&nbsp;</div>
-            </td>
-            <td class="m_2435347494993575023st-Blocks-item-cell m_2435347494993575023st-Font m_2435347494993575023st-Font--body" style="border:0;margin:0;padding:0;color:#414552;font-family:-apple-system,'SF Pro Display','SF Pro Text','Helvetica',sans-serif;font-size:16px;line-height:24px">
-              
-      <table style="padding-left:5px;padding-right:5px" width="100%">
-      <tbody><tr>
-        <td>
-         
-       
-          </td> </tr> <tr>
-      <td style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#525f7f;font-size:15px;line-height:24px;width:100%">
-          {{PRODUCT_NAME}} &lt;&gt;&nbsp;{{BUYER_NAME}}</td>
-      <td width="8" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px">&nbsp;</td>
-      <td align="right" valign="top" style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#525f7f;font-size:15px;line-height:24px">
-            {{PRODUCT_PRICE}}
-      </td>
-    </tr>
-      <tr>
-        <td colspan="3" height="6" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px">&nbsp;</td>
-      </tr>
-      <tr>
-        <td colspan="3" height="6" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px">&nbsp;</td>
-    </tr>
-     
-    <tr>
-      <td bgcolor="e6ebf1" colspan="3" height="1" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px">&nbsp;</td>
-    </tr>
-     
-    <tr>
-      <td colspan="3" height="8" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px">&nbsp;</td>
-    </tr>
-         
-    <tr>
-      <td style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#525f7f;font-size:15px;line-height:24px;width:100%">
-          <strong>Amount paid</strong>
-      </td>
-      <td width="8" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px">&nbsp;</td>
-      <td align="right" valign="top" style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#525f7f;font-size:15px;line-height:24px">
-            <strong>{{TOTAL_AMOUNT}}</strong>
-      </td>
-    </tr>
-      <tr>
-        <td colspan="3" height="6" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px">&nbsp;</td>
-      </tr>
-      
-       
-       
-       
-      
-    </tbody></table> 
-  
-             </td>
-            <td class="m_2435347494993575023st-Spacer m_2435347494993575023st-Spacer--gutter" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px" width="16">
-              <div class="m_2435347494993575023st-Spacer">&nbsp;</div>
-            </td>
-          </tr>
-          <tr>
-            <td class="m_2435347494993575023st-Spacer" colspan="3" height="12" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px">
-              <div class="m_2435347494993575023st-Spacer">&nbsp;</div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </td> </tr>
-             </tbody>
+              <tr>
+                <td style="border:0;margin:0;padding:0;">
+                  <table border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;width:100%;">
+                    <tbody>
+                      <tr>
+                        <td align="center" height="0" style="border:0;margin:0;padding:0;color:#ffffff;display:none!important;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">
+                          <span style="color:#ffffff;text-decoration:none;">Receipt for {{PRODUCT_NAME}} - Order #{{RECEIPT_ID}} - {{AMOUNT_PAID}} paid on {{DATE_PAID}}</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+                  <div style="background-color:#f6f9fc;padding-top:20px;">
+                    <table dir="ltr" width="100%" style="border:0;border-collapse:collapse;margin:0;padding:0;background-color:#ffffff;">
+                      <tbody>
+                        <tr>
+                          <td style="background-color:#ffffff;border:0;border-collapse:collapse;margin:0;padding:0;font-size:0;line-height:0px;background-size:100% 100%;border-top-left-radius:5px;" align="right" height="156" valign="bottom" width="252">
+                            <a href="https://stan.store/" style="outline:0;text-decoration:none;" target="_blank">
+                              <img alt="" height="156" width="252" src="https://stripe-images.stripecdn.com/notifications/hosted/20180110/Header/Left.png" style="display:block;border:0;line-height:100%;width:100%;" />
+                            </a>
+                          </td>
+                          <td style="background-color:#ffffff;border:0;border-collapse:collapse;margin:0;padding:0;font-size:0;line-height:0px;background-size:100% 100%;width:96px!important;" align="center" height="156" valign="bottom">
+                            <a href="https://stan.store/" style="outline:0;text-decoration:none;" target="_blank">
+                              <img alt="" height="156" width="96" src="https://stripe-images.s3.amazonaws.com/emails/acct_1FYbdJIYtv5oAFkS/2/twelve_degree_icon@2x.png" style="display:block;border:0;line-height:100%;" />
+                            </a>
+                          </td>
+                          <td style="background-color:#ffffff;border:0;border-collapse:collapse;margin:0;padding:0;font-size:0;line-height:0px;background-size:100% 100%;border-top-right-radius:5px;" align="left" height="156" valign="bottom" width="252">
+                            <a href="https://stan.store/" style="outline:0;text-decoration:none;" target="_blank">
+                              <img alt="" height="156" width="252" src="https://stripe-images.stripecdn.com/notifications/hosted/20180110/Header/Right.png" style="display:block;border:0;line-height:100%;width:100%;" />
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  <table border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;width:100%;">
+                    <tbody>
+                      <tr>
+                        <td align="center" style="border:0;border-collapse:collapse;margin:0;padding:20px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#32325d;font-size:24px;line-height:32px;">
+                          Receipt from Stan - Your Creator Store
+                        </td>
+                      </tr>
+                      <tr>
+                        <td height="12" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;">
+                          &nbsp;
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+                  <table border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;width:100%;">
+                    <tbody>
+                      <tr>
+                        <td align="center" style="border:0;border-collapse:collapse;margin:0;padding:0 64px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#8898aa;font-size:15px;line-height:18px;">
+                          Receipt #{{RECEIPT_ID}}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td height="20" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;">
+                          &nbsp;
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%" style="padding:0 64px;">
+                    <tbody>
+                      <tr>
+                        <td style="border:0;margin:0;padding:0;color:#687385;font-family:-apple-system,'SF Pro Display','SF Pro Text','Helvetica',sans-serif;font-size:12px;font-weight:bold;line-height:16px;text-transform:uppercase;">
+                        </td>
+                        <td width="64" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px;">&nbsp;</td>
+                        <td valign="top" style="border:0;border-collapse:collapse;margin:0;padding:0;">
+                          <table style="border:0;border-collapse:collapse;margin:0;padding:0;">
+                            <tbody>
+                              <tr>
+                                <td style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#8898aa;font-size:12px;line-height:16px;white-space:nowrap;font-weight:bold;text-transform:uppercase;">
+                                  Amount paid
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#525f7f;font-size:15px;line-height:24px;white-space:nowrap;">
+                                  {{AMOUNT_PAID}}
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                        <td width="20" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px;">&nbsp;</td>
+                        <td valign="top" style="border:0;border-collapse:collapse;margin:0;padding:0;">
+                          <table style="border:0;border-collapse:collapse;margin:0;padding:0;">
+                            <tbody>
+                              <tr>
+                                <td style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#8898aa;font-size:12px;line-height:16px;white-space:nowrap;font-weight:bold;text-transform:uppercase;">
+                                  Date paid
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#525f7f;font-size:15px;line-height:24px;white-space:nowrap;">
+                                  {{DATE_PAID}}
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                        <td width="20" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px;">&nbsp;</td>
+                        <td valign="top" style="border:0;border-collapse:collapse;margin:0;padding:0;">
+                          <table style="border:0;border-collapse:collapse;margin:0;padding:0;">
+                            <tbody>
+                              <tr>
+                                <td style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#8898aa;font-size:12px;line-height:16px;white-space:nowrap;font-weight:bold;text-transform:uppercase;">
+                                  Payment method
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#525f7f;font-size:15px;line-height:24px;white-space:nowrap;">
+                                  <span><img alt="{{PAYMENT_METHOD}}" height="16" src="https://stripe-images.stripecdn.com/emails/receipt_assets/card/mastercard-dark@2x.png" style="border:0;margin:0;padding:0;vertical-align:text-bottom;" width="75" /></span>
+                                  <span> - {{CARD_LAST4}}</span>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                        <td width="64" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px;">&nbsp;</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tbody>
+                      <tr>
+                        <td height="32" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;">
+                          &nbsp;
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+                  <table border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;width:100%;">
+                    <tbody>
+                      <tr>
+                        <td height="8" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;">
+                          &nbsp;
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;" width="48">
+                          &nbsp;
+                        </td>
+                        <td style="border:0;margin:0;padding:0;color:#687385;font-family:-apple-system,'SF Pro Display','SF Pro Text','Helvetica',sans-serif;font-weight:bold;font-size:12px;line-height:16px;text-transform:uppercase;">
+                          SUMMARY
+                        </td>
+                        <td style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;" width="48">
+                          &nbsp;
+                        </td>
+                      </tr>
+                      <tr>
+                        <td height="8" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;">
+                          &nbsp;
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+                  <table border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;width:100%;">
+                    <tbody>
+                      <tr>
+                        <td height="24" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;">
+                          &nbsp;
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;" width="48">
+                          &nbsp;
+                        </td>
+                        <td style="border:0;margin:0;padding:0;">
+                          <table bgcolor="#f6f9fc" border="0" cellpadding="0" cellspacing="0" style="border-radius:8px;background-color:#f6f9fc;" width="100%">
+                            <tbody>
+                              <tr>
+                                <td style="border:0;margin:0;padding:0;">
+                                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                    <tbody>
+                                      <tr>
+                                        <td height="12" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;">
+                                          &nbsp;
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;" width="16">
+                                          &nbsp;
+                                        </td>
+                                        <td style="border:0;margin:0;padding:0;color:#414552;font-family:-apple-system,'SF Pro Display','SF Pro Text','Helvetica',sans-serif;font-size:16px;line-height:24px;">
+                                          <table style="padding-left:5px;padding-right:5px;" width="100%">
+                                            <tbody>
+                                              <tr>
+                                                <td style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#525f7f;font-size:15px;line-height:24px;width:100%;">
+                                                  {{PRODUCT_NAME}} &lt;&gt; {{BUYER_NAME}}
+                                                </td>
+                                                <td width="8" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px;">&nbsp;</td>
+                                                <td align="right" valign="top" style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#525f7f;font-size:15px;line-height:24px;">
+                                                  {{PRODUCT_PRICE}}
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td colspan="3" height="6" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px;">&nbsp;</td>
+                                              </tr>
+                                              <tr>
+                                                <td colspan="3" height="6" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px;">&nbsp;</td>
+                                              </tr>
+                                              <tr>
+                                                <td bgcolor="#e6ebf1" colspan="3" height="1" style="border:0;border-collapse:collapse;margin:0;padding:0;background-color:#e6ebf1;color:#ffffff;font-size:1px;line-height:1px;">&nbsp;</td>
+                                              </tr>
+                                              <tr>
+                                                <td colspan="3" height="8" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px;">&nbsp;</td>
+                                              </tr>
+                                              <tr>
+                                                <td style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#525f7f;font-size:15px;line-height:24px;width:100%;">
+                                                  <strong>Amount paid</strong>
+                                                </td>
+                                                <td width="8" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px;">&nbsp;</td>
+                                                <td align="right" valign="top" style="border:0;border-collapse:collapse;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Ubuntu,sans-serif;vertical-align:middle;color:#525f7f;font-size:15px;line-height:24px;">
+                                                  <strong>{{TOTAL_AMOUNT}}</strong>
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td colspan="3" height="6" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px;">&nbsp;</td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </td>
+                                        <td style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;" width="16">
+                                          &nbsp;
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td height="12" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;">
+                                          &nbsp;
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                        <td style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;" width="48">
+                          &nbsp;
+                        </td>
+                      </tr>
+                      <tr>
+                        <td height="24" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;">
+                          &nbsp;
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+                  <table border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;width:100%;">
+                    <tbody>
+                      <tr>
+                        <td height="8" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;">
+                          &nbsp;
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;" width="48">
+                          &nbsp;
+                        </td>
+                        <td style="border:0;margin:0;padding:0;color:#414552;font-family:-apple-system,'SF Pro Display','SF Pro Text','Helvetica',sans-serif;font-weight:400;font-size:16px;line-height:24px;">
+                          If you have any questions, visit our support site at <a style="border:0;margin:0;padding:0;color:#625afa;font-weight:bold;text-decoration:none;" href="https://help.stan.store" target="_blank">http://help.stan.store</a>, or contact the creator at <a href="mailto:{{SELLER_EMAIL}}" style="color:#625afa;text-decoration:none;">{{SELLER_EMAIL}}</a>.
+                        </td>
+                        <td style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;" width="48">
+                          &nbsp;
+                        </td>
+                      </tr>
+                      <tr>
+                        <td height="8" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px;">
+                          &nbsp;
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+                  <table width="100%" style="border:0;border-collapse:collapse;margin:0;padding:0;background-color:#ffffff;">
+                    <tbody>
+                      <tr>
+                        <td height="20" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px;">&nbsp;</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <table width="100%" style="border:0;border-collapse:collapse;margin:0;padding:0;background-color:#ffffff;">
+                    <tbody>
+                      <tr>
+                        <td height="20" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px;">&nbsp;</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <table width="100%" style="border:0;border-collapse:collapse;margin:0;padding:0;background-color:#ffffff;border-bottom-left-radius:5px;border-bottom-right-radius:5px;">
+                    <tbody>
+                      <tr>
+                        <td height="64" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px;">&nbsp;</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
           </table>
         </td>
-        <td class="m_2435347494993575023st-Spacer m_2435347494993575023st-Spacer--kill" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px" width="48">
-          <div class="m_2435347494993575023st-Spacer">&nbsp;</div>
-        </td>
       </tr>
       <tr>
-        <td class="m_2435347494993575023st-Spacer" colspan="3" height="24" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px">
-          <div class="m_2435347494993575023st-Spacer">&nbsp;</div>
+        <td style="border:0;margin:0;padding:0;" height="64">
+          &nbsp;
         </td>
       </tr>
     </tbody>
   </table>
-     
-    <table class="m_2435347494993575023st-Width m_2435347494993575023st-Width--mobile" border="0" cellpadding="0" cellspacing="0" width="600" style="min-width:600px">
-    <tbody>
-      <tr>
-        <td class="m_2435347494993575023st-Spacer" colspan="3" height="8" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px">
-          <div class="m_2435347494993575023st-Spacer">&nbsp;</div>
-        </td>
-      </tr>
-      <tr>
-        <td class="m_2435347494993575023st-Spacer m_2435347494993575023st-Spacer--gutter" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px" width="48">
-          <div class="m_2435347494993575023st-Spacer">&nbsp;</div>
-        </td>
-        <td style="border:0;margin:0;padding:0;color:#414552!important;font-family:-apple-system,'SF Pro Display','SF Pro Text','Helvetica',sans-serif;font-weight:400;font-size:16px;line-height:24px">
-         If you have any questions, visit our support site at <a style="border:0;margin:0;padding:0;color:#625afa!important;font-weight:bold;text-decoration:none" href="https://help.stan.store" target="_blank">http://help.stan.store</a>,
-or contact the creator at <a href="mailto:{{SELLER_EMAIL}}">{{SELLER_EMAIL}}</a>.
-         </td>
-        <td class="m_2435347494993575023st-Spacer m_2435347494993575023st-Spacer--gutter" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px" width="48">
-          <div class="m_2435347494993575023st-Spacer">&nbsp;</div>
-        </td>
-      </tr>
-      <tr>
-        <td class="m_2435347494993575023st-Spacer" colspan="3" height="8" style="border:0;margin:0;padding:0;font-size:1px;line-height:1px">
-          <div class="m_2435347494993575023st-Spacer">&nbsp;</div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-   
-   
-  <table width="100%" style="border:0;border-collapse:collapse;margin:0;padding:0;background-color:#ffffff"><tbody><tr><td height="20" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px">&nbsp;</td></tr></tbody></table>
-    <table width="100%" style="border:0;border-collapse:collapse;margin:0;padding:0;background-color:#ffffff"><tbody><tr><td height="20" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px">&nbsp;</td></tr></tbody></table>
-    <table width="100%" style="border:0;border-collapse:collapse;margin:0;padding:0;background-color:#ffffff;border-bottom-left-radius:5px;border-bottom-right-radius:5px"><tbody><tr><td height="64" style="border:0;border-collapse:collapse;margin:0;padding:0;color:#ffffff;font-size:1px;line-height:1px">&nbsp;</td></tr></tbody></table>
-                      </td>
-                    </tr>
-                    </tbody>
-                </table>
-                
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        
-  </div>`,
+</body>
+</html>`,
 
     fanbasis: `<!DOCTYPE html>
 <html lang="en">
