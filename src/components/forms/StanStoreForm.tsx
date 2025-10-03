@@ -101,6 +101,16 @@ const StanStoreForm = () => {
           </div>
 
           <div>
+            <Label htmlFor="date-paid">Date Paid</Label>
+            <Input
+              id="date-paid"
+              value={formData.DATE_PAID}
+              onChange={(e) => handleInputChange("DATE_PAID", e.target.value)}
+              placeholder="MM/DD/YYYY"
+            />
+          </div>
+
+          <div>
             <Label htmlFor="product-price">Product Price</Label>
             <Input
               id="product-price"
