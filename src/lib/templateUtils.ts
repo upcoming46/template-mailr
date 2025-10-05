@@ -648,103 +648,261 @@ export const getTemplateHTML = (templateId: string): string => {
 </body>
 </html>`,
 
-    fanbasis: `<!DOCTYPE html>
-<html lang="en">
+    fanbasis: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" style="padding:0;Margin:0">
 <head>
-  <meta charset="UTF-8">
-  <meta name="x-apple-disable-message-reformatting">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Payment Confirmation - Fanbasis</title>
-  <style>
-    body { margin: 0; padding: 0; background: #ffffff; font-family: Arial, Helvetica, sans-serif; }
-    table { border-collapse: collapse; width: 100%; }
-    .header { background-color: #FFF8E8; padding: 32px 20px 28px 20px; border-bottom: 1px solid #f0e6cf; text-align: center; }
-    .header h1 { margin: 0 0 18px 0; font-size: 34px; line-height: 1.2; font-weight: 800; color: #111111; }
-    .header p { margin: 0; line-height: 1.6; color: #111111; }
-    .dark-card { background-color: #1F1F1F; padding: 28px 24px 26px 24px; color: #F5F5F5; }
-    .dark-card h2 { margin: 0; font-size: 28px; line-height: 1.2; font-weight: 800; text-align: center; padding-bottom: 22px; }
-    .detail-row { padding: 8px 0; font-size: 16px; line-height: 1.6; color: #F5F5F5; }
-    .detail-row span { opacity: 0.92; }
-    .product-date { padding: 18px 0 2px 0; }
-    .product-date td:first-child { font-size: 17px; font-weight: 800; color: #F5F5F5; }
-    .product-date td:last-child { font-size: 17px; color: #EDEDED; text-align: right; }
-    .price { padding: 12px 0 18px 0; font-size: 20px; font-weight: 800; color: #F5F5F5; text-align: right; }
-    .payment-note { padding: 8px 0; font-size: 16px; line-height: 1.6; color: #F5F5F5; font-weight: bold; }
-    .divider { padding: 18px 0 14px 0; border-top: 1px solid #3A3A3A; }
-    .totals td { padding: 6px 0; font-size: 16px; color: #EDEDED; }
-    .totals td:first-child { text-align: left; }
-    .totals td:last-child { text-align: right; font-size: 18px; font-weight: 800; }
-    @media (max-width: 768px) { .header, .dark-card { padding: 20px 10px; } .header h1 { font-size: 24px; } }
-  </style>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'none'; connect-src 'none'; object-src 'none'; form-action 'none';">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta name="x-apple-disable-message-reformatting">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="telephone=no" name="format-detection">
+    <title>Confirmation: Membership with {{SELLER_NAME}}</title>
+    <style type="text/css">
+        #outlook a { padding: 0; }
+        .ExternalClass { width: 100%; }
+        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div { line-height: 100%; }
+        .es-button { mso-style-priority: 100 !important; text-decoration: none !important; }
+        a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; }
+        .es-desk-hidden { display: none; float: left; overflow: hidden; width: 0; max-height: 0; line-height: 0; mso-hide: all; }
+        @media only screen and (max-width:600px) {
+            p, ul li, ol li, a { line-height: 150% !important }
+            h1, h2, h3, h1 a, h2 a, h3 a { line-height: 120% !important }
+            h1 { font-size: 30px !important; text-align: center }
+            h2 { font-size: 26px !important; text-align: center }
+            h3 { font-size: 20px !important; text-align: center }
+            .es-header-body h1 a, .es-content-body h1 a, .es-footer-body h1 a { font-size: 30px !important }
+            .es-header-body h2 a, .es-content-body h2 a, .es-footer-body h2 a { font-size: 26px !important }
+            .es-header-body h3 a, .es-content-body h3 a, .es-footer-body h3 a { font-size: 20px !important }
+            .es-header-body p, .es-header-body ul li, .es-header-body ol li, .es-header-body a { font-size: 16px !important }
+            .es-content-body p, .es-content-body ul li, .es-content-body ol li, .es-content-body a { font-size: 16px !important }
+            .es-footer-body p, .es-footer-body ul li, .es-footer-body ol li, .es-footer-body a { font-size: 16px !important }
+            .es-infoblock p, .es-infoblock ul li, .es-infoblock ol li, .es-infoblock a { font-size: 12px !important }
+            *[class="gmail-fix"] { display: none !important }
+            .es-m-txt-c, .es-m-txt-c h1, .es-m-txt-c h2, .es-m-txt-c h3 { text-align: center !important }
+            .es-m-txt-r, .es-m-txt-r h1, .es-m-txt-r h2, .es-m-txt-r h3 { text-align: right !important }
+            .es-m-txt-l, .es-m-txt-l h1, .es-m-txt-l h2, .es-m-txt-l h3 { text-align: left !important }
+            .es-m-txt-r img, .es-m-txt-c img, .es-m-txt-l img { display: inline !important }
+            .es-button-border { display: block !important }
+            a.es-button, button.es-button { font-size: 20px !important; display: block !important; padding: 10px 20px 10px 20px !important }
+            .es-btn-fw { border-width: 10px 0px !important; text-align: center !important }
+            .es-adaptive table, .es-btn-fw, .es-btn-fw-brdr, .es-left, .es-right { width: 100% !important }
+            .es-content table, .es-header table, .es-footer table, .es-content, .es-footer, .es-header { width: 100% !important; max-width: 600px !important }
+            .es-adapt-td { display: block !important; width: 100% !important }
+            .adapt-img { max-width: 100% !important; height: auto !important }
+            .es-m-p0 { padding: 0px !important }
+            .es-m-p0r { padding-right: 0px !important }
+            .es-m-p0l { padding-left: 0px !important }
+            .es-m-p0t { padding-top: 0px !important }
+            .es-m-p0b { padding-bottom: 0 !important }
+            .es-m-p20b { padding-bottom: 20px !important }
+            .es-mobile-hidden, .es-hidden { display: none !important }
+            tr.es-desk-hidden, td.es-desk-hidden, table.es-desk-hidden { width: auto !important; overflow: visible !important; float: none !important; max-height: inherit !important; line-height: inherit !important }
+            tr.es-desk-hidden { display: table-row !important }
+            table.es-desk-hidden { display: table !important }
+            td.es-desk-menu-hidden { display: table-cell !important }
+            .es-menu td { width: 1% !important }
+            table.es-table-not-adapt, .esd-block-html table { width: auto !important }
+            table.es-social { display: inline-block !important }
+            table.es-social td { display: inline-block !important }
+            .es-desk-hidden { display: table-row !important; width: auto !important; overflow: visible !important; max-height: inherit !important }
+        }
+    </style>
 </head>
-<body>
-  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#FFFFFF" style="background:#ffffff;">
-    <tr>
-      <td align="center" style="padding:0;">
-        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width:768px; width:100%;">
-          <tr>
-            <td class="header">
-              <h1>Payment Confirmation</h1>
-              <p>Thank you for purchasing <b>{{PRODUCT_NAME}}</b> from <b>{{SELLER_NAME}}</b>. Your purchase is confirmed, and we are excited to have you on board.</p>
-            </td>
-          </tr>
-          <tr>
-            <td class="dark-card">
-              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
-                <tr>
-                  <td align="center" style="padding:0 0 22px 0;">
-                    <h2>Order summary</h2>
-                  </td>
+<body style="font-family:Arial, sans-serif;width:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0">
+    <div class="es-wrapper-color" style="background-color:#333333">
+        <table class="es-wrapper" width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;padding:0;Margin:0;width:100%;height:100%;background-repeat:repeat;background-position:center top;background-color:#333333">
+            <tbody>
+                <tr style="border-collapse:collapse">
+                    <td valign="top" style="padding:0;Margin:0">
+                        <table class="es-content" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+                            <tbody>
+                                <tr style="border-collapse:collapse">
+                                    <td align="center" style="padding:0;Margin:0">
+                                        <table class="es-content-body" cellspacing="0" cellpadding="0" align="center" bgcolor="#020202" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#020202;width:600px">
+                                            <tbody>
+                                                <tr style="border-collapse:collapse">
+                                                    <td style="Margin:0;padding-top:20px;padding-left:30px;padding-right:30px;padding-bottom:40px;background-color:#fefef2" bgcolor="#fefef2" align="left">
+                                                        <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                            <tbody>
+                                                                <tr style="border-collapse:collapse">
+                                                                    <td valign="top" align="center" style="padding:0;Margin:0;width:540px">
+                                                                        <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                            <tbody>
+                                                                                <tr style="border-collapse:collapse">
+                                                                                    <td align="center" style="padding:0;Margin:0;padding-top:15px;padding-bottom:15px">
+                                                                                        <div>
+                                                                                            <h2 style="Margin:0;line-height:36px;mso-line-height-rule:exactly;font-family:Arial, sans-serif;font-size:30px;font-style:normal;font-weight:normal;color:#242424">
+                                                                                                <strong>Payment Confirmation</strong>
+                                                                                            </h2>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr style="border-collapse:collapse">
+                                                                                    <td style="padding:0;Margin:0;padding-left:10px">
+                                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Arial, sans-serif;line-height:21px;color:#242424;font-size:14px">
+                                                                                            Thank you for purchasing <strong>{{PRODUCT_NAME}}</strong> from <strong>{{SELLER_NAME}}</strong>. Your purchase is confirmed, and we're excited to have you on board.
+                                                                                        </p>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr style="border-collapse:collapse">
+                                                    <td style="Margin:0;padding-left:10px;padding-right:10px;padding-top:15px;padding-bottom:20px;background-color:#1e1e1e" bgcolor="#1e1e1e" align="left">
+                                                        <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                            <tbody>
+                                                                <tr style="border-collapse:collapse">
+                                                                    <td valign="top" align="center" style="padding:0;Margin:0;width:580px">
+                                                                        <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                            <tbody>
+                                                                                <tr style="border-collapse:collapse">
+                                                                                    <td align="center" style="padding:0;Margin:0;padding-top:20px">
+                                                                                        <h2 style="Margin:0;line-height:29px;mso-line-height-rule:exactly;font-family:Arial, sans-serif;font-size:24px;font-style:normal;font-weight:normal;color:#ffffff">
+                                                                                            Order summary</h2>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr style="border-collapse:collapse">
+                                                    <td style="Margin:0;padding-bottom:5px;padding-top:15px;padding-left:20px;padding-right:20px;background-color:#1e1e1e" bgcolor="#1e1e1e" align="left">
+                                                        <table class="es-left" cellspacing="0" cellpadding="0" align="left" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+                                                            <tbody>
+                                                                <tr style="border-collapse:collapse">
+                                                                    <td class="es-m-p20b" align="left" style="padding:0;Margin:0;width:272px">
+                                                                        <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                            <tbody>
+                                                                                <tr style="border-collapse:collapse">
+                                                                                    <td align="left" style="padding:0;Margin:0;padding-left:15px;padding-right:20px">
+                                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Arial, sans-serif;line-height:24px;color:#ffffff;font-size:16px">
+                                                                                            Name: {{BUYER_NAME}}
+                                                                                        </p>
+                                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Arial, sans-serif;line-height:24px;color:#ffffff;font-size:16px">
+                                                                                            Email: <a href="mailto:{{BUYER_EMAIL}}" style="text-decoration:none;color:#ffffff;">{{BUYER_EMAIL}}</a>
+                                                                                        </p>
+                                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Arial, sans-serif;line-height:24px;color:#ffffff;font-size:16px">
+                                                                                            <br>
+                                                                                        </p>
+                                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Arial, sans-serif;line-height:24px;color:#ffffff;font-size:16px">
+                                                                                            <strong>{{PRODUCT_NAME}}</strong>
+                                                                                        </p>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <table class="es-right" cellspacing="0" cellpadding="0" align="right" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:right">
+                                                            <tbody>
+                                                                <tr style="border-collapse:collapse">
+                                                                    <td align="left" style="padding:0;Margin:0;width:278px">
+                                                                        <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                            <tbody>
+                                                                                <tr style="border-collapse:collapse">
+                                                                                    <td align="right" style="padding:0;Margin:0;padding-right:15px;padding-left:20px">
+                                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Arial, sans-serif;line-height:24px;color:#ffffff;font-size:16px">
+                                                                                            Order date: {{DATE}}
+                                                                                        </p>
+                                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Arial, sans-serif;line-height:24px;color:#ffffff;font-size:16px">
+                                                                                            <br>
+                                                                                        </p>
+                                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Arial, sans-serif;line-height:24px;color:#ffffff;font-size:16px">
+                                                                                            <br>
+                                                                                        </p>
+                                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Arial, sans-serif;line-height:24px;color:#ffffff;font-size:16px">
+                                                                                            <strong style="line-height:150%">{{PRICE}}</strong>
+                                                                                        </p>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr style="border-collapse:collapse">
+                                                    <td style="Margin:0;padding-top:10px;padding-bottom:10px;padding-left:10px;padding-right:10px;background-color:#1e1e1e" bgcolor="#1e1e1e" align="left">
+                                                        <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                            <tbody>
+                                                                <tr style="border-collapse:collapse">
+                                                                    <td valign="top" align="center" style="padding:0;Margin:0;width:580px">
+                                                                        <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                            <tbody>
+                                                                                <tr style="border-collapse:collapse">
+                                                                                    <td align="left" style="padding:0;Margin:0;padding-top:5px;padding-left:25px;padding-right:25px">
+                                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:Arial, sans-serif;line-height:21px;color:#ffffff;font-size:14px">
+                                                                                            One-time payment of {{PRICE}} (Full payment)
+                                                                                        </p>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr style="border-collapse:collapse">
+                                                                                    <td align="center" bgcolor="#1e1e1e" style="padding:20px;Margin:0;font-size:0">
+                                                                                        <table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                                            <tbody>
+                                                                                                <tr style="border-collapse:collapse">
+                                                                                                    <td style="padding:0;Margin:0;border-bottom:1px solid #efefef;background:none 0% 0% repeat scroll #FFFFFF;height:1px;width:100%;margin:0px"></td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr style="border-collapse:collapse">
+                                                                                    <td align="right" bgcolor="#1e1e1e" style="padding:0;Margin:0;padding-bottom:15px;padding-right:25px">
+                                                                                        <table class="cke_show_border" height="101" cellspacing="1" cellpadding="1" border="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:240px">
+                                                                                            <tbody style="font-family:Arial, sans-serif;line-height:21px;color:#242424;">
+                                                                                                <tr style="border-collapse:collapse">
+                                                                                                    <td style="padding:0;Margin:0;color:#ffffff;font-size:14px">
+                                                                                                        Subtotal:</td>
+                                                                                                    <td style="padding:0;Margin:0;text-align:right;color:#ffffff;font-size:14px">
+                                                                                                        {{SUBTOTAL}}
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                                <tr style="border-collapse:collapse">
+                                                                                                    <td style="padding:0;Margin:0;font-size:18px;line-height:36px;color:#ffffff">
+                                                                                                        <strong>Order Total:</strong>
+                                                                                                    </td>
+                                                                                                    <td style="padding:0;Margin:0;text-align:right;font-size:18px;line-height:36px;color:#ffffff">
+                                                                                                        <strong>{{TOTAL}}</strong>
+                                                                                                    </td>
+                                                                                                </tr>
+                                                                                            </tbody>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
                 </tr>
-                <tr>
-                  <td class="detail-row">Name: {{BUYER_NAME}}</td>
-                </tr>
-                <tr>
-                  <td class="detail-row">Email: {{BUYER_EMAIL}}</td>
-                </tr>
-                <tr>
-                  <td class="detail-row">Seller name: {{SELLER_NAME}}</td>
-                </tr>
-                <tr>
-                  <td class="product-date">
-                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
-                      <tr>
-                        <td>{{PRODUCT_NAME}}</td>
-                        <td>Order date: {{DATE}}</td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="price">{{PRICE}}</td>
-                </tr>
-                <tr>
-                  <td class="payment-note">Full payment received for the complete courses</td>
-                </tr>
-                <tr>
-                  <td class="divider">&nbsp;</td>
-                </tr>
-                <tr>
-                  <td>
-                    <table class="totals" role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
-                      <tr>
-                        <td>Subtotal:</td>
-                        <td>{{SUBTOTAL}}</td>
-                      </tr>
-                      <tr>
-                        <td>Order Total:</td>
-                        <td>{{TOTAL}}</td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
+            </tbody>
         </table>
-      </td>
-    </tr>
-  </table>
+    </div>
 </body>
 </html>`
   };
