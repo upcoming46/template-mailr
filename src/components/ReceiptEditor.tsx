@@ -18,6 +18,9 @@ const ReceiptEditor = ({ originalHTML, onEditComplete }: ReceiptEditorProps) => 
   const [fields, setFields] = useState<TemplateField[]>([]);
   const [generatedHTML, setGeneratedHTML] = useState("");
   const [loading, setLoading] = useState(false);
+  const [emailSubject, setEmailSubject] = useState("");
+  const [fromName, setFromName] = useState("");
+  const [fromEmail, setFromEmail] = useState("");
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -30,6 +33,11 @@ const ReceiptEditor = ({ originalHTML, onEditComplete }: ReceiptEditorProps) => 
         // Pre-fill form with extracted data
         const extractedData = extractDataFromHTML(originalHTML);
         setFormData(extractedData);
+        
+        // Set default email settings
+        setFromName(extractedData.SELLER_NAME || "Store");
+        setFromEmail("no-reply@store.com");
+        setEmailSubject(`${extractedData.PRODUCT_NAME || "Your Receipt"} Confirmation`);
       } catch (error) {
         console.error('Error parsing HTML:', error);
         toast({
@@ -136,9 +144,9 @@ const ReceiptEditor = ({ originalHTML, onEditComplete }: ReceiptEditorProps) => 
     // Store the generated receipt for sending
     localStorage.setItem('receiptData', JSON.stringify({
       html: generatedHTML,
-      subject: `Receipt from ${formData.SELLER_NAME || 'Your Purchase'}`,
-      fromName: formData.SELLER_NAME || 'Store',
-      fromEmail: formData.SELLER_EMAIL || 'no-reply@store.com',
+      subject: emailSubject,
+      fromName: fromName,
+      fromEmail: fromEmail,
     }));
     
     navigate('/send-receipt');
@@ -196,6 +204,43 @@ const ReceiptEditor = ({ originalHTML, onEditComplete }: ReceiptEditorProps) => 
                   )}
                 </div>
               ))}
+              
+              <div className="border-t pt-4 mt-6 space-y-4">
+                <h3 className="font-semibold text-lg">Email Settings</h3>
+                
+                <div>
+                  <Label htmlFor="emailSubject">Subject Line</Label>
+                  <Input
+                    id="emailSubject"
+                    type="text"
+                    value={emailSubject}
+                    onChange={(e) => setEmailSubject(e.target.value)}
+                    placeholder="Email subject"
+                  />
+                </div>
+                
+                <div>
+                  <Label htmlFor="fromName">From Name</Label>
+                  <Input
+                    id="fromName"
+                    type="text"
+                    value={fromName}
+                    onChange={(e) => setFromName(e.target.value)}
+                    placeholder="Sender name"
+                  />
+                </div>
+                
+                <div>
+                  <Label htmlFor="fromEmail">From Email</Label>
+                  <Input
+                    id="fromEmail"
+                    type="email"
+                    value={fromEmail}
+                    onChange={(e) => setFromEmail(e.target.value)}
+                    placeholder="sender@example.com"
+                  />
+                </div>
+              </div>
               
               <div className="space-y-2 pt-4">
                 <Button 

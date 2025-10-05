@@ -25,6 +25,7 @@ const App = () => (
           <Route path="/custom" element={<CustomTemplates />} />
           <Route path="/custom-templates" element={<CustomTemplates />} />
           <Route path="/receipt-editor" element={<ReceiptEditorPage />} />
+          <Route path="/edit-receipt" element={<ReceiptEditorPage />} />
           <Route path="/send" element={<SendReceipt />} />
           <Route path="/send-receipt" element={<SendReceipt />} />
           <Route path="/email-success" element={<EmailSuccess />} />
