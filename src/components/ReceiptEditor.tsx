@@ -28,11 +28,28 @@ const ReceiptEditor = ({ originalHTML, onEditComplete }: ReceiptEditorProps) => 
     if (originalHTML) {
       try {
         const parsed = parseHTMLTemplate(originalHTML);
-        setFields(parsed.fields);
         
         // Pre-fill form with extracted data
         const extractedData = extractDataFromHTML(originalHTML);
         setFormData(extractedData);
+        
+        // If no placeholders found, create standard receipt fields
+        if (parsed.fields.length === 0) {
+          const standardFields: TemplateField[] = [
+            { key: 'BUYER_NAME', label: 'Buyer Name', type: 'text', placeholder: 'Enter buyer name' },
+            { key: 'BUYER_EMAIL', label: 'Buyer Email', type: 'email', placeholder: 'buyer@example.com' },
+            { key: 'PRODUCT_NAME', label: 'Product Name', type: 'text', placeholder: 'Enter product name' },
+            { key: 'SELLER_NAME', label: 'Seller Name', type: 'text', placeholder: 'Enter seller name' },
+            { key: 'PRICE', label: 'Price', type: 'text', placeholder: '$0.00' },
+            { key: 'SUBTOTAL', label: 'Subtotal', type: 'text', placeholder: '$0.00' },
+            { key: 'TOTAL', label: 'Total', type: 'text', placeholder: '$0.00' },
+            { key: 'DATE', label: 'Date', type: 'date', placeholder: 'Select date' },
+            { key: 'ORDER_ID', label: 'Order ID', type: 'text', placeholder: 'Order number' },
+          ];
+          setFields(standardFields);
+        } else {
+          setFields(parsed.fields);
+        }
         
         // Set default email settings
         setFromName(extractedData.SELLER_NAME || "Store");
@@ -54,12 +71,15 @@ const ReceiptEditor = ({ originalHTML, onEditComplete }: ReceiptEditorProps) => 
     
     // Enhanced extraction patterns
     const patterns = {
-      BUYER_NAME: /Thanks for your order,?\s*([^!]+?)!/i,
+      BUYER_NAME: /(?:Name|Customer):\s*([^<\n]+)|Thanks for your order,?\s*([^!]+?)!/i,
+      BUYER_EMAIL: /(?:Email):\s*(?:<a[^>]*>)?([^<\n]+@[^<\n]+)(?:<\/a>)?/i,
       PRODUCT_NAME: /<(?:strong|b|h[1-6])[^>]*>\s*([^<]+?)\s*<\/(?:strong|b|h[1-6])>/i,
-      PRICE: /\$([0-9]+(?:\.[0-9]{2})?)/,
-      DATE: /(?:Date|Order date):\s*([^<\n]+)/i,
-      ORDER_ID: /(?:Order #|Receipt #|ID):\s*([^<\n\s]+)/i,
-      SELLER_NAME: /from\s+([^<\n.!]+)/i,
+      PRICE: /\$\s*([0-9,]+(?:\.[0-9]{2})?)/,
+      SUBTOTAL: /Subtotal:?\s*\$\s*([0-9,]+(?:\.[0-9]{2})?)/i,
+      TOTAL: /(?:Total|Order Total):?\s*\$\s*([0-9,]+(?:\.[0-9]{2})?)/i,
+      DATE: /(?:Date|Order date):?\s*([0-9]{1,2}\/[0-9]{1,2}\/[0-9]{2,4})/i,
+      ORDER_ID: /(?:Order #|Receipt #|ID):?\s*([^<\n\s]+)/i,
+      SELLER_NAME: /from\s+<(?:strong|b)>\s*([^<]+)\s*<\/(?:strong|b)>|purchasing\s+<(?:strong|b)>\s*([^<]+)\s*<\/(?:strong|b)>/i,
       ACCESS_LINK: /href="([^"]*access[^"]*)/i,
       CUSTOMER_PORTAL_URL: /href="([^"]*portal[^"]*)/i,
     };
@@ -84,7 +104,11 @@ const ReceiptEditor = ({ originalHTML, onEditComplete }: ReceiptEditorProps) => 
     Object.entries(patterns).forEach(([key, pattern]) => {
       const match = html.match(pattern);
       if (match) {
-        data[key] = match[1].trim();
+        // Some patterns have multiple capture groups, find the first non-empty one
+        const value = match[1] || match[2];
+        if (value) {
+          data[key] = value.trim();
+        }
       }
     });
 
@@ -116,12 +140,30 @@ const ReceiptEditor = ({ originalHTML, onEditComplete }: ReceiptEditorProps) => 
 
     setLoading(true);
     try {
-      const newHTML = generateReceiptHTML(originalHTML, formData);
+      // Replace values in HTML with form data
+      let newHTML = originalHTML;
+      
+      // Replace each field value in the HTML
+      Object.entries(formData).forEach(([key, value]) => {
+        if (value) {
+          // Try to find and replace the old value intelligently
+          const patterns = [
+            new RegExp(`(>${key}:?\\s*<[^>]*>)([^<]+)(<)`, 'gi'),
+            new RegExp(`(Name|Email|Date|Product|Price|Subtotal|Total):?\\s*<[^>]*>([^<]+)<`, 'gi'),
+          ];
+          
+          // Simple replacement if we can't find specific patterns
+          if (newHTML.includes(`{{${key}}}`)) {
+            newHTML = newHTML.replace(new RegExp(`\\{\\{${key}\\}\\}`, 'g'), value);
+          }
+        }
+      });
+      
       setGeneratedHTML(newHTML);
       
       toast({
         title: "Success",
-        description: "Receipt generated successfully!",
+        description: "Receipt updated successfully!",
       });
 
       if (onEditComplete) {
