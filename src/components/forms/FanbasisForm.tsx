@@ -40,7 +40,7 @@ const FanbasisForm = () => {
     localStorage.setItem('receiptData', JSON.stringify({
       html: generatedHTML,
       platform: 'fanbasis',
-      subject: 'Payment Confirmation - Your Order Receipt',
+      subject: `${formData.PRODUCT_NAME} Confirmation`,
       fromName: 'Fanbasis',
       fromEmail: 'no-reply@fanbasis.com'
     }));
