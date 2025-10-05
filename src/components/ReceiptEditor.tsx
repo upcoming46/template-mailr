@@ -33,23 +33,28 @@ const ReceiptEditor = ({ originalHTML, onEditComplete }: ReceiptEditorProps) => 
         const extractedData = extractDataFromHTML(originalHTML);
         setFormData(extractedData);
         
-        // If no placeholders found, create standard receipt fields
-        if (parsed.fields.length === 0) {
-          const standardFields: TemplateField[] = [
-            { key: 'BUYER_NAME', label: 'Buyer Name', type: 'text', placeholder: 'Enter buyer name' },
-            { key: 'BUYER_EMAIL', label: 'Buyer Email', type: 'email', placeholder: 'buyer@example.com' },
-            { key: 'PRODUCT_NAME', label: 'Product Name', type: 'text', placeholder: 'Enter product name' },
-            { key: 'SELLER_NAME', label: 'Seller Name', type: 'text', placeholder: 'Enter seller name' },
-            { key: 'PRICE', label: 'Price', type: 'text', placeholder: '$0.00' },
-            { key: 'SUBTOTAL', label: 'Subtotal', type: 'text', placeholder: '$0.00' },
-            { key: 'TOTAL', label: 'Total', type: 'text', placeholder: '$0.00' },
-            { key: 'DATE', label: 'Date', type: 'date', placeholder: 'Select date' },
-            { key: 'ORDER_ID', label: 'Order ID', type: 'text', placeholder: 'Order number' },
-          ];
-          setFields(standardFields);
-        } else {
-          setFields(parsed.fields);
+        // Create standard receipt fields
+        const standardFields: TemplateField[] = [
+          { key: 'BUYER_NAME', label: 'Buyer Name', type: 'text', placeholder: 'Enter buyer name' },
+          { key: 'BUYER_EMAIL', label: 'Buyer Email', type: 'email', placeholder: 'buyer@example.com' },
+          { key: 'PRODUCT_NAME', label: 'Product Name', type: 'text', placeholder: 'Enter product name' },
+          { key: 'SELLER_NAME', label: 'Seller Name', type: 'text', placeholder: 'Enter seller name' },
+          { key: 'PRICE', label: 'Price', type: 'text', placeholder: '$0.00' },
+          { key: 'SUBTOTAL', label: 'Subtotal', type: 'text', placeholder: '$0.00' },
+          { key: 'TOTAL', label: 'Total', type: 'text', placeholder: '$0.00' },
+          { key: 'DATE', label: 'Date', type: 'date', placeholder: 'Select date' },
+          { key: 'ORDER_ID', label: 'Order ID', type: 'text', placeholder: 'Order number' },
+        ];
+        
+        // Add image fields if detected
+        if (extractedData.SELLER_LOGO_URL) {
+          standardFields.push({ key: 'SELLER_LOGO_URL', label: 'Logo/Seller Image URL', type: 'text', placeholder: 'https://example.com/logo.png' });
         }
+        if (extractedData.PRODUCT_IMAGE_URL) {
+          standardFields.push({ key: 'PRODUCT_IMAGE_URL', label: 'Product Image URL', type: 'text', placeholder: 'https://example.com/product.png' });
+        }
+        
+        setFields(standardFields);
         
         // Set default email settings
         setFromName(extractedData.SELLER_NAME || "Store");
@@ -140,21 +145,25 @@ const ReceiptEditor = ({ originalHTML, onEditComplete }: ReceiptEditorProps) => 
 
     setLoading(true);
     try {
-      // Replace values in HTML with form data
       let newHTML = originalHTML;
+      const extractedData = extractDataFromHTML(originalHTML);
       
-      // Replace each field value in the HTML
+      // Replace images first
+      if (formData.SELLER_LOGO_URL && extractedData.SELLER_LOGO_URL) {
+        newHTML = newHTML.replace(extractedData.SELLER_LOGO_URL, formData.SELLER_LOGO_URL);
+      }
+      if (formData.PRODUCT_IMAGE_URL && extractedData.PRODUCT_IMAGE_URL) {
+        newHTML = newHTML.replace(extractedData.PRODUCT_IMAGE_URL, formData.PRODUCT_IMAGE_URL);
+      }
+      
+      // Replace text values
       Object.entries(formData).forEach(([key, value]) => {
-        if (value) {
-          // Try to find and replace the old value intelligently
-          const patterns = [
-            new RegExp(`(>${key}:?\\s*<[^>]*>)([^<]+)(<)`, 'gi'),
-            new RegExp(`(Name|Email|Date|Product|Price|Subtotal|Total):?\\s*<[^>]*>([^<]+)<`, 'gi'),
-          ];
-          
-          // Simple replacement if we can't find specific patterns
-          if (newHTML.includes(`{{${key}}}`)) {
-            newHTML = newHTML.replace(new RegExp(`\\{\\{${key}\\}\\}`, 'g'), value);
+        if (value && !key.includes('URL')) {
+          const oldValue = extractedData[key];
+          if (oldValue && typeof oldValue === 'string') {
+            // Replace all occurrences of the old value with new value
+            const regex = new RegExp(oldValue.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+            newHTML = newHTML.replace(regex, value);
           }
         }
       });
