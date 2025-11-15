@@ -61,12 +61,13 @@ const handler = async (req: Request): Promise<Response> => {
 
     const resend = new Resend(resendApiKey);
 
+    // Use ordersstan.store domain for all templates
     const emailData = {
-      from: `${fromName || 'Stan'} <orders@ordersstan.store>`,
+      from: `${fromName || 'Receipt'} <orders@ordersstan.store>`,
       to: [to],
       subject: subject,
       html: html,
-      reply_to: fromEmail || "orders@ordersstan.store",
+      reply_to: "orders@ordersstan.store",
     };
 
     console.log("Sending email with Resend API...");
