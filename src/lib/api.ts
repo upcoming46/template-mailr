@@ -18,26 +18,34 @@ export const sendEmail = async (emailData: EmailRequest): Promise<void> => {
       htmlLength: emailData.html?.length
     });
 
-    const { data, error } = await supabase.functions.invoke('send-email', {
-      body: emailData,
-    });
+    // Use direct fetch to avoid Supabase client connection issues
+    const response = await fetch(
+      'https://abhpwnfajkjxoyudvfwp.supabase.co/functions/v1/send-email',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(emailData),
+      }
+    );
 
-    console.log('=== RESPONSE ===');
-    console.log('Data:', data);
-    console.log('Error:', error);
+    console.log('=== RESPONSE STATUS ===', response.status);
 
-    if (error) {
-      console.error('=== INVOKE ERROR ===', error);
-      throw new Error(`Supabase function error: ${error.message || JSON.stringify(error)}`);
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('=== SERVER ERROR ===', errorText);
+      throw new Error(`Failed to send email: ${response.status} - ${errorText}`);
     }
 
-    if (!data || data.error) {
-      console.error('=== DATA ERROR ===', data);
-      throw new Error(data?.error?.details || data?.error || 'No response from email service');
+    const result = await response.json();
+    console.log('=== SUCCESS RESULT ===', result);
+
+    if (result.error) {
+      throw new Error(result.error.details || result.error || 'Email service error');
     }
 
-    console.log('=== SUCCESS ===');
-    return data;
+    return result;
   } catch (error) {
     console.error('=== CATCH ERROR ===', error);
     if (error instanceof Error) {
