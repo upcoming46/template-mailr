@@ -18,34 +18,28 @@ export const sendEmail = async (emailData: EmailRequest): Promise<void> => {
       htmlLength: emailData.html?.length
     });
 
-    // Use direct fetch to avoid Supabase client connection issues
-    const response = await fetch(
-      'https://abhpwnfajkjxoyudvfwp.supabase.co/functions/v1/send-email',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(emailData),
-      }
-    );
+    // Use Supabase client which handles CORS properly
+    const { data, error } = await supabase.functions.invoke('send-email', {
+      body: emailData,
+    });
 
-    console.log('=== RESPONSE STATUS ===', response.status);
+    console.log('=== RESPONSE ===');
+    console.log('Data:', data);
+    console.log('Error:', error);
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error('=== SERVER ERROR ===', errorText);
-      throw new Error(`Failed to send email: ${response.status} - ${errorText}`);
+    if (error) {
+      console.error('=== INVOKE ERROR ===', error);
+      // Provide more helpful error message
+      throw new Error(`Email service error: ${error.message || 'Connection failed'}. Please check your internet connection and try again.`);
     }
 
-    const result = await response.json();
-    console.log('=== SUCCESS RESULT ===', result);
-
-    if (result.error) {
-      throw new Error(result.error.details || result.error || 'Email service error');
+    if (!data || data.error) {
+      console.error('=== DATA ERROR ===', data);
+      throw new Error(data?.error?.details || data?.error || 'No response from email service');
     }
 
-    return result;
+    console.log('=== SUCCESS ===');
+    return data;
   } catch (error) {
     console.error('=== CATCH ERROR ===', error);
     if (error instanceof Error) {
