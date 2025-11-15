@@ -10,13 +10,28 @@ export interface EmailRequest {
 
 export const sendEmail = async (emailData: EmailRequest): Promise<void> => {
   try {
+    console.log('Calling send-email function with data:', {
+      to: emailData.to,
+      subject: emailData.subject,
+      fromName: emailData.fromName,
+      fromEmail: emailData.fromEmail,
+      htmlLength: emailData.html?.length
+    });
+
     const { data, error } = await supabase.functions.invoke('send-email', {
       body: emailData
     });
 
+    console.log('Response from send-email function:', { data, error });
+
     if (error) {
       console.error('Supabase function error:', error);
       throw new Error(error.message || 'Failed to send email');
+    }
+
+    if (data?.error) {
+      console.error('Error from edge function:', data.error);
+      throw new Error(data.error.details || data.error || 'Failed to send email');
     }
 
     return data;
