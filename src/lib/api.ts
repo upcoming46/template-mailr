@@ -10,35 +10,40 @@ export interface EmailRequest {
 
 export const sendEmail = async (emailData: EmailRequest): Promise<void> => {
   try {
-    console.log('Sending email with data:', {
+    console.log('=== SENDING EMAIL ===');
+    console.log('Email data:', {
       to: emailData.to,
       subject: emailData.subject,
       fromName: emailData.fromName,
-      fromEmail: emailData.fromEmail,
       htmlLength: emailData.html?.length
     });
 
     const { data, error } = await supabase.functions.invoke('send-email', {
-      body: emailData
+      body: emailData,
     });
 
-    console.log('Response from send-email:', { data, error });
+    console.log('=== RESPONSE ===');
+    console.log('Data:', data);
+    console.log('Error:', error);
 
     if (error) {
-      console.error('Supabase function error:', error);
-      throw new Error(error.message || 'Failed to send email');
+      console.error('=== INVOKE ERROR ===', error);
+      throw new Error(`Supabase function error: ${error.message || JSON.stringify(error)}`);
     }
 
-    if (data?.error) {
-      console.error('Error from edge function:', data.error);
-      throw new Error(data.error.details || data.error || 'Failed to send email');
+    if (!data || data.error) {
+      console.error('=== DATA ERROR ===', data);
+      throw new Error(data?.error?.details || data?.error || 'No response from email service');
     }
 
-    console.log('Email sent successfully!');
+    console.log('=== SUCCESS ===');
     return data;
   } catch (error) {
-    console.error('Email send error:', error);
-    throw error;
+    console.error('=== CATCH ERROR ===', error);
+    if (error instanceof Error) {
+      throw error;
+    }
+    throw new Error('Unknown error occurred while sending email');
   }
 };
 
