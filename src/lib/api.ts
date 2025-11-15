@@ -18,36 +18,24 @@ export const sendEmail = async (emailData: EmailRequest): Promise<void> => {
       htmlLength: emailData.html?.length
     });
 
-    // Use direct fetch for reliability
-    const response = await fetch(
-      'https://abhpwnfajkjxoyudvfwp.supabase.co/functions/v1/send-email',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFiaHB3bmZhamtqeG95dWR2ZndwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4NDY2NDksImV4cCI6MjA3MjQyMjY0OX0.K_mG61o1LbiR9pKhmZoMPQBziErLh5yuspIsQA4oXMY',
-          'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFiaHB3bmZhamtqeG95dWR2ZndwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4NDY2NDksImV4cCI6MjA3MjQyMjY0OX0.K_mG61o1LbiR9pKhmZoMPQBziErLh5yuspIsQA4oXMY',
-        },
-        body: JSON.stringify(emailData),
-      }
-    );
+    const { data, error } = await supabase.functions.invoke('send-email', {
+      body: emailData
+    });
 
-    console.log('Response status:', response.status);
+    console.log('Response from send-email:', { data, error });
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error('Server error response:', errorText);
-      throw new Error(`Failed to send email: ${response.status} ${errorText}`);
+    if (error) {
+      console.error('Supabase function error:', error);
+      throw new Error(error.message || 'Failed to send email');
     }
 
-    const result = await response.json();
-    console.log('Email sent successfully:', result);
-    
-    if (result.error) {
-      throw new Error(result.error.details || result.error || 'Failed to send email');
+    if (data?.error) {
+      console.error('Error from edge function:', data.error);
+      throw new Error(data.error.details || data.error || 'Failed to send email');
     }
 
-    return result;
+    console.log('Email sent successfully!');
+    return data;
   } catch (error) {
     console.error('Email send error:', error);
     throw error;
