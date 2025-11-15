@@ -14,7 +14,135 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      api_keys: {
+        Row: {
+          coingecko_key: string | null
+          created_at: string
+          id: string
+          news_api_key: string | null
+          trading_economics_key: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          coingecko_key?: string | null
+          created_at?: string
+          id?: string
+          news_api_key?: string | null
+          trading_economics_key?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          coingecko_key?: string | null
+          created_at?: string
+          id?: string
+          news_api_key?: string | null
+          trading_economics_key?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      signals: {
+        Row: {
+          asset: string
+          confidence_score: number
+          created_at: string
+          explanation: string
+          fundamental_warnings: string[] | null
+          id: string
+          price_at_signal: number | null
+          sentiment_data: Json | null
+          signal_type: string
+          technical_data: Json | null
+          user_id: string
+        }
+        Insert: {
+          asset?: string
+          confidence_score: number
+          created_at?: string
+          explanation: string
+          fundamental_warnings?: string[] | null
+          id?: string
+          price_at_signal?: number | null
+          sentiment_data?: Json | null
+          signal_type: string
+          technical_data?: Json | null
+          user_id: string
+        }
+        Update: {
+          asset?: string
+          confidence_score?: number
+          created_at?: string
+          explanation?: string
+          fundamental_warnings?: string[] | null
+          id?: string
+          price_at_signal?: number | null
+          sentiment_data?: Json | null
+          signal_type?: string
+          technical_data?: Json | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      strategy_metrics: {
+        Row: {
+          created_at: string
+          date: string
+          id: string
+          successful_signals: number
+          total_profit_loss: number | null
+          total_signals: number
+          updated_at: string
+          user_id: string
+          win_rate: number | null
+        }
+        Insert: {
+          created_at?: string
+          date: string
+          id?: string
+          successful_signals?: number
+          total_profit_loss?: number | null
+          total_signals?: number
+          updated_at?: string
+          user_id: string
+          win_rate?: number | null
+        }
+        Update: {
+          created_at?: string
+          date?: string
+          id?: string
+          successful_signals?: number
+          total_profit_loss?: number | null
+          total_signals?: number
+          updated_at?: string
+          user_id?: string
+          win_rate?: number | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
