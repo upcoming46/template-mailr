@@ -98,14 +98,9 @@ const SendReceipt = () => {
     } catch (error) {
       console.error('Email send error:', error);
       
-      // Provide more detailed error feedback
       let errorMessage = "Failed to send email. Please try again.";
       if (error instanceof Error) {
-        if (error.message.includes('network') || error.message.includes('fetch')) {
-          errorMessage = "Network error. Please check your connection and try again.";
-        } else if (error.message.includes('invalid') || error.message.includes('not found')) {
-          errorMessage = "Invalid email address or email service issue.";
-        }
+        errorMessage = error.message;
       }
       
       toast({
