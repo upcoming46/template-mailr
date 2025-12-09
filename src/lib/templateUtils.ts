@@ -654,11 +654,11 @@ export const getTemplateHTML = (templateId: string): string => {
       <tbody>
         <tr style="border-collapse:collapse">
           <td valign="top" style="padding:0;Margin:0">
-            <table class="m_8547670884616214203es-content" cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;border-spacing:0px;table-layout:fixed!important;width:100%">
+            <table cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;border-spacing:0px;table-layout:fixed!important;width:100%">
               <tbody>
                 <tr style="border-collapse:collapse">
                   <td align="center" style="padding:0;Margin:0">
-                    <table class="m_8547670884616214203es-content-body" cellspacing="0" cellpadding="0" align="center" bgcolor="#020202" style="border-collapse:collapse;border-spacing:0px;background-color:#020202;width:600px">
+                    <table cellspacing="0" cellpadding="0" align="center" bgcolor="#020202" style="border-collapse:collapse;border-spacing:0px;background-color:#020202;width:600px">
                       <tbody>
                         <tr style="border-collapse:collapse">
                           <td style="Margin:0;padding-top:20px;padding-left:30px;padding-right:30px;padding-bottom:40px;background-color:#fefef2" bgcolor="#fefef2" align="left">
@@ -717,10 +717,10 @@ export const getTemplateHTML = (templateId: string): string => {
                         </tr>
                         <tr style="border-collapse:collapse">
                           <td style="Margin:0;padding-bottom:5px;padding-top:15px;padding-left:20px;padding-right:20px;background-color:#1e1e1e" bgcolor="#1e1e1e" align="left">
-                            <table class="m_8547670884616214203es-left" cellspacing="0" cellpadding="0" align="left" style="border-collapse:collapse;border-spacing:0px;float:left">
+                            <table cellspacing="0" cellpadding="0" align="left" style="border-collapse:collapse;border-spacing:0px">
                               <tbody>
                                 <tr style="border-collapse:collapse">
-                                  <td class="m_8547670884616214203es-m-p20b" align="left" style="padding:0;Margin:0;width:272px">
+                                  <td align="left" style="padding:0;Margin:0;width:272px">
                                     <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="border-collapse:collapse;border-spacing:0px">
                                       <tbody>
                                         <tr style="border-collapse:collapse">
@@ -729,7 +729,7 @@ export const getTemplateHTML = (templateId: string): string => {
                                               Name: {{BUYER_NAME}}
                                             </p>
                                             <p style="Margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px">
-                                              Email: <a href="mailto:{{BUYER_EMAIL}}" style="text-decoration:none;color:#ffffff" target="_blank" rel="noreferrer">{{BUYER_EMAIL}}</a>
+                                              Email: {{BUYER_EMAIL}}
                                             </p>
                                             <p style="Margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px">
                                               <br>
@@ -745,7 +745,7 @@ export const getTemplateHTML = (templateId: string): string => {
                                 </tr>
                               </tbody>
                             </table>
-                            <table class="m_8547670884616214203es-right" cellspacing="0" cellpadding="0" align="right" style="border-collapse:collapse;border-spacing:0px;float:right">
+                            <table cellspacing="0" cellpadding="0" align="right" style="border-collapse:collapse;border-spacing:0px">
                               <tbody>
                                 <tr style="border-collapse:collapse">
                                   <td align="left" style="padding:0;Margin:0;width:278px">
@@ -849,8 +849,8 @@ export const getTemplateHTML = (templateId: string): string => {
                                   <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="border-collapse:collapse;border-spacing:0px">
                                     <tr style="border-collapse:collapse">
                                       <td align="center" bgcolor="#fd3363" style="padding:0;Margin:0">
-                                        <span class="m_8547670884616214203es-button-border" style="border-style:solid;border-color:#242424;background:#242424;border-width:0px;display:inline-block;border-radius:22px;width:auto">
-                                          <a href="{{PORTAL_URL}}" class="m_8547670884616214203es-button" style="text-decoration:none;color:#ffffff;font-size:18px;display:inline-block;background:#242424;border-radius:22px;font-family:'lucida sans unicode','lucida grande',sans-serif;font-weight:normal;font-style:normal;line-height:22px;width:auto;text-align:center;padding:10px 20px" target="_blank" rel="noreferrer"> Access Customer Portal </a>
+                                        <span style="border-style:solid;border-color:#242424;background:#242424;border-width:0px;display:inline-block;border-radius:22px;width:auto">
+                                          <a href="{{PORTAL_URL}}" style="text-decoration:none;color:#ffffff;font-size:18px;display:inline-block;background:#242424;border-radius:22px;font-family:'lucida sans unicode','lucida grande',sans-serif;font-weight:normal;font-style:normal;line-height:22px;width:auto;text-align:center;padding:10px 20px" target="_blank" rel="noreferrer"> Access Customer Portal </a>
                                         </span>
                                       </td>
                                     </tr>
