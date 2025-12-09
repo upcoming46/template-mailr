@@ -17,7 +17,9 @@ const FanbasisForm = () => {
     DATE: new Date().toLocaleDateString(),
     PRICE: "",
     SUBTOTAL: "",
-    TOTAL: ""
+    TOTAL: "",
+    LAST_PAYMENT_DATE: "",
+    PORTAL_URL: "https://www.fanbasis.com/portal/customer/login"
   });
   const [generatedHTML, setGeneratedHTML] = useState("");
   const { toast } = useToast();
@@ -135,7 +137,27 @@ const FanbasisForm = () => {
               id="date"
               value={formData.DATE}
               onChange={(e) => handleInputChange("DATE", e.target.value)}
-              placeholder="09/12/2025"
+              placeholder="11/15/2025"
+            />
+          </div>
+
+          <div>
+            <Label htmlFor="last-payment-date">Last Payment Date</Label>
+            <Input
+              id="last-payment-date"
+              value={formData.LAST_PAYMENT_DATE}
+              onChange={(e) => handleInputChange("LAST_PAYMENT_DATE", e.target.value)}
+              placeholder="Jan 14 2026"
+            />
+          </div>
+
+          <div>
+            <Label htmlFor="portal-url">Customer Portal URL</Label>
+            <Input
+              id="portal-url"
+              value={formData.PORTAL_URL}
+              onChange={(e) => handleInputChange("PORTAL_URL", e.target.value)}
+              placeholder="https://www.fanbasis.com/portal/customer/login"
             />
           </div>
 
