@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,6 +7,43 @@ import { useToast } from "@/hooks/use-toast";
 import { generateReceiptHTML, getTemplateHTML } from "@/lib/templateUtils";
 import { Link } from "react-router-dom";
 import { Mail } from "lucide-react";
+import { addMonths, format, parse } from "date-fns";
+
+const calculateLastPaymentDate = (orderDate: string): string => {
+  try {
+    // Try to parse common date formats
+    let date: Date | null = null;
+    
+    // Try MM/DD/YYYY format first
+    const usFormat = parse(orderDate, 'M/d/yyyy', new Date());
+    if (!isNaN(usFormat.getTime())) {
+      date = usFormat;
+    }
+    
+    // Try DD/MM/YYYY format
+    if (!date) {
+      const euFormat = parse(orderDate, 'd/M/yyyy', new Date());
+      if (!isNaN(euFormat.getTime())) {
+        date = euFormat;
+      }
+    }
+    
+    // Fallback to Date constructor
+    if (!date) {
+      date = new Date(orderDate);
+    }
+    
+    if (isNaN(date.getTime())) {
+      return "";
+    }
+    
+    // Add 6 months for last payment date
+    const lastPaymentDate = addMonths(date, 6);
+    return format(lastPaymentDate, "MMM d yyyy");
+  } catch {
+    return "";
+  }
+};
 
 const FanbasisForm = () => {
   const [formData, setFormData] = useState({
@@ -23,6 +60,16 @@ const FanbasisForm = () => {
   });
   const [generatedHTML, setGeneratedHTML] = useState("");
   const { toast } = useToast();
+
+  // Auto-calculate last payment date when order date changes
+  useEffect(() => {
+    if (formData.DATE) {
+      const lastPayment = calculateLastPaymentDate(formData.DATE);
+      if (lastPayment) {
+        setFormData(prev => ({ ...prev, LAST_PAYMENT_DATE: lastPayment }));
+      }
+    }
+  }, [formData.DATE]);
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
