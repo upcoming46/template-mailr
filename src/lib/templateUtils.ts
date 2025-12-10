@@ -659,7 +659,6 @@ export const getTemplateHTML = (templateId: string): string => {
   <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color:#333333;">
     <tr>
       <td align="center" style="padding:20px 10px;">
-        <!-- Main Container - Single Column -->
         <table border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;width:100%;background-color:#020202;">
           
           <!-- Header Section -->
@@ -679,22 +678,15 @@ export const getTemplateHTML = (templateId: string): string => {
             </td>
           </tr>
           
-          <!-- Buyer Details - Stacked for Mobile -->
+          <!-- Name and Email on Left, Order Date on Right -->
           <tr>
-            <td bgcolor="#1e1e1e" style="padding:15px 25px;background-color:#1e1e1e;">
+            <td bgcolor="#1e1e1e" style="padding:15px 25px 5px 25px;background-color:#1e1e1e;">
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
-                  <td style="font-family:Arial,sans-serif;font-size:16px;line-height:24px;color:#ffffff;padding-bottom:5px;">
+                  <td width="300" valign="top" style="font-family:Arial,sans-serif;font-size:16px;line-height:24px;color:#ffffff;">
                     Name: {{BUYER_NAME}}
                   </td>
-                </tr>
-                <tr>
-                  <td style="font-family:Arial,sans-serif;font-size:16px;line-height:24px;color:#ffffff;padding-bottom:5px;">
-                    Email: {{BUYER_EMAIL}}
-                  </td>
-                </tr>
-                <tr>
-                  <td style="font-family:Arial,sans-serif;font-size:16px;line-height:24px;color:#ffffff;padding-bottom:5px;">
+                  <td width="250" align="right" valign="top" style="font-family:Arial,sans-serif;font-size:16px;line-height:24px;color:#ffffff;">
                     Order date: {{DATE}}
                   </td>
                 </tr>
@@ -702,15 +694,28 @@ export const getTemplateHTML = (templateId: string): string => {
             </td>
           </tr>
           
-          <!-- Product and Price -->
+          <!-- Email Row -->
           <tr>
-            <td bgcolor="#1e1e1e" style="padding:10px 25px;background-color:#1e1e1e;">
+            <td bgcolor="#1e1e1e" style="padding:5px 25px;background-color:#1e1e1e;">
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
                   <td style="font-family:Arial,sans-serif;font-size:16px;line-height:24px;color:#ffffff;">
+                    Email: {{BUYER_EMAIL}}
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+          <!-- Product Name on Left, Price on Right -->
+          <tr>
+            <td bgcolor="#1e1e1e" style="padding:15px 25px;background-color:#1e1e1e;">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td width="300" valign="top" style="font-family:Arial,sans-serif;font-size:16px;line-height:24px;color:#ffffff;">
                     <strong>{{PRODUCT_NAME}}</strong>
                   </td>
-                  <td align="right" style="font-family:Arial,sans-serif;font-size:16px;line-height:24px;color:#ffffff;">
+                  <td width="250" align="right" valign="top" style="font-family:Arial,sans-serif;font-size:16px;line-height:24px;color:#ffffff;">
                     <strong>{{PRICE}}</strong>
                   </td>
                 </tr>
@@ -718,21 +723,27 @@ export const getTemplateHTML = (templateId: string): string => {
             </td>
           </tr>
           
-          <!-- Billing Info -->
+          <!-- Billing Info on Left -->
           <tr>
-            <td bgcolor="#1e1e1e" style="padding:15px 25px;background-color:#1e1e1e;">
-              <p style="margin:0 0 5px 0;font-family:Arial,sans-serif;font-size:14px;line-height:21px;color:#ffffff;">
-                Billed {{PRICE}} for every 30 days
-              </p>
-              <p style="margin:0;font-family:Arial,sans-serif;font-size:14px;line-height:21px;color:#ffffff;">
-                Last day of payment is {{LAST_PAYMENT_DATE}}
-              </p>
+            <td bgcolor="#1e1e1e" style="padding:10px 25px;background-color:#1e1e1e;">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td style="font-family:Arial,sans-serif;font-size:14px;line-height:21px;color:#ffffff;font-style:italic;">
+                    Billed {{PRICE}} for every 30 days
+                  </td>
+                </tr>
+                <tr>
+                  <td style="font-family:Arial,sans-serif;font-size:14px;line-height:21px;color:#ffffff;padding-top:5px;">
+                    Last day of payment is {{LAST_PAYMENT_DATE}}
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
           
           <!-- Divider -->
           <tr>
-            <td bgcolor="#1e1e1e" style="padding:10px 25px;background-color:#1e1e1e;">
+            <td bgcolor="#1e1e1e" style="padding:15px 25px;background-color:#1e1e1e;">
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
                   <td style="border-bottom:1px solid #ffffff;height:1px;line-height:1px;font-size:1px;">&nbsp;</td>
@@ -741,15 +752,15 @@ export const getTemplateHTML = (templateId: string): string => {
             </td>
           </tr>
           
-          <!-- Totals -->
+          <!-- Subtotal and Order Total -->
           <tr>
-            <td bgcolor="#1e1e1e" style="padding:15px 25px 20px 25px;background-color:#1e1e1e;">
+            <td bgcolor="#1e1e1e" style="padding:15px 25px 25px 25px;background-color:#1e1e1e;">
               <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
-                  <td style="font-family:Arial,sans-serif;font-size:14px;line-height:24px;color:#ffffff;">
+                  <td style="font-family:Arial,sans-serif;font-size:14px;line-height:28px;color:#ffffff;">
                     Subtotal:
                   </td>
-                  <td align="right" style="font-family:Arial,sans-serif;font-size:14px;line-height:24px;color:#ffffff;">
+                  <td align="right" style="font-family:Arial,sans-serif;font-size:14px;line-height:28px;color:#ffffff;">
                     {{SUBTOTAL}}
                   </td>
                 </tr>
@@ -765,13 +776,13 @@ export const getTemplateHTML = (templateId: string): string => {
             </td>
           </tr>
           
-          <!-- CTA Button -->
+          <!-- Full Width CTA Button -->
           <tr>
-            <td align="center" bgcolor="#fd3363" style="padding:30px 20px;background-color:#fd3363;">
-              <table border="0" cellpadding="0" cellspacing="0">
+            <td align="center" bgcolor="#fd3363" style="padding:30px 50px;background-color:#fd3363;">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
-                  <td align="center" bgcolor="#242424" style="border-radius:22px;background-color:#242424;">
-                    <a href="{{PORTAL_URL}}" target="_blank" style="display:inline-block;padding:12px 24px;font-family:'Lucida Sans Unicode','Lucida Grande',sans-serif;font-size:18px;font-weight:normal;line-height:22px;color:#ffffff;text-decoration:none;border-radius:22px;">Access Customer Portal</a>
+                  <td align="center" bgcolor="#242424" style="border-radius:10px;background-color:#242424;">
+                    <a href="{{PORTAL_URL}}" target="_blank" style="display:block;padding:18px 24px;font-family:'Lucida Sans Unicode','Lucida Grande',sans-serif;font-size:18px;font-weight:normal;line-height:22px;color:#ffffff;text-decoration:none;text-align:center;">Access Customer Portal</a>
                   </td>
                 </tr>
               </table>
