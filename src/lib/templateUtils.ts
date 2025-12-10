@@ -648,230 +648,142 @@ export const getTemplateHTML = (templateId: string): string => {
 </body>
 </html>`,
 
-    fanbasis: `<div style="font-family:Arial,sans-serif;width:100%;padding:0;Margin:0">
-  <div style="background-color:#333333">
-    <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border-spacing:0px;padding:0;Margin:0;width:100%;height:100%;background-repeat:repeat;background-position:center top;background-color:#333333">
-      <tbody>
-        <tr style="border-collapse:collapse">
-          <td valign="top" style="padding:0;Margin:0">
-            <table cellspacing="0" cellpadding="0" align="center" style="border-collapse:collapse;border-spacing:0px;table-layout:fixed!important;width:100%">
-              <tbody>
-                <tr style="border-collapse:collapse">
-                  <td align="center" style="padding:0;Margin:0">
-                    <table cellspacing="0" cellpadding="0" align="center" bgcolor="#020202" style="border-collapse:collapse;border-spacing:0px;background-color:#020202;width:600px">
-                      <tbody>
-                        <tr style="border-collapse:collapse">
-                          <td style="Margin:0;padding-top:20px;padding-left:30px;padding-right:30px;padding-bottom:40px;background-color:#fefef2" bgcolor="#fefef2" align="left">
-                            <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border-spacing:0px">
-                              <tbody>
-                                <tr style="border-collapse:collapse">
-                                  <td valign="top" align="center" style="padding:0;Margin:0;width:540px">
-                                    <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="border-collapse:collapse;border-spacing:0px">
-                                      <tbody>
-                                        <tr style="border-collapse:collapse">
-                                          <td align="center" style="padding:0;Margin:0;padding-top:15px;padding-bottom:15px">
-                                            <div>
-                                              <h2 style="Margin:0;line-height:36px;font-family:Arial,sans-serif;font-size:30px;font-style:normal;font-weight:normal;color:#242424">
-                                                <strong>Payment Confirmation</strong>
-                                              </h2>
-                                            </div>
-                                          </td>
-                                        </tr>
-                                        <tr style="border-collapse:collapse">
-                                          <td style="padding:0;Margin:0;padding-left:10px">
-                                            <p style="Margin:0;font-family:Arial,sans-serif;line-height:21px;color:#242424;font-size:14px">
-                                              Thank you for purchasing <strong>{{PRODUCT_NAME}}</strong> from <strong>{{SELLER_NAME}}</strong>. Your purchase is confirmed, and we're excited to have you on board.
-                                            </p>
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </td>
-                        </tr>
-                        <tr style="border-collapse:collapse">
-                          <td style="Margin:0;padding-left:10px;padding-right:10px;padding-top:15px;padding-bottom:20px;background-color:#1e1e1e" bgcolor="#1e1e1e" align="left">
-                            <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border-spacing:0px">
-                              <tbody>
-                                <tr style="border-collapse:collapse">
-                                  <td valign="top" align="center" style="padding:0;Margin:0;width:580px">
-                                    <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="border-collapse:collapse;border-spacing:0px">
-                                      <tbody>
-                                        <tr style="border-collapse:collapse">
-                                          <td align="center" style="padding:0;Margin:0;padding-top:20px">
-                                            <h2 style="Margin:0;line-height:29px;font-family:Arial,sans-serif;font-size:24px;font-style:normal;font-weight:normal;color:#ffffff">
-                                              Order summary
-                                            </h2>
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </td>
-                        </tr>
-                        <tr style="border-collapse:collapse">
-                          <td style="Margin:0;padding-bottom:5px;padding-top:15px;padding-left:20px;padding-right:20px;background-color:#1e1e1e" bgcolor="#1e1e1e" align="left">
-                            <table cellspacing="0" cellpadding="0" align="left" style="border-collapse:collapse;border-spacing:0px">
-                              <tbody>
-                                <tr style="border-collapse:collapse">
-                                  <td align="left" style="padding:0;Margin:0;width:272px">
-                                    <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="border-collapse:collapse;border-spacing:0px">
-                                      <tbody>
-                                        <tr style="border-collapse:collapse">
-                                          <td align="left" style="padding:0;Margin:0;padding-left:15px;padding-right:20px">
-                                            <p style="Margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px">
-                                              Name: {{BUYER_NAME}}
-                                            </p>
-                                            <p style="Margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px">
-                                              Email: {{BUYER_EMAIL}}
-                                            </p>
-                                            <p style="Margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px">
-                                              <br>
-                                            </p>
-                                            <p style="Margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px">
-                                              <strong>{{PRODUCT_NAME}}</strong>
-                                            </p>
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                            <table cellspacing="0" cellpadding="0" align="right" style="border-collapse:collapse;border-spacing:0px">
-                              <tbody>
-                                <tr style="border-collapse:collapse">
-                                  <td align="left" style="padding:0;Margin:0;width:278px">
-                                    <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="border-collapse:collapse;border-spacing:0px">
-                                      <tbody>
-                                        <tr style="border-collapse:collapse">
-                                          <td align="right" style="padding:0;Margin:0;padding-right:15px;padding-left:20px">
-                                            <p style="Margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px">
-                                              Order date: {{DATE}}
-                                            </p>
-                                            <p style="Margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px">
-                                              <br>
-                                            </p>
-                                            <p style="Margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px">
-                                              <br>
-                                            </p>
-                                            <p style="Margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px">
-                                              <strong style="line-height:150%">{{PRICE}}</strong>
-                                            </p>
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </td>
-                        </tr>
-                        <tr style="border-collapse:collapse">
-                          <td style="Margin:0;padding-top:10px;padding-bottom:10px;padding-left:10px;padding-right:10px;background-color:#1e1e1e" bgcolor="#1e1e1e" align="left">
-                            <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border-spacing:0px">
-                              <tbody>
-                                <tr style="border-collapse:collapse">
-                                  <td valign="top" align="center" style="padding:0;Margin:0;width:580px">
-                                    <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="border-collapse:collapse;border-spacing:0px">
-                                      <tbody>
-                                        <tr style="border-collapse:collapse">
-                                          <td align="left" style="padding:0;Margin:0;padding-top:5px;padding-left:25px;padding-right:25px">
-                                            <p style="Margin:0;font-family:Arial,sans-serif;line-height:21px;color:#ffffff;font-size:14px">
-                                              Billed {{PRICE}} for every 30 days
-                                            </p>
-                                          </td>
-                                        </tr>
-                                        <tr style="border-collapse:collapse">
-                                          <td align="left" style="padding:0;Margin:0;padding-top:5px;padding-left:25px;padding-right:25px">
-                                            <p style="Margin:0;font-family:Arial,sans-serif;line-height:21px;color:#ffffff;font-size:14px">
-                                              Last day of payment is {{LAST_PAYMENT_DATE}}
-                                            </p>
-                                          </td>
-                                        </tr>
-                                        <tr style="border-collapse:collapse">
-                                          <td bgcolor="#1e1e1e" align="center" style="padding:20px;Margin:0;font-size:0">
-                                            <table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;border-spacing:0px">
-                                              <tbody>
-                                                <tr style="border-collapse:collapse">
-                                                  <td style="padding:0;Margin:0;border-bottom:1px solid #efefef;background:none 0% 0% repeat scroll #ffffff;height:1px;width:100%;margin:0px">
-                                                  </td>
-                                                </tr>
-                                              </tbody>
-                                            </table>
-                                          </td>
-                                        </tr>
-                                        <tr style="border-collapse:collapse">
-                                          <td align="right" bgcolor="#1e1e1e" style="padding:0;Margin:0;padding-bottom:15px;padding-right:25px">
-                                            <table height="101" cellspacing="1" cellpadding="1" border="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;width:240px">
-                                              <tbody style="font-family:Arial,sans-serif;line-height:21px;color:#242424">
-                                                <tr style="border-collapse:collapse">
-                                                  <td style="padding:0;Margin:0;color:#ffffff;font-size:14px">
-                                                    Subtotal:
-                                                  </td>
-                                                  <td style="padding:0;Margin:0;text-align:right;color:#ffffff;font-size:14px">
-                                                    {{SUBTOTAL}}
-                                                  </td>
-                                                </tr>
-                                                <tr style="border-collapse:collapse">
-                                                  <td style="padding:0;Margin:0;font-size:18px;line-height:36px;color:#ffffff">
-                                                    <strong>Order Total:</strong>
-                                                  </td>
-                                                  <td style="padding:0;Margin:0;text-align:right;font-size:18px;line-height:36px;color:#ffffff">
-                                                    <strong>{{TOTAL}}</strong>
-                                                  </td>
-                                                </tr>
-                                              </tbody>
-                                            </table>
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </td>
-                        </tr>
-                        <tr style="border-collapse:collapse">
-                          <td align="left" bgcolor="#fd3363" style="padding:30px;Margin:0;background-color:#fd3363">
-                            <table cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;border-spacing:0px">
-                              <tr style="border-collapse:collapse">
-                                <td align="center" valign="top" style="padding:0;Margin:0;width:540px">
-                                  <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="border-collapse:collapse;border-spacing:0px">
-                                    <tr style="border-collapse:collapse">
-                                      <td align="center" bgcolor="#fd3363" style="padding:0;Margin:0">
-                                        <span style="border-style:solid;border-color:#242424;background:#242424;border-width:0px;display:inline-block;border-radius:22px;width:auto">
-                                          <a href="{{PORTAL_URL}}" style="text-decoration:none;color:#ffffff;font-size:18px;display:inline-block;background:#242424;border-radius:22px;font-family:'lucida sans unicode','lucida grande',sans-serif;font-weight:normal;font-style:normal;line-height:22px;width:auto;text-align:center;padding:10px 20px" target="_blank" rel="noreferrer"> Access Customer Portal </a>
-                                        </span>
-                                      </td>
-                                    </tr>
-                                  </table>
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+    fanbasis: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Confirmation</title>
+</head>
+<body style="margin:0;padding:0;background-color:#333333;font-family:Arial,sans-serif;">
+  <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color:#333333;">
+    <tr>
+      <td align="center" style="padding:20px 10px;">
+        <!-- Main Container - Single Column -->
+        <table border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;width:100%;background-color:#020202;">
+          
+          <!-- Header Section -->
+          <tr>
+            <td align="center" bgcolor="#fefef2" style="padding:30px 20px;background-color:#fefef2;">
+              <h2 style="margin:0;padding:0;font-family:Arial,sans-serif;font-size:28px;font-weight:bold;color:#242424;line-height:36px;">Payment Confirmation</h2>
+              <p style="margin:15px 0 0 0;font-family:Arial,sans-serif;font-size:14px;line-height:21px;color:#242424;">
+                Thank you for purchasing <strong>{{PRODUCT_NAME}}</strong> from <strong>{{SELLER_NAME}}</strong>. Your purchase is confirmed, and we're excited to have you on board.
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Order Summary Title -->
+          <tr>
+            <td align="center" bgcolor="#1e1e1e" style="padding:20px;background-color:#1e1e1e;">
+              <h2 style="margin:0;font-family:Arial,sans-serif;font-size:24px;font-weight:normal;color:#ffffff;line-height:29px;">Order summary</h2>
+            </td>
+          </tr>
+          
+          <!-- Buyer Details - Stacked for Mobile -->
+          <tr>
+            <td bgcolor="#1e1e1e" style="padding:15px 25px;background-color:#1e1e1e;">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td style="font-family:Arial,sans-serif;font-size:16px;line-height:24px;color:#ffffff;padding-bottom:5px;">
+                    Name: {{BUYER_NAME}}
                   </td>
                 </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>`
+                <tr>
+                  <td style="font-family:Arial,sans-serif;font-size:16px;line-height:24px;color:#ffffff;padding-bottom:5px;">
+                    Email: {{BUYER_EMAIL}}
+                  </td>
+                </tr>
+                <tr>
+                  <td style="font-family:Arial,sans-serif;font-size:16px;line-height:24px;color:#ffffff;padding-bottom:5px;">
+                    Order date: {{DATE}}
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+          <!-- Product and Price -->
+          <tr>
+            <td bgcolor="#1e1e1e" style="padding:10px 25px;background-color:#1e1e1e;">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td style="font-family:Arial,sans-serif;font-size:16px;line-height:24px;color:#ffffff;">
+                    <strong>{{PRODUCT_NAME}}</strong>
+                  </td>
+                  <td align="right" style="font-family:Arial,sans-serif;font-size:16px;line-height:24px;color:#ffffff;">
+                    <strong>{{PRICE}}</strong>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+          <!-- Billing Info -->
+          <tr>
+            <td bgcolor="#1e1e1e" style="padding:15px 25px;background-color:#1e1e1e;">
+              <p style="margin:0 0 5px 0;font-family:Arial,sans-serif;font-size:14px;line-height:21px;color:#ffffff;">
+                Billed {{PRICE}} for every 30 days
+              </p>
+              <p style="margin:0;font-family:Arial,sans-serif;font-size:14px;line-height:21px;color:#ffffff;">
+                Last day of payment is {{LAST_PAYMENT_DATE}}
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Divider -->
+          <tr>
+            <td bgcolor="#1e1e1e" style="padding:10px 25px;background-color:#1e1e1e;">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td style="border-bottom:1px solid #ffffff;height:1px;line-height:1px;font-size:1px;">&nbsp;</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+          <!-- Totals -->
+          <tr>
+            <td bgcolor="#1e1e1e" style="padding:15px 25px 20px 25px;background-color:#1e1e1e;">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td style="font-family:Arial,sans-serif;font-size:14px;line-height:24px;color:#ffffff;">
+                    Subtotal:
+                  </td>
+                  <td align="right" style="font-family:Arial,sans-serif;font-size:14px;line-height:24px;color:#ffffff;">
+                    {{SUBTOTAL}}
+                  </td>
+                </tr>
+                <tr>
+                  <td style="font-family:Arial,sans-serif;font-size:18px;line-height:36px;color:#ffffff;">
+                    <strong>Order Total:</strong>
+                  </td>
+                  <td align="right" style="font-family:Arial,sans-serif;font-size:18px;line-height:36px;color:#ffffff;">
+                    <strong>{{TOTAL}}</strong>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+          <!-- CTA Button -->
+          <tr>
+            <td align="center" bgcolor="#fd3363" style="padding:30px 20px;background-color:#fd3363;">
+              <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td align="center" bgcolor="#242424" style="border-radius:22px;background-color:#242424;">
+                    <a href="{{PORTAL_URL}}" target="_blank" style="display:inline-block;padding:12px 24px;font-family:'Lucida Sans Unicode','Lucida Grande',sans-serif;font-size:18px;font-weight:normal;line-height:22px;color:#ffffff;text-decoration:none;border-radius:22px;">Access Customer Portal</a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`
   };
 
   return templates[templateId] || '';
