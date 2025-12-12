@@ -650,11 +650,12 @@ export const getTemplateHTML = (templateId: string): string => {
 
     fanbasis: `<div style="font-family:Arial,sans-serif;width:100%;padding:0;margin:0">
     <style>
-        @media only screen and (max-width: 600px) {
+        @media only screen and (max-width: 640px) {
             .mobile-full-width { width: 100% !important; max-width: 100% !important; }
             .mobile-stack { display: block !important; width: 100% !important; float: none !important; }
             .spacer { display: none !important; }
             .mobile-text-left { text-align: left !important; }
+            .mobile-padding { padding-left: 15px !important; padding-right: 15px !important; }
         }
     </style>
     <div style="background-color:#333333">
@@ -666,7 +667,7 @@ export const getTemplateHTML = (templateId: string): string => {
                             <tbody>
                                 <tr style="border-collapse:collapse">
                                     <td align="center" style="padding:0;margin:0">
-                                        <table cellspacing="0" cellpadding="0" align="center" bgcolor="#020202" class="mobile-full-width" style="border-collapse:collapse;border-spacing:0px;background-color:#020202;width:100%;max-width:600px">
+                                        <table cellspacing="0" cellpadding="0" align="center" bgcolor="#020202" class="mobile-full-width" style="border-collapse:collapse;border-spacing:0px;background-color:#020202;width:100%;max-width:640px">
                                             <tbody>
                                                 <tr style="border-collapse:collapse">
                                                     <td style="margin:0;padding-top:20px;padding-left:30px;padding-right:30px;padding-bottom:40px;background-color:#fefef2" bgcolor="#fefef2" align="left">
