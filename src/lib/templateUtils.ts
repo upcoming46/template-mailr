@@ -801,16 +801,16 @@ export const getTemplateHTML = (templateId: string): string => {
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr style="border-collapse:collapse">
-                                                                                    <td align="right" bgcolor="#1e1e1e" style="padding:0;margin:0;padding-bottom:15px;padding-right:25px">
-                                                                                        <table height="101" cellspacing="1" cellpadding="1" border="0" role="presentation" style="border-collapse:collapse;border-spacing:0px;width:240px">
+                                                                                    <td bgcolor="#1e1e1e" style="padding:0;margin:0;padding-bottom:15px;padding-left:25px;padding-right:25px">
+                                                                                        <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation" style="border-collapse:collapse;border-spacing:0px">
                                                                                             <tbody style="font-family:Arial,sans-serif;line-height:21px;color:#242424">
                                                                                                 <tr style="border-collapse:collapse">
-                                                                                                    <td style="padding:0;margin:0;color:#ffffff;font-size:14px">Subtotal:</td>
-                                                                                                    <td style="padding:0;margin:0;text-align:right;color:#ffffff;font-size:14px">{{SUBTOTAL}}</td>
+                                                                                                    <td style="padding:0;margin:0;padding-top:10px;color:#ffffff;font-size:14px" align="left">Subtotal:</td>
+                                                                                                    <td style="padding:0;margin:0;padding-top:10px;text-align:right;color:#ffffff;font-size:14px" align="right">{{SUBTOTAL}}</td>
                                                                                                 </tr>
                                                                                                 <tr style="border-collapse:collapse">
-                                                                                                    <td style="padding:0;margin:0;font-size:18px;line-height:36px;color:#ffffff"><strong>Order Total:</strong></td>
-                                                                                                    <td style="padding:0;margin:0;text-align:right;font-size:18px;line-height:36px;color:#ffffff"><strong>{{TOTAL}}</strong></td>
+                                                                                                    <td style="padding:0;margin:0;padding-top:10px;font-size:18px;line-height:36px;color:#ffffff" align="left"><strong>Order Total:</strong></td>
+                                                                                                    <td style="padding:0;margin:0;padding-top:10px;text-align:right;font-size:18px;line-height:36px;color:#ffffff" align="right"><strong>{{TOTAL}}</strong></td>
                                                                                                 </tr>
                                                                                             </tbody>
                                                                                         </table>
@@ -825,18 +825,16 @@ export const getTemplateHTML = (templateId: string): string => {
                                                     </td>
                                                 </tr>
                                                 <tr style="border-collapse:collapse">
-                                                    <td align="left" bgcolor="#fd3363" style="padding:30px;margin:0;background-color:#fd3363">
+                                                    <td align="center" bgcolor="#fd3363" style="padding:30px;margin:0;background-color:#fd3363">
                                                         <table cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;border-spacing:0px">
                                                             <tr style="border-collapse:collapse">
-                                                                <td align="center" valign="top" style="padding:0;margin:0;width:540px">
+                                                                <td align="center" valign="top" style="padding:0;margin:0">
                                                                     <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="border-collapse:collapse;border-spacing:0px">
                                                                         <tr style="border-collapse:collapse">
                                                                             <td align="center" bgcolor="#fd3363" style="padding:0;margin:0">
-                                                                                <span style="border-style:solid;border-color:#242424;background:#242424;border-width:0px;display:inline-block;border-radius:22px;width:auto">
-                                                                                    <a href="{{PORTAL_URL}}" style="text-decoration:none;color:#ffffff;font-size:18px;display:inline-block;background:#242424;border-radius:22px;font-family:'lucida sans unicode','lucida grande',sans-serif;font-weight:normal;font-style:normal;line-height:22px;width:auto;text-align:center;padding:10px 20px" target="_blank">
-                                                                                        Access Customer Portal
-                                                                                    </a>
-                                                                                </span>
+                                                                                <a href="{{PORTAL_URL}}" style="text-decoration:none;color:#ffffff;font-size:18px;display:block;background:#242424;border-radius:30px;font-family:'lucida sans unicode','lucida grande',sans-serif;font-weight:normal;font-style:normal;line-height:22px;width:100%;text-align:center;padding:15px 20px;box-sizing:border-box" target="_blank">
+                                                                                    Access Customer Portal
+                                                                                </a>
                                                                             </td>
                                                                         </tr>
                                                                     </table>
