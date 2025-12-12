@@ -736,7 +736,7 @@ export const getTemplateHTML = (templateId: string): string => {
                                                                                             Name: {{BUYER_NAME}}
                                                                                         </p>
                                                                                         <p style="margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px">
-                                                                                            Email: {{BUYER_EMAIL}}
+                                                                                            Email: <a href="mailto:{{BUYER_EMAIL}}" style="color:#ffffff;text-decoration:none">{{BUYER_EMAIL}}</a>
                                                                                         </p>
                                                                                         <p class="spacer" style="margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px"><br></p>
                                                                                         <p style="margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px">
