@@ -649,6 +649,14 @@ export const getTemplateHTML = (templateId: string): string => {
 </html>`,
 
     fanbasis: `<div style="font-family:Arial,sans-serif;width:100%;padding:0;margin:0">
+    <style>
+        @media only screen and (max-width: 600px) {
+            .mobile-full-width { width: 100% !important; max-width: 100% !important; }
+            .mobile-stack { display: block !important; width: 100% !important; float: none !important; }
+            .spacer { display: none !important; }
+            .mobile-text-left { text-align: left !important; }
+        }
+    </style>
     <div style="background-color:#333333">
         <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border-spacing:0px;padding:0;margin:0;width:100%;height:100%;background-repeat:repeat;background-position:center top;background-color:#333333">
             <tbody>
@@ -658,14 +666,14 @@ export const getTemplateHTML = (templateId: string): string => {
                             <tbody>
                                 <tr style="border-collapse:collapse">
                                     <td align="center" style="padding:0;margin:0">
-                                        <table cellspacing="0" cellpadding="0" align="center" bgcolor="#020202" style="border-collapse:collapse;border-spacing:0px;background-color:#020202;width:600px">
+                                        <table cellspacing="0" cellpadding="0" align="center" bgcolor="#020202" class="mobile-full-width" style="border-collapse:collapse;border-spacing:0px;background-color:#020202;width:100%;max-width:600px">
                                             <tbody>
                                                 <tr style="border-collapse:collapse">
                                                     <td style="margin:0;padding-top:20px;padding-left:30px;padding-right:30px;padding-bottom:40px;background-color:#fefef2" bgcolor="#fefef2" align="left">
                                                         <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border-spacing:0px">
                                                             <tbody>
                                                                 <tr style="border-collapse:collapse">
-                                                                    <td valign="top" align="center" style="padding:0;margin:0;width:540px">
+                                                                    <td valign="top" align="center" class="mobile-full-width" style="padding:0;margin:0;width:540px">
                                                                         <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="border-collapse:collapse;border-spacing:0px">
                                                                             <tbody>
                                                                                 <tr style="border-collapse:collapse">
@@ -695,7 +703,7 @@ export const getTemplateHTML = (templateId: string): string => {
                                                         <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border-spacing:0px">
                                                             <tbody>
                                                                 <tr style="border-collapse:collapse">
-                                                                    <td valign="top" align="center" style="padding:0;margin:0;width:580px">
+                                                                    <td valign="top" align="center" class="mobile-full-width" style="padding:0;margin:0;width:580px">
                                                                         <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="border-collapse:collapse;border-spacing:0px">
                                                                             <tbody>
                                                                                 <tr style="border-collapse:collapse">
@@ -715,10 +723,10 @@ export const getTemplateHTML = (templateId: string): string => {
                                                 </tr>
                                                 <tr style="border-collapse:collapse">
                                                     <td style="margin:0;padding-bottom:5px;padding-top:15px;padding-left:20px;padding-right:20px;background-color:#1e1e1e" bgcolor="#1e1e1e" align="left">
-                                                        <table cellspacing="0" cellpadding="0" align="left" style="border-collapse:collapse;border-spacing:0px;float:left">
+                                                        <table cellspacing="0" cellpadding="0" align="left" class="mobile-stack" style="border-collapse:collapse;border-spacing:0px;float:left">
                                                             <tbody>
                                                                 <tr style="border-collapse:collapse">
-                                                                    <td align="left" style="padding:0;margin:0;width:272px">
+                                                                    <td align="left" class="mobile-full-width" style="padding:0;margin:0;width:272px">
                                                                         <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="border-collapse:collapse;border-spacing:0px">
                                                                             <tbody>
                                                                                 <tr style="border-collapse:collapse">
@@ -729,7 +737,7 @@ export const getTemplateHTML = (templateId: string): string => {
                                                                                         <p style="margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px">
                                                                                             Email: {{BUYER_EMAIL}}
                                                                                         </p>
-                                                                                        <p style="margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px"><br></p>
+                                                                                        <p class="spacer" style="margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px"><br></p>
                                                                                         <p style="margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px">
                                                                                             <strong>{{PRODUCT_NAME}}</strong>
                                                                                         </p>
@@ -741,19 +749,19 @@ export const getTemplateHTML = (templateId: string): string => {
                                                                 </tr>
                                                             </tbody>
                                                         </table>
-                                                        <table cellspacing="0" cellpadding="0" align="right" style="border-collapse:collapse;border-spacing:0px;float:right">
+                                                        <table cellspacing="0" cellpadding="0" align="right" class="mobile-stack" style="border-collapse:collapse;border-spacing:0px;float:right">
                                                             <tbody>
                                                                 <tr style="border-collapse:collapse">
-                                                                    <td align="left" style="padding:0;margin:0;width:278px">
+                                                                    <td align="left" class="mobile-full-width mobile-text-left" style="padding:0;margin:0;width:278px">
                                                                         <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="border-collapse:collapse;border-spacing:0px">
                                                                             <tbody>
                                                                                 <tr style="border-collapse:collapse">
-                                                                                    <td align="right" style="padding:0;margin:0;padding-right:15px;padding-left:20px">
+                                                                                    <td align="right" class="mobile-text-left" style="padding:0;margin:0;padding-right:15px;padding-left:20px">
                                                                                         <p style="margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px">
                                                                                             Order date: {{DATE}}
                                                                                         </p>
-                                                                                        <p style="margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px"><br></p>
-                                                                                        <p style="margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px"><br></p>
+                                                                                        <p class="spacer" style="margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px"><br></p>
+                                                                                        <p class="spacer" style="margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px"><br></p>
                                                                                         <p style="margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px">
                                                                                             <strong style="line-height:150%">{{PRICE}}</strong>
                                                                                         </p>
@@ -772,7 +780,7 @@ export const getTemplateHTML = (templateId: string): string => {
                                                         <table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border-spacing:0px">
                                                             <tbody>
                                                                 <tr style="border-collapse:collapse">
-                                                                    <td valign="top" align="center" style="padding:0;margin:0;width:580px">
+                                                                    <td valign="top" align="center" class="mobile-full-width" style="padding:0;margin:0;width:580px">
                                                                         <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="border-collapse:collapse;border-spacing:0px">
                                                                             <tbody>
                                                                                 <tr style="border-collapse:collapse">
