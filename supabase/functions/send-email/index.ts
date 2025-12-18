@@ -67,7 +67,6 @@ const handler = async (req: Request): Promise<Response> => {
       to: [to],
       subject: subject,
       html: html,
-      reply_to: "support@fanbasis.site",
     };
 
     console.log("Sending email with Resend API...");
