@@ -648,12 +648,23 @@ export const getTemplateHTML = (templateId: string): string => {
 </body>
 </html>`,
 
-    fanbasis: `<div style="font-family:Arial,sans-serif;width:100%;padding:0;margin:0">
+    fanbasis: `<div id="fanbasis-email" style="font-family:Arial,sans-serif;width:100%;padding:0;margin:0">
     <style>
-        /* Override auto-linked emails */
+        /* Force links (including auto-linked emails) to match receipt text color */
+        #fanbasis-email a,
+        #fanbasis-email a:link,
+        #fanbasis-email a:visited,
+        #fanbasis-email a:hover,
+        #fanbasis-email a:active {
+          color: #ffffff !important;
+          text-decoration: none !important;
+        }
+
+        /* iOS / Gmail auto-detection overrides */
         a[x-apple-data-detectors] { color: #ffffff !important; text-decoration: none !important; }
         .x-gmail-data-detectors, .x-gmail-data-detectors * { color: #ffffff !important; text-decoration: none !important; }
         u + #body a { color: #ffffff !important; text-decoration: none !important; }
+
         @media only screen and (max-width: 640px) {
             .mobile-full-width { width: 100% !important; max-width: 100% !important; }
             .mobile-stack { display: block !important; width: 100% !important; float: none !important; }
@@ -741,7 +752,7 @@ export const getTemplateHTML = (templateId: string): string => {
                                                                                             Name: {{BUYER_NAME}}
                                                                                         </p>
                                                                                         <p class="no-wrap" style="margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px;white-space:nowrap">
-                                                                                            Email: <span style="color:#ffffff !important;text-decoration:none !important;">{{BUYER_EMAIL}}</span>
+                                                                                            Email: <a href="mailto:{{BUYER_EMAIL}}" style="color:#ffffff !important;text-decoration:none !important;">{{BUYER_EMAIL}}</a>
                                                                                         </p>
                                                                                         <p class="spacer" style="margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px"><br></p>
                                                                                         <p style="margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px">
