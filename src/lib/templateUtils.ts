@@ -656,6 +656,7 @@ export const getTemplateHTML = (templateId: string): string => {
             .spacer { display: none !important; }
             .mobile-text-left { text-align: left !important; }
             .mobile-padding { padding-left: 15px !important; padding-right: 15px !important; }
+            .no-wrap { white-space: nowrap !important; }
         }
     </style>
     <div style="background-color:#333333">
@@ -731,12 +732,12 @@ export const getTemplateHTML = (templateId: string): string => {
                                                                         <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="border-collapse:collapse;border-spacing:0px">
                                                                             <tbody>
                                                                                 <tr style="border-collapse:collapse">
-                                                                                    <td align="left" style="padding:0;margin:0;padding-left:15px;padding-right:20px">
-                                                                                        <p style="margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px">
+                                                                    <td align="left" style="padding:0;margin:0;padding-left:15px;padding-right:20px">
+                                                                                        <p class="no-wrap" style="margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px;white-space:nowrap">
                                                                                             Name: {{BUYER_NAME}}
                                                                                         </p>
-                                                                                        <p style="margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px">
-                                                                                            Email: <a href="mailto:{{BUYER_EMAIL}}" style="color:#ffffff;text-decoration:none">{{BUYER_EMAIL}}</a>
+                                                                                        <p class="no-wrap" style="margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px;white-space:nowrap">
+                                                                                            Email: {{BUYER_EMAIL}}
                                                                                         </p>
                                                                                         <p class="spacer" style="margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px"><br></p>
                                                                                         <p style="margin:0;font-family:Arial,sans-serif;line-height:24px;color:#ffffff;font-size:16px">
