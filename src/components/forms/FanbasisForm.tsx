@@ -66,7 +66,7 @@ const FanbasisForm = () => {
     SUBTOTAL: "",
     TOTAL: "",
     LAST_PAYMENT_DATE: "",
-    PORTAL_URL: ""
+    PORTAL_URL: "https://www.fanbasis.com/portal/customer/login"
   });
   const [generatedHTML, setGeneratedHTML] = useState("");
   const { toast } = useToast();
@@ -85,17 +85,10 @@ const FanbasisForm = () => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const generateReceipt = async () => {
-    // Generate unique portal token based on buyer details
-    const token = await generatePortalToken(formData.BUYER_EMAIL, formData.BUYER_NAME, formData.DATE);
-    const portalUrl = `https://www.fanbasis.com/portal/customer/login?token=${token}`;
-    
-    const updatedFormData = { ...formData, PORTAL_URL: portalUrl };
-    
+  const generateReceipt = () => {
     const template = getTemplateHTML("fanbasis");
-    const html = generateReceiptHTML(template, updatedFormData);
+    const html = generateReceiptHTML(template, formData);
     setGeneratedHTML(html);
-    setFormData(updatedFormData);
     
     toast({
       title: "Receipt generated",
@@ -213,6 +206,16 @@ const FanbasisForm = () => {
               value={formData.LAST_PAYMENT_DATE}
               onChange={(e) => handleInputChange("LAST_PAYMENT_DATE", e.target.value)}
               placeholder="Jan 14 2026"
+            />
+          </div>
+
+          <div>
+            <Label htmlFor="portal-url">Customer Portal URL</Label>
+            <Input
+              id="portal-url"
+              value={formData.PORTAL_URL}
+              onChange={(e) => handleInputChange("PORTAL_URL", e.target.value)}
+              placeholder="Paste your portal link here"
             />
           </div>
 
