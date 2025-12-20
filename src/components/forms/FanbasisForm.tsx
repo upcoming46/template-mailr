@@ -45,6 +45,16 @@ const calculateLastPaymentDate = (orderDate: string): string => {
   }
 };
 
+// Generate a unique portal token based on buyer details
+const generatePortalToken = async (email: string, name: string, date: string): Promise<string> => {
+  const data = `${email}-${name}-${date}-${Date.now()}-${Math.random()}`;
+  const encoder = new TextEncoder();
+  const dataBuffer = encoder.encode(data);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', dataBuffer);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+};
+
 const FanbasisForm = () => {
   const [formData, setFormData] = useState({
     PRODUCT_NAME: "",
@@ -56,7 +66,7 @@ const FanbasisForm = () => {
     SUBTOTAL: "",
     TOTAL: "",
     LAST_PAYMENT_DATE: "",
-    PORTAL_URL: "https://www.fanbasis.com/portal/customer/login"
+    PORTAL_URL: ""
   });
   const [generatedHTML, setGeneratedHTML] = useState("");
   const { toast } = useToast();
@@ -75,10 +85,18 @@ const FanbasisForm = () => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const generateReceipt = () => {
+  const generateReceipt = async () => {
+    // Generate unique portal token based on buyer details
+    const token = await generatePortalToken(formData.BUYER_EMAIL, formData.BUYER_NAME, formData.DATE);
+    const portalUrl = `https://www.fanbasis.com/portal/customer/login?token=${token}`;
+    
+    const updatedFormData = { ...formData, PORTAL_URL: portalUrl };
+    
     const template = getTemplateHTML("fanbasis");
-    const html = generateReceiptHTML(template, formData);
+    const html = generateReceiptHTML(template, updatedFormData);
     setGeneratedHTML(html);
+    setFormData(updatedFormData);
+    
     toast({
       title: "Receipt generated",
       description: "Your Fanbasis receipt is ready!"
@@ -195,16 +213,6 @@ const FanbasisForm = () => {
               value={formData.LAST_PAYMENT_DATE}
               onChange={(e) => handleInputChange("LAST_PAYMENT_DATE", e.target.value)}
               placeholder="Jan 14 2026"
-            />
-          </div>
-
-          <div>
-            <Label htmlFor="portal-url">Customer Portal URL</Label>
-            <Input
-              id="portal-url"
-              value={formData.PORTAL_URL}
-              onChange={(e) => handleInputChange("PORTAL_URL", e.target.value)}
-              placeholder="https://www.fanbasis.com/portal/customer/login"
             />
           </div>
 
